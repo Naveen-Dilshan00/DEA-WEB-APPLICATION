@@ -36,16 +36,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Watches</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Phones</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Laptops</a>
+        <a class="nav-link" href="adminHome.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
 <!--      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,13 +49,6 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>-->
-<!--      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>-->
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</button>
-      <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fa-regular fa-address-book"></i>Contact Us</button>
     </form>
   </div>
 </nav>

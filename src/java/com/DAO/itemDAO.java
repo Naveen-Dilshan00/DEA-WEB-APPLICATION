@@ -5,16 +5,17 @@
  */
 package com.DAO;
 
-import com.entity.user;
+import com.entity.itemDetailes;
+import java.util.List;
+
 /**
  *
  * @author Naveen Dilshan
  */
-public interface userDAO {
+public interface itemDAO {
     
-    // user register
-    public boolean userRegister(user us);
+    public boolean addItem(itemDetailes b);
     
-    //user login
-    public user login(String name,String password);
+    public List<itemDetailes> getAllItems();
+    
 }

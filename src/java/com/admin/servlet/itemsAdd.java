@@ -3,27 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.user.servlet;
+package com.admin.servlet;
 
+import com.DAO.itemDAOImpl;
 import com.DB.DBConnect;
-import com.entity.user;
-import com.DAO.userDAOImpl;
-
+import com.entity.itemDetailes;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author Naveen Dilshan
  */
-@WebServlet(name = "registerServlet", urlPatterns = {"/registerServlet"})
-public class registerServlet extends HttpServlet {
+@WebServlet(name = "itemsAdd", urlPatterns = {"/itemsAdd"})
+@MultipartConfig
+public class itemsAdd extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +45,10 @@ public class registerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registerServlet</title>");            
+            out.println("<title>Servlet itemsAdd</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet registerServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet itemsAdd at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -78,55 +81,52 @@ public class registerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-            
-          try{
-            String name=request.getParameter("fname");
-            String email = request.getParameter("email");
-            String phno =request.getParameter("phno");
-            String password = request.getParameter("password");
-            String check = request.getParameter("check");
 
-          System.out.println(name + " " +email+" " +phno+" " +password+" "+check);
-
-            user us =new user();
-            us.setName(name);
-            us.setEmail(email);
-            us.setPhno(phno);
-            us.setPassword(password);
-            
-            
-            HttpSession httpSession = request.getSession();
-            
-            //Term & conditions Agree
-            if(check!=null){
-                    userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
-                    boolean f= dao.userRegister(us);
-
-                    if(f){
-//                        System.out.println("Account created succesfully");
-                           httpSession.setAttribute("SuccMsg" , "Registration Succesfully");
-                           response.sendRedirect("register.jsp");
+            try{
+                
+                String itemName = request.getParameter("iName");
+                String year = request.getParameter("year");
+                Double price = Double.parseDouble(request.getParameter("price"));
+                String catergory = request.getParameter("iCater");
+                String stat = request.getParameter("iStat");
+                Part par = request.getPart("phoName");
+                String fileName = par.getSubmittedFileName();
+                
+                
+                itemDetailes b =new itemDetailes(itemName,year,price,catergory,stat,fileName,"admin");
+                System.out.println(b);
+                
+                itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+                
+                boolean f = dao.addItem(b);
+                
+                HttpSession session = request.getSession();
+                
+                 if(f){
+//                String path =getServletContext().getRealPath("") + File.separator + "Books";
+//                System.out.println(path);
+//                File f = new File(path);
+//                par.write(path + File.separator+ fileName);
+                     
+                        
+//                         System.out.println("Account created succesfully");
+                           session.setAttribute("SuccMsg" , "Registration Succesfully");
+                           response.sendRedirect("admin/adminHome.jsp");
+                           System.out.println("aaaaaaaaaaaaaaaaaaaa");
                          
                     }
                     else{
 //                        System.out.println("Something went wrong");
-                           httpSession.setAttribute("faildMsg","Something wrong on server");
-                           response.sendRedirect("register.jsp");
+                           session.setAttribute("faildMsg","Something wrong on server");
+                           response.sendRedirect("admin/adminHome.jsp");
+                           System.out.println("bbbbbbbbbbbbbbbbb");
                            
                     }
-                }
-            else{
-//                System.out.println("Please check agree &term conditions");
-                   
-                   httpSession.setAttribute("faildMsg","please check terms and conditions");
-                    response.sendRedirect("register.jsp");
+                
+            }  catch(Exception e){
+                System.out.println("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+                e.printStackTrace();
             }
-            
-            
-              
-          }catch(Exception e){
-              e.printStackTrace();
-          }
     }
 
     /**

@@ -18,7 +18,10 @@
         <div class="container p-2">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <div class="card" style="border-radius: 30px;">
+                     
+                    <div class="card mt-5" style="border-radius: 30px;">
+                        
+                       
                         <div class="card-body">
                             <h4 class="text-center">Registration Page</h4>
                             

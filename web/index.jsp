@@ -11,16 +11,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ebook-Index</title>
+        <title>APPLE-Index</title>
         <%@include file="/all_components/allCSS.jsp"%>
         
         <style type="text/css">
             .back-img{
-                background:url("image/Book.jpg");
+                background:url("image/Clock.jpg");
                 height:50vh;
                 width:100%;
                 background-size: cover;
-                background-position: bottom;
+                background-position: center;
             }
             
             .crd-ho:hover{
@@ -33,7 +33,7 @@
         
         
         <div class="container-fluid back-img">
-            <h2 class="text-center text-danger">Book Management System</h2>
+            <h2 class="text-center text-danger">WATCH STROE</h2>
         </div>
         
         
@@ -44,13 +44,13 @@
 <!--START RECENT BOOKS        -->
 
         <div class="container">
-            <h3 class="text-center">Recent Book</h3>
+            <h3 class="text-center">Watches</h3>
             <div class="row">
                 
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -66,7 +66,7 @@
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -82,7 +82,7 @@
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -98,7 +98,7 @@
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -122,13 +122,13 @@
 <!--START NEW BOOKS -->
 
         <div class="container">
-            <h3 class="text-center">New Book</h3>
+            <h3 class="text-center">Phones</h3>
             <div class="row">
                 
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -144,7 +144,7 @@
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -160,7 +160,7 @@
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -176,7 +176,7 @@
                 <div class="col-md-3">
                     <div class="card crd-ho">
                         <div class="card-body text-center">
-                            <img alt="" src="Books/Java.jpg" style="width:150px; height:200px" class="img-thumblin">
+                            <img alt="" src="Items_img/Watch1.jpg" style="width:150px; height:200px" class="img-thumblin">
                           <p>Java Programming</p>
                           <p>Balguruswamy</p>
                           <p>catergories : New</p>
@@ -200,7 +200,7 @@
 <!--START OLD BOOKS-->
 
         <div class="container">
-            <h3 class="text-center">Old Book</h3>
+            <h3 class="text-center">Laptops</h3>
             <div class="row">
                 
                 <div class="col-md-3">

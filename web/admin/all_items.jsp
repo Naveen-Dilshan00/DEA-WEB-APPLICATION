@@ -1,0 +1,69 @@
+<%-- 
+    Document   : all_items
+    Created on : 07-Apr-2024, 07:45:42
+    Author     : Naveen Dilshan
+--%>
+
+<%@page import="java.util.List"%>
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.itemDAOImpl"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Admin:All items</title>
+        <%@include file="adminCSS.jsp"%>
+    </head>
+    <body>
+        <%@include file="adminNavbar.jsp"%>
+        <h3 class="text-center">Hello Admin</h3>
+        
+        
+        <table class="table">
+            <thead class="bg-dark text-white">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Year</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Catergories</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              <%
+              
+              itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+              List<itemDetailes> list = dao.getAllItems();
+              for(itemDetailes b : list){
+               %>   
+               <tr>
+                  <td><%=b.getItemId()%></td>
+                  <td><img src="../Items_img/<%=b.getPhotoName()%>" style="width:100px;height:100px;"></td>
+                  <td><%=b.getItemName()%></td>
+                  <td><%=b.getM_year()%></td>
+                  <td><%=b.getPrice()%></td>
+                  <td><%=b.getCatergory()%></td>
+                  <td><%=b.getStatus()%></td>
+                  <td>
+                      <a href='#' class="btn btn-sm btn-primary">Edit</a>
+                      <a href='#' class="btn btn-sm btn-danger">Delete</a>
+                  </td>
+                </tr>
+                
+                <%
+                 }
+                %>
+              
+              
+              
+              
+              
+              </tbody>
+         </table>
+    </body>
+</html>
