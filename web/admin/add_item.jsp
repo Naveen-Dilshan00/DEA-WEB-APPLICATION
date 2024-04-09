@@ -1,5 +1,5 @@
 <%-- 
-    Document   : add_books.jsp
+    Document   : add_item.jsp
     Created on : 07-Apr-2024, 07:37:52
     Author     : Naveen Dilshan
 --%>
@@ -52,8 +52,8 @@
                                         <label for="exampleFormControlSelect1">Item Status</label>
                                         <select name = "iStat"class="form-control" id="exampleFormControlSelect1">
                                           <option>--Select--</option>
-                                          <option>2</option>
-                                          <option>3</option>
+                                          <option value = "Active">Active</option>
+                                          <option value="Inactive">Inactive</option>
                                         </select>
                                      </div>
                                     

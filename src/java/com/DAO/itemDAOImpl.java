@@ -26,6 +26,7 @@ public class itemDAOImpl implements itemDAO{
         this.con = con;
     }
     
+    // Item add (admin panel)
     public boolean addItem(itemDetailes b){
         
         boolean f =false;
@@ -92,4 +93,85 @@ public class itemDAOImpl implements itemDAO{
     
     return list;
 }
+    
+    
+    @Override
+    public itemDetailes getItemsById(int d){
+        itemDetailes b = null;
+        
+        try{
+            String sql="select*from item_data where Item_ID=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, d);
+            
+            ResultSet rs = ps.executeQuery();
+            while(rs.next())
+            {
+            
+                b =new itemDetailes();
+                b.setItemId(rs.getInt(1));
+                b.setItemName(rs.getString(2));
+                b.setM_year(rs.getString(3));
+                b.setPrice(rs.getDouble(4));
+                b.setPhotoName(rs.getString(5));
+                b.setCatergory(rs.getString(6));
+                b.setStatus(rs.getString(7));
+                b.setEmail(rs.getString(8));
+                
+                
+            }
+            
+            
+        }  catch(Exception e){
+            e.printStackTrace();
+        }
+        return b;
+    }
+    
+    
+    public boolean updateEditItems(itemDetailes b){
+        boolean f =false;
+        try{
+            
+            String sql=" update item_data set Item_Name=?,M_Year=?,Price=?,Status=? where Item_ID=?";
+            PreparedStatement ps =con.prepareStatement(sql);
+            
+            ps.setString(1,b.getItemName());
+            ps.setString(2,b.getM_year());
+            ps.setDouble(3,b.getPrice());
+            ps.setString(4,b.getStatus());
+            ps.setInt(5,b.getItemId());
+            
+            int i=ps.executeUpdate();
+            System.out.println("done");
+            if(i==1)
+            {
+                f=true;
+            }
+            
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return f;
+    }
+    
+    
+    public boolean deleteItems(int id){
+        boolean f= false;
+        try{
+            String sql = "delete from item_data where Item_Id=?";
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, id);
+            int i=ps.executeUpdate();
+            if(i==1){
+                f=true;
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return f;
+    }
 }
