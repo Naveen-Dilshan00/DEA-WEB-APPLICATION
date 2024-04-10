@@ -24,13 +24,14 @@ public class cartDAOImpl implements cartDAO{
         
         boolean f=false;
         try{
-            String sql="insert into cart(Item_Id,User_Id,Item_Name,M_year,Price,Total_Price) values(?,?,?,?,?,?)";
+            String sql="insert into cart(Item_Id,User_Id,Item_Name,M_Year,Price,Total_Price) values(?,?,?,?,?,?)";
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setInt(1,c.getIid());
             ps.setInt(2,c.getUserId());
-            ps.setString(3,c.getM_year());
-            ps.setDouble(4,c.getPrice());
-            ps.setDouble(5,c.getTotallPrice());
+            ps.setString(3,c.getItemName());
+            ps.setString(4,c.getM_year());
+            ps.setDouble(5,c.getPrice());
+            ps.setDouble(6,c.getTotallPrice());
             
             int i = ps.executeUpdate();
             if(i==1){

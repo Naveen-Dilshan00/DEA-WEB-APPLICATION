@@ -5,6 +5,11 @@
  */
 package com.user.servlet;
 
+import com.DAO.cartDAOImpl;
+import com.DAO.itemDAOImpl;
+import com.DB.DBConnect;
+import com.entity.cart;
+import com.entity.itemDetailes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -58,7 +64,44 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+
+            try{
+                
+                int Iid = Integer.parseInt(request.getParameter("Iid").trim());
+                int Uid = Integer.parseInt(request.getParameter("Uid"));
+                
+                itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+                itemDetailes b = dao.getItemsById(Iid);
+                
+                cart c = new cart();
+                c.setIid(Iid);
+                c.setUserId(Uid);
+                c.setItemName(b.getItemName());
+                c.setM_year(b.getM_year());
+                c.setPrice(b.getPrice());
+                c.setTotallPrice(b.getPrice());
+                System.out.println("");
+                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+                boolean f =dao2.addCart(c);
+                
+                HttpSession session =request.getSession();
+                
+                if(f){
+                    session.setAttribute("addCart","Book added to the cart");
+                    response.sendRedirect("all_Laps.jsp");
+                    System.out.println("Add cart Succesfully");
+                }
+                else{
+                    session.setAttribute("failed","something went wrong");
+                    response.sendRedirect("all_Laps.jsp");
+                    System.out.println("Not added card");
+                }
+                
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
     }
 
     /**
