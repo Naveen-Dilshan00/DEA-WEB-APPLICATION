@@ -62,11 +62,13 @@
                                               if("Active".equals(b.getStatus())){
                                           %>
                                                   <option value = "Inactive">Inactive</option>
+                                                  <option value = "Active">Active</option>
                                                   
                                           <%    }
                                                else{
                                           %>  
                                                   <option value = "Active">Active</option>
+                                                  <option value = "Inactive">Inactive</option>
                                           <%
                                                   }
                                           %>
