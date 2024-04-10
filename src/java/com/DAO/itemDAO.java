@@ -26,4 +26,8 @@ public interface itemDAO {
     public boolean updateEditItems(itemDetailes b); 
     
     public boolean deleteItems(int id);
+    
+    public List<itemDetailes> getPhones();
+    
+    public List<itemDetailes> getLaps();
 }
