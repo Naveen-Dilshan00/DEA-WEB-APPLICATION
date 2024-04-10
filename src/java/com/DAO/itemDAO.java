@@ -30,4 +30,6 @@ public interface itemDAO {
     public List<itemDetailes> getPhones();
     
     public List<itemDetailes> getLaps();
+    
+    public List<itemDetailes> getAllLaps();
 }

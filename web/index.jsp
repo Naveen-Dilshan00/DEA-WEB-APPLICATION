@@ -4,6 +4,7 @@
     Author     : Naveen Dilshan
 --%>
 
+<%@page import="com.entity.user"%>
 <%@page import="java.util.List"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
@@ -15,7 +16,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>APPLE-Index</title>
-        <%@include file="/all_components/allCSS.jsp"%>
+        <%@include file="all_components/allCSS.jsp"%>
         
         <style type="text/css">
             .back-img{
@@ -32,6 +33,12 @@
         </style>
     </head>
     <body style="background-color:#f7f7f7">
+  
+<!--        check user already loged in-->
+        <%
+            user u =(user)session.getAttribute("userobj");
+        %>
+        
         <%@include file="all_components/navbar.jsp"%>
         
         
@@ -67,9 +74,23 @@
                               if(b.getStatus().equals("Active")){
                           %>
                           <p><%=b.getStatus()%></p>
+                          
                           <div class="row">
-                              <a href="" class="btn btn-danger btn-sm ml-2">Add cart</a>
-                              <a href="" class="btn btn-success btn-sm ml-1">View Detailes</a>
+                             
+<!--                              check user already loged in-->
+                              <%
+                                  if(u==null){
+                              %>       
+                                        <a href="login.jsp" class="btn btn-danger btn-sm ml-2">Add cart</a>
+                              <%
+                                  } else{
+                              %>
+                              <a href="cart?Iid=<%=b.getItemId()%> && Uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add cart</a>
+                              <%
+                                  }
+                              %>          
+                              
+                              <a href="view_Items.jsp?Iid=<%=b.getItemId()%>" class="btn btn-success btn-sm ml-1">View Detailes</a>
                               <a href="" class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%></a>
                           </div>
                           
@@ -78,7 +99,7 @@
                            %>
                            <div class="row">
                               <button class="btn btn-success btn-sm ml-1" disabled>OUT Of stock</button>
-                              <a href="" class="btn btn-success btn-sm ml-1">View Detailes</a>
+                              <a href="view_Items.jsp?Iid=<%=b.getItemId()%>" class="btn btn-success btn-sm ml-1">View Detailes</a>
                               <a href="" class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%></a>
                            </div>
                             <% }%>

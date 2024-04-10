@@ -36,16 +36,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Watches</a>
+        <a class="nav-link" href=""><i class="fa-solid fa-book-open"></i>Watches</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Phones</a>
+        <a class="nav-link" href="all_Phones.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Laptops</a>
+        <a class="nav-link" href="all_Laps.jsp"><i class="fa-solid fa-book-open"></i>Laptops</a>
       </li>
 <!--      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
