@@ -9,6 +9,8 @@
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 
 
@@ -19,6 +21,24 @@
         <%@include file="all_components/allCSS.jsp"%>
     </head>
     <body>
+        
+<!--        popUp massage-->
+        <c:if test="${not empty addCart}">
+            <div id="toast">${addCart}</div>
+
+            <script type="text/javascript">
+                            showToast();
+                            function showToast(content)
+                            {
+                                $('#toast').addClass("display");
+                                $('#toast').html(content);
+                                setTimeout(()=>{
+                                    $("#toast").removeClass("display");
+                                },2000)
+                            }	
+            </script>
+            <c:remove var="addCart" scope="session"/>
+        </c:if>   
         <%@include file="all_components/navbar.jsp"%>
         <div class="container">
             
