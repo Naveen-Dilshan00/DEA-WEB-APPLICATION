@@ -7,7 +7,11 @@ package com.DAO;
 
 import java.sql.Connection;
 import com.entity.cart;
+import com.entity.itemDetailes;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Naveen Dilshan
@@ -41,6 +45,63 @@ public class cartDAOImpl implements cartDAO{
         catch(Exception e){
             e.printStackTrace();
         }
+        return f;
+    }
+    
+    public List<cart> getItemByUser(int userId){
+        List<cart> list = new ArrayList<cart>();
+        cart c =null;
+        double totallPrice=0.00;
+        try{
+            String sql="select * from cart where User_ID =?";
+            PreparedStatement ps=conn.prepareStatement(sql);
+            ps.setInt(1, userId);
+            
+            ResultSet rs=ps.executeQuery();
+            
+            while(rs.next())
+            {
+                c =new cart();
+                c.setCid(rs.getInt(1));
+                c.setIid(rs.getInt(2));
+                c.setUserId(rs.getInt(3));
+                c.setItemName(rs.getString(4));
+                c.setM_year(rs.getString(5));
+                c.setPrice(rs.getDouble(6));
+                
+                totallPrice = totallPrice +rs.getDouble(7);
+                c.setTotallPrice(totallPrice);
+                
+                list.add(c);
+            }
+            
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return list; 
+    }
+    
+    public boolean deleteItem(int Iid,int Cid){
+            boolean f=false;
+            
+            try{
+                String sql = "delete from cart where Item_ID=? and Cart_ID = ?";
+                PreparedStatement ps =conn.prepareStatement(sql);
+                ps.setInt(1,Iid);
+                ps.setInt(2,Cid);
+                
+                int i = ps.executeUpdate();
+                if(i==1){
+                    f=true;
+                    
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+            
         return f;
     }
 }
