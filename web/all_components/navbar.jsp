@@ -4,6 +4,9 @@
     Author     : Naveen Dilshan
 --%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
+
 <div class="container-fluid" style="height:10px;background-color:#303f9f"></div>
 
 <div class="container-fluid p-3">
@@ -18,10 +21,21 @@
             </form>
         </div>
         
-        <div class="col-md-3">
+        <c:if test="${not empty userobj}">
+             <div class="col-md-3">
+                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href=" " class="btn btn-success">${userobj.name}</a>
+            <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
+             </div>
+        
+        </c:if>
+        
+        <c:if test="${empty userobj}">
+             <div class="col-md-3">
             <a href="login.jsp" class="btn btn-success">Login</a>
             <a href="register.jsp" class="btn btn-primary text-white">Register</a>
-        </div>
+             </div>
+        </c:if>
     </div>
 </div>
 

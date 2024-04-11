@@ -68,7 +68,7 @@ public class CartServlet extends HttpServlet {
 
             try{
                 
-                int Iid = Integer.parseInt(request.getParameter("Iid").trim());
+                int Iid = Integer.parseInt(request.getParameter("Iid"));
                 int Uid = Integer.parseInt(request.getParameter("Uid"));
                 
                 itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());

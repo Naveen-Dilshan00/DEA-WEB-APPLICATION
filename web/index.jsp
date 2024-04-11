@@ -85,7 +85,7 @@
                               <%
                                   } else{
                               %>
-                              <a href="CartServlet?Iid=<%=b.getItemId()%> &&Uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add cart</a>
+                              <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add cart</a>
                               <%
                                   }
                               %>          
