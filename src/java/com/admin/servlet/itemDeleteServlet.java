@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.user.servlet;
+package com.admin.servlet;
 
+import com.DAO.itemDAOImpl;
 import com.DB.DBConnect;
-import com.entity.user;
-import com.DAO.userDAOImpl;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -22,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Naveen Dilshan
  */
-@WebServlet(name = "registerServlet", urlPatterns = {"/registerServlet"})
-public class registerServlet extends HttpServlet {
+@WebServlet(name = "itemDeleteServlet", urlPatterns = {"/itemDeleteServlet"})
+public class itemDeleteServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +40,10 @@ public class registerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registerServlet</title>");            
+            out.println("<title>Servlet itemDeleteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet registerServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet itemDeleteServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,7 +61,33 @@ public class registerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+
+            try{
+                int id=Integer.parseInt(request.getParameter("id"));
+                itemDAOImpl dao =new itemDAOImpl(DBConnect.getConn());
+                boolean f=dao.deleteItems(id);
+                
+                
+                 HttpSession session=request.getSession();
+                
+                if(f){
+//                        System.out.println("Account created succesfully");
+                          session.setAttribute("SuccMsg" , "Item delete Succesfully");
+                           response.sendRedirect("admin/all_items.jsp");
+                         
+                    }
+                    else{
+//                        System.out.println("Something went wrong");
+                           session.setAttribute("faildMsg","Something wrong on server");
+                           response.sendRedirect("admin/adminHome.jsp");
+                
+                
+           }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
     }
 
     /**
@@ -77,56 +101,7 @@ public class registerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-            
-          try{
-            String name=request.getParameter("fname");
-            String email = request.getParameter("email");
-            String phno =request.getParameter("phno");
-            String password = request.getParameter("password");
-            String check = request.getParameter("check");
-
-          System.out.println(name + " " +email+" " +phno+" " +password+" "+check);
-
-            user us =new user();
-            us.setName(name);
-            us.setEmail(email);
-            us.setPhno(phno);
-            us.setPassword(password);
-            
-            
-            HttpSession httpSession = request.getSession();
-            
-            //Term & conditions Agree
-            if(check!=null){
-                    userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
-                    boolean f= dao.userRegister(us);
-
-                    if(f){
-//                        System.out.println("Account created succesfully");
-                           httpSession.setAttribute("SuccMsg" , "Registration Succesfully");
-                           response.sendRedirect("login.jsp");
-                         
-                    }
-                    else{
-//                        System.out.println("Something went wrong");
-                           httpSession.setAttribute("faildMsg","Something wrong on server");
-                           response.sendRedirect("register.jsp");
-                           
-                    }
-                }
-            else{
-//                System.out.println("Please check agree &term conditions");
-                   
-                   httpSession.setAttribute("faildMsg","please check terms and conditions");
-                    response.sendRedirect("register.jsp");
-            }
-            
-            
-              
-          }catch(Exception e){
-              e.printStackTrace();
-          }
+        processRequest(request, response);
     }
 
     /**
