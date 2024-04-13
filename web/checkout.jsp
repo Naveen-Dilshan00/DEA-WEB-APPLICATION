@@ -96,7 +96,7 @@
                                 <div class="form-row">
                                   <div class="form-group col-md-6">
                                     <label for="inputEmail4">Name</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.name}">
                                   </div>
                                   <div class="form-group col-md-6">
                                     <label for="inputPassword4">Password</label>
@@ -107,11 +107,11 @@
                               <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">Email</label>
-                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}">
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">Phone Number</label>
-                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password">
+                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}">
                                </div>
                              </div>
                                                             <div class="form-row">
