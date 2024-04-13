@@ -30,24 +30,28 @@
 	animation: fadeIn 0.5, fadeOut 0.5s 2.5s;
 }
 
-@keyframes fadeIn {from { bottom:0;
-	opacity: 0;
+@keyframes fadeIn {
+    from { 
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
-to {
-	bottom: 30px;
-	opacity: 1;
+@keyframes fadeOut {
+    from { 
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
-}
-@keyframes fadeOut {form { bottom:30px;
-	opacity: 1;
-}
-
-to {
-	bottom: 0;
-	opacity: 0;
-}
 
 /*header section css part*/
 .header

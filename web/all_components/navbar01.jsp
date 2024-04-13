@@ -22,7 +22,7 @@
             <!-- header section start -->
             <header class="header">
                      <a href="#" class="logo">
-                          <img src="Web Pages\image\apple_logo.jpg" alt="apple-logo" alt="logo-pict">
+                          <img src="../image/apple_logo.jpg" alt="apple-logo" alt="logo-pict">
                      </a>
                   <!--navbar start-->
                   <nav class="navbar">
