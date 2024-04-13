@@ -7,6 +7,7 @@ package com.DAO;
 
 import java.sql.Connection;
 import com.entity.user;
+import com.mysql.cj.protocol.Resultset;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -84,6 +85,53 @@ public class userDAOImpl implements userDAO{
         }
         
        return us;
+    }
+    
+    public boolean checkPassword(String ps,int id){
+        
+        boolean f = false;
+        
+        try{
+            String sql = "select * from user where ID=? and Password=?";
+            PreparedStatement p = conn.prepareStatement(sql);
+            p.setInt(1,id);
+            p.setString(2,ps);
+            
+            ResultSet rs = p.executeQuery();
+            while(rs.next()){
+                f = true;
+            }
+            
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return f;
+    }
+    
+    public boolean updateProfile(user us){
+        boolean f=false;
+            
+        try{
+           String sql ="update user set Name =?,Email=?,Phonenumber=? where Id =?";
+           PreparedStatement ps = conn.prepareStatement(sql);
+           ps.setString(1,us.getName());
+           ps.setString(2, us.getEmail());
+           ps.setString(3,us.getPhno());
+           ps.setInt(4,us.getId());
+           
+           int i =ps.executeUpdate();
+           if(i==1){
+               f=true;
+           }
+           
+        }
+        catch(Exception e){
+            
+        }
+        
+        return f;
     }
 }
     
