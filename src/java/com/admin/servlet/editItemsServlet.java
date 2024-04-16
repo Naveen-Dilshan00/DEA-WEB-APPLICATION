@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.user.servlet;
+package com.admin.servlet;
 
+import com.DAO.itemDAOImpl;
 import com.DB.DBConnect;
-import com.entity.user;
-import com.DAO.userDAOImpl;
-
+import com.entity.itemDetailes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,13 +16,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author Naveen Dilshan
  */
-@WebServlet(name = "registerServlet", urlPatterns = {"/registerServlet"})
-public class registerServlet extends HttpServlet {
+@WebServlet(name = "editItemsServlet", urlPatterns = {"/editItemsServlet"})
+public class editItemsServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +42,10 @@ public class registerServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registerServlet</title>");            
+            out.println("<title>Servlet editItemsServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet registerServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet editItemsServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -78,55 +78,45 @@ public class registerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-            
-          try{
-            String name=request.getParameter("fname");
-            String email = request.getParameter("email");
-            String phno =request.getParameter("phno");
-            String password = request.getParameter("password");
-            String check = request.getParameter("check");
 
-          System.out.println(name + " " +email+" " +phno+" " +password+" "+check);
 
-            user us =new user();
-            us.setName(name);
-            us.setEmail(email);
-            us.setPhno(phno);
-            us.setPassword(password);
-            
-            
-            HttpSession httpSession = request.getSession();
-            
-            //Term & conditions Agree
-            if(check!=null){
-                    userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
-                    boolean f= dao.userRegister(us);
-
-                    if(f){
+           try{
+                
+                int id =Integer.parseInt(request.getParameter("id"));
+                String itemName = request.getParameter("iName");
+                String year = request.getParameter("year");
+                Double price = Double.parseDouble(request.getParameter("price"));
+                String stat = request.getParameter("iStat");
+                
+                itemDetailes b= new itemDetailes();
+                b.setItemId(id);
+                b.setItemName(itemName);
+                b.setM_year(year);
+                b.setPrice(price);
+                b.setStatus(stat);
+             
+                itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+                boolean f = dao.updateEditItems(b);
+                
+                HttpSession session=request.getSession();
+                
+                if(f){
 //                        System.out.println("Account created succesfully");
-                           httpSession.setAttribute("SuccMsg" , "Registration Succesfully");
-                           response.sendRedirect("login.jsp");
+                          session.setAttribute("SuccMsg" , "BOOk update Succesfully");
+                           response.sendRedirect("admin/all_items.jsp");
                          
                     }
                     else{
 //                        System.out.println("Something went wrong");
-                           httpSession.setAttribute("faildMsg","Something wrong on server");
-                           response.sendRedirect("register.jsp");
-                           
-                    }
-                }
-            else{
-//                System.out.println("Please check agree &term conditions");
-                   
-                   httpSession.setAttribute("faildMsg","please check terms and conditions");
-                    response.sendRedirect("register.jsp");
-            }
-            
-            
-              
-          }catch(Exception e){
-              e.printStackTrace();
-          }
+                           session.setAttribute("faildMsg","Something wrong on server");
+                           response.sendRedirect("admin/adminHome.jsp");
+                
+                
+           }
+           }
+           catch(Exception e){
+               e.printStackTrace();
+           }
     }
 
     /**

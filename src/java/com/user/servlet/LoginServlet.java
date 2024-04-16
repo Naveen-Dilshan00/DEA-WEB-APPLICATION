@@ -62,7 +62,15 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+         processRequest(request, response);
+        // login session end method
+//             String logoutParam = request.getParameter("logout");
+//             if ("true".equals(logoutParam)) {
+//                    logout(request, response);
+//                } else {
+//                    processRequest(request, response);
+//                }
     }
 
     /**
@@ -97,14 +105,14 @@ public class LoginServlet extends HttpServlet {
                 user us = dao.login(name,password);
                 if(us !=null){
                     session.setAttribute("userobj",us);
-                    response.sendRedirect("home.jsp");
+                    response.sendRedirect("index.jsp");
                 } 
                 else{
                     session.setAttribute("failedMsg","Email & Password invalid");
                     response.sendRedirect("login.jsp");
                 }
                 
-                response.sendRedirect("home.jsp");
+                
             }
             
         } catch(Exception e){
@@ -122,5 +130,14 @@ public class LoginServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+    // User log session end
+//     private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        HttpSession session = request.getSession(false); // Pass false to getSession to avoid creating a new session
+//        if (session != null) {
+//            session.invalidate(); // Invalidate the current session
+//        }
+//        response.sendRedirect("index.jsp"); // Redirect to home page or any other page after logout
+//    }
 
 }

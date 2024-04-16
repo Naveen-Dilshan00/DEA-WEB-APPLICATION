@@ -1,5 +1,5 @@
 <%-- 
-    Document   : add_books.jsp
+    Document   : add_item.jsp
     Created on : 07-Apr-2024, 07:37:52
     Author     : Naveen Dilshan
 --%>
@@ -29,7 +29,7 @@
                                     
                                     <div class="form-group">
                                       <label for="exampleInputPassword1">Year </label>
-                                      <input name="year" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                      <input name="year" type="text" class="form-control" id="exampleInputPassword1" placeholder="Year">
                                     </div>
                                     
                                     <div class="form-group">
@@ -41,10 +41,10 @@
                                         <label for="exampleFormControlSelect1">Item catergories</label>
                                         <select  name="iCater "class="form-control" id="exampleFormControlSelect1">
                                           <option>--Select--</option>
-                                          <option>2</option>
-                                          <option>3</option>
+                                          <option value="Phone">Phone</option>
+                                          <option value="Laptop">Laptop</option>
                                           <option>4</option>
-                                          <option>5</option>
+                                          
                                         </select>
                                      </div>
                                     
@@ -52,12 +52,11 @@
                                         <label for="exampleFormControlSelect1">Item Status</label>
                                         <select name = "iStat"class="form-control" id="exampleFormControlSelect1">
                                           <option>--Select--</option>
-                                          <option>2</option>
-                                          <option>3</option>
+                                          <option value = "Active">Active</option>
+                                          <option value="Inactive">Inactive</option>
                                         </select>
                                      </div>
                                     
-                                    <form>
                                         <div class="form-group">
                                           <label for="exampleFormControlFile1">Upload Photo</label>
                                           <input name="phoName" type="file" class="form-control-file" id="exampleFormControlFile1">
