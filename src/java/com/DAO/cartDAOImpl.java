@@ -8,6 +8,7 @@ package com.DAO;
 import java.sql.Connection;
 import com.entity.cart;
 import com.entity.itemDetailes;
+import com.entity.user;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -102,6 +103,18 @@ public class cartDAOImpl implements cartDAO{
                 e.printStackTrace();
             }
             
+        return f;
+    }
+    
+    public boolean addDetailes(user u){
+        boolean f = false;
+        
+        try{
+            String sql="insert into cart(Item_Id,User_Id,Item_Name,M_Year,Price,Total_Price) values(?,?,?,?,?,?)";
+        }
+        catch(Exception e){
+           
+        }
         return f;
     }
 }

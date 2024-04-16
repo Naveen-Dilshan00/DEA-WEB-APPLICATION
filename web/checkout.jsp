@@ -92,52 +92,50 @@
                     <div class="card">
                         <div class="card-body">
                             <h3 class="text-center text-success">Your Detailes</h3>>
-                            <form>
+                            <form action="OrderServlet">
+                                <input type="hidden" name="id" value="${userobj.id}">
                                 <div class="form-row">
                                   <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Name</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.name}">
+                                    <label name="name"for="inputEmail4">Name</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.name}" name="username">
                                   </div>
-                                  <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                  </div>
+                                 
                                 </div>
                                 
                               <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">Email</label>
-                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}">
+                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}" name="email">
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">Phone Number</label>
-                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}">
+                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}" name="phno">
                                </div>
                              </div>
                                                             <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">Address</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="address">
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">LandMark</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="landmark">
                                </div>
                              </div>
                               <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">City</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="city">
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">Zip</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="zip">
                                </div>
                                   <div class="form-group">
                                       <label>Payment Mode</label>
-                                      <select>
-                                          <option>-Select-</option>
-                                          <option>Cash on dilivary</option>
+                                      <select name="payment">
+                                          <option value="nonselect">-Select-</option>
+                                          <option value="c">Cash on dilivary</option>
                                       </select>
                                   </div>
                                   <br>
