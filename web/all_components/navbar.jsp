@@ -1,16 +1,12 @@
 <%-- 
-    Document   : navbar01
-    Created on : Apr 12, 2024, 8:42:26 PM
-    Author     : admin
+    Document   : navbar
+    Created on : 05-Apr-2024, 20:23:19
+    Author     : Naveen Dilshan
 --%>
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored ="false"%>
 
->>>>>>> b4ff9bdd637508bb57fcffb6c877a6ac83b2b74d
 <div class="container-fluid" style="height:10px;background-color:#303f9f"></div>
 
 <div class="container-fluid p-3">
@@ -42,40 +38,15 @@
         </c:if>
     </div>
 </div>
-=======
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--CSS link -->
-    <link rel="stylesheet" href="style.css">
-        
-    <!-- Boxicons CSS -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!--font-awesome link-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
->>>>>>> Stashed changes
 
-  </head>
-  <body>
-    <nav>
-        <div class="nav-bar">
-            <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#home"><img src="apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
+<!--change color navbar background-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom"> 
+  <a class="navbar-brand" href="#"><i class="fa-solid fa-house-chimney-user"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <div class="menu">
-                <div class="logo-toggle">
-                    <span class="logo"><a href="#home"><img src="image\apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
-                    <i class='bx bx-x siderbarClose'></i>
-                </div>
-
-<<<<<<< Updated upstream
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -112,48 +83,3 @@
   </div>
 </nav>
  
-=======
-                <ul class="nav-links">
-                    <li><a href="#iphone.jsp">iPhone</a></li>
-                    <li><a href="#watch.jsp">Watch</a></li>
-                    <li><a href="#mac.jsp">Mac</a></li>
-                    <li><a href="#airpods.jsp">Airpods</a></li>
-                    <li><a href="#ipads.jsp">iPads</a></li>
-                 <li><a href="#support.jsp">Support</a></li>
-                 <li></li>
-                 <li></li>
-                 <li class="toggle"><input type="text" placeholder="Search...">
-                    <a href="#search-bar">
-                         <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                </li>
-                <li class="toggle"><a href="#cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li> <!-- Added cart icon -->
-                <li class="toggle"><a href="#login.jsp"><i class="fa-solid fa-user"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-  <script>
-     const body = document.querySelector("body"),
-     nav = document.querySelector("nav"),
-     sidebarOpen = document.querySelector(".sidebarOpen"),
-     siderbarClose = document.querySelector(".siderbarClose");
-
-     // javascript code to toggle sidebar
-     sidebarOpen.addEventListener("click" , () =>{
-     nav.classList.add("active"); 
-     });
-
-     body.addEventListener("click" , e =>{
-     let clickedElm = e.target;
-
-     if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-     nav.classList.remove("active");
-     }
-     });
-
-  </script>
-  </body>
-</html>
->>>>>>> Stashed changes
