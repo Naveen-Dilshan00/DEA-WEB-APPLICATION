@@ -4,7 +4,16 @@
     Author     : Naveen Dilshan
 --%>
 
+<%@page import="com.entity.item_order"%>
+<%@page import="com.DAO.itemOrderDAOImpl"%>
+<%@page import="com.entity.cart"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DAO.cartDAOImpl"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,36 +40,29 @@
                 </tr>
               </thead>
               <tbody>
+                
+            <%
+                itemOrderDAOImpl dao = new itemOrderDAOImpl(DBConnect.getConn());
+                List<item_order> blist = dao.getAllItem();
+                for(item_order b:blist){
+             %>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
+                  <th scope="row"><%=b.getOrder_Id()%></th>
+                  <th scope="row"><%=b.getItemName()%></th>
+                  <th scope="row"><%=b.getPrice()%></th>
+                  <th scope="row"><%=b.getUserName()%></th>
+                  <th scope="row"><%=b.getEmail()%></th>
+                  <th scope="row"><%=b.getFullAdd()%></th>
+                  <th scope="row"><%=b.getPhone()%></th>
+                  <th scope="row"><%=b.getPaymenttype()%></th>
+                  
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                </tr>
+            <%
+               }  
+            %>
+                                    
+                
+                
               </tbody>
          </table>
     </body>
