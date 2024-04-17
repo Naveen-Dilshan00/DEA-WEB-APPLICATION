@@ -12,7 +12,7 @@ package com.entity;
 public class item_order {
     
     private int id;
-    private String order_Id;
+    private int order_Id;
     private String userName;
     private String email;
     private String fullAdd;
@@ -25,11 +25,11 @@ public class item_order {
         super();
     }
 
-    public void setOrder_Id(String order_Id){
+    public void setOrder_Id(int order_Id){
         this.order_Id=order_Id;
     }
     
-    public String getOrder_Id(){
+    public int getOrder_Id(){
         return order_Id;
     }
     public int getId() {

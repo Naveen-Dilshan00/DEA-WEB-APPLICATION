@@ -16,4 +16,8 @@ public interface itemOrderDAO {
     public int getOrderNo();
     
     public boolean saveOrder(List<item_order> Ilist);
+    
+    public List<item_order> getItem(int id);
+    
+    public List<item_order> getAllItem();
 }

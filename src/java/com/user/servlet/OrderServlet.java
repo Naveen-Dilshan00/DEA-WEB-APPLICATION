@@ -15,11 +15,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -68,7 +70,11 @@ public class OrderServlet extends HttpServlet {
             throws ServletException, IOException {
 //        processRequest(request, response
 
+                
             try{
+                
+                HttpSession session = request.getSession();
+                user u =(user)session.getAttribute("userobj");
                 
                 int id = Integer.parseInt(request.getParameter("id"));
                 String Name = request.getParameter("name");
@@ -87,16 +93,25 @@ public class OrderServlet extends HttpServlet {
                 cartDAOImpl dao =new cartDAOImpl(DBConnect.getConn());
                 
                 List<cart> itemlist = dao.getItemByUser(id);
-                itemOrderDAOImpl dao2 = new itemOrderDAOImpl(DBConnect.getConn());
+                
+                if(itemlist.isEmpty())
+                {
+                    session.setAttribute("failedMsg","ADD Item");
+                    response.sendRedirect("checkout.jsp");
+                }
+                else{
+                    itemOrderDAOImpl dao2 = new itemOrderDAOImpl(DBConnect.getConn());
                 int i = dao2.getOrderNo();
                 
-                item_order o= new item_order();
+                item_order o= null;
                 
                 ArrayList<item_order> orderList = new ArrayList<item_order>();
+                Random r =new Random();
                 for(cart c:itemlist){
-                    
-                    o.setOrder_Id("BOOK-ORD-00"+i);
-                    o.setUserName(Name);
+                    o = new item_order();
+//                    o.setOrder_Id("BOOK-ORD-00"+ r.nextInt(1000));
+                    o.setId(u.getId());
+                    o.setUserName(u.getName());
                     o.setEmail(Email);
                     o.setPhone(Phonenumber);
                     o.setFullAdd(fullAdd);
@@ -109,7 +124,8 @@ public class OrderServlet extends HttpServlet {
                 }
                 
                 
-               if(Paymenttype.equals("notselect")){
+               if(Paymenttype.equals("nonselect")){
+                   session.setAttribute("failedMsg", "choose Payment Method");
                    response.sendRedirect("checkout.jsp");
                }
                else{
@@ -117,15 +133,17 @@ public class OrderServlet extends HttpServlet {
                     boolean f= dao2.saveOrder(orderList);
                     
                     if(f){
+                        response.sendRedirect("succes.jsp");
                         System.out.println("Order succesfull");
                     }
                     else{
                         System.out.println("Order failed");
                     }
                  }
+                }
             }
             catch(Exception e){
-                e.printStackTrace();
+                System.out.println(e);
             }
     }
 

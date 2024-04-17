@@ -9,7 +9,7 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
-public class user {
+public class user extends item_order{
     
     private int id;
     private String name;

@@ -37,7 +37,7 @@
         
         <c:if test="${ not empty failedMsg}">
             <div class="alert alert-danger" role="alert">
-             This is a success alert—check it out!
+             ${failedMsg}
             </div>
              <c:remove var="failedMsg" scope="session"/>
         </c:if>
