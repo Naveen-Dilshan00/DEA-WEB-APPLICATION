@@ -9,7 +9,7 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
-public class cart {
+public class cart extends item_order {
     
     private int cid;
     private int iid;
@@ -59,11 +59,11 @@ public class cart {
         this.m_year = m_year;
     }
 
-    public Double getPrice() {
+    public Double getPricee() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPricee(Double price) {
         this.price = price;
     }
 
