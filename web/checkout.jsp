@@ -81,6 +81,9 @@
                                     <td></td>
                                     <td><%=totallprice%></td>
                                 </tr>
+                                <tr>
+                                    <td><a href="placeOrder.jsp" class="btn btn-sm btn-warning "> Order Now</a></td>
+                                </tr>
                              
                             </tbody>
                           </table>
@@ -88,65 +91,7 @@
             </div>
                 </div>
                 
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="text-center text-success">Your Detailes</h3>>
-                            <form action="OrderServlet">
-                                <input type="hidden" name="id" value="${userobj.id}">
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label name="name"for="inputEmail4">Name</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.name}" name="username">
-                                  </div>
-                                 
-                                </div>
-                                
-                              <div class="form-row">
-                               <div class="form-group col-md-6">
-                                 <label for="inputEmail4">Email</label>
-                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}" name="email">
-                               </div>
-                               <div class="form-group col-md-6">
-                                 <label for="inputPassword4">Phone Number</label>
-                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}" name="phno">
-                               </div>
-                             </div>
-                                                            <div class="form-row">
-                               <div class="form-group col-md-6">
-                                 <label for="inputEmail4">Address</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="address">
-                               </div>
-                               <div class="form-group col-md-6">
-                                 <label for="inputPassword4">LandMark</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="landmark">
-                               </div>
-                             </div>
-                              <div class="form-row">
-                               <div class="form-group col-md-6">
-                                 <label for="inputEmail4">City</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="city">
-                               </div>
-                               <div class="form-group col-md-6">
-                                 <label for="inputPassword4">Zip</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="zip">
-                               </div>
-                                  <div class="form-group">
-                                      <label>Payment Mode</label>
-                                      <select name="payment">
-                                          <option value="nonselect">-Select-</option>
-                                          <option value="c">Cash on dilivary</option>
-                                      </select>
-                                  </div>
-                                  <br>
-                                  
-                             </div>
-                                <button class="btn btn-warning">Ortder Now</button>
-                                  <a href="index.jsp" class="btn btn-success">Continue</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </body>

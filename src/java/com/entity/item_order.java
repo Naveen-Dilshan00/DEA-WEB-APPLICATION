@@ -9,7 +9,7 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
-public class item_order {
+public class item_order  {
     
     private int id;
     private int order_Id;

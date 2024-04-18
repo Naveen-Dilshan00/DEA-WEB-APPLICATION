@@ -126,7 +126,7 @@ public class OrderServlet extends HttpServlet {
                 
                if(Paymenttype.equals("nonselect")){
                    session.setAttribute("failedMsg", "choose Payment Method");
-                   response.sendRedirect("checkout.jsp");
+                   response.sendRedirect("placeOrder.jsp");
                }
                else{
                    
