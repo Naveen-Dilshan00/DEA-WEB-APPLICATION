@@ -180,6 +180,7 @@
             }
            .product-total
            {
+               
                flex: 0.25;
                padding: 20px;
                height: 150px;
@@ -193,7 +194,7 @@
                display: flex;
                justify-content: space-between;
                margin-bottom: 30px;
-               font-size: 20px;
+               font-size: 15px;
            }
            .product-total a
            {
@@ -254,8 +255,9 @@
            {
                display: flex;
                justify-content: space-between;
-               margin-bottom: 30px;
-               font-size: 20px;
+               margin-bottom: 5px;
+               font-size: 15px;
+               padding: 15px;
            }
         </style>
     </head>
@@ -314,7 +316,7 @@
                 <div class="container1">
                     <form action="" method="post">
                         <p>Cart------Delivery------Payment</p>
-                        <h5>Order Summary</h5>
+                        <h2>Order Summary</h2>
                         <div class="order-summary">
                             <p>
                                         <span>Order Total</span>
