@@ -64,7 +64,6 @@ public class LogoutServlet extends HttpServlet {
             try{
                 HttpSession session = request.getSession();
                 session.removeAttribute("userobj");
-                session.removeAttribute("cart-list");
             
                 HttpSession session2 = request.getSession();
                 session.setAttribute("SuccMsg" , "Logout Succesfully");

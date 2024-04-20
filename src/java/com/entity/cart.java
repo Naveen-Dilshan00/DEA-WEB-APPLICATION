@@ -10,6 +10,9 @@ package com.entity;
  * @author Naveen Dilshan
  */
 
+public class cart {
+
+
 public class cart extends item_order {
 
 
@@ -22,9 +25,8 @@ public class cart extends user {
     private int userId;
     private String itemName;
     private String m_year;
-    private Double pricee;
+    private Double price;
     private Double totallPrice;
-    private int cQuantity;
 
     public int getCid() {
         return cid;
@@ -67,7 +69,9 @@ public class cart extends user {
     }
 
 
+
     public Double getPricee() {
+
 
     public Double getPrice() {
         return price;
@@ -75,6 +79,7 @@ public class cart extends user {
 
     public void setPricee(Double price) {
         this.price = price;
+
     public Double getPricee() {
         return pricee;
     }
@@ -91,15 +96,6 @@ public class cart extends user {
     public void setTotallPrice(Double totallPrice) {
         this.totallPrice = totallPrice;
     }
-
-    public int getcQuantity() {
-        return cQuantity;
-    }
-
-    public void setcQuantity(int cQuantity) {
-        this.cQuantity = cQuantity;
-    }
     
     
-}
-     
+} 

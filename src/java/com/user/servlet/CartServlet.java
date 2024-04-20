@@ -82,6 +82,7 @@ public class CartServlet extends HttpServlet {
                 c.setIid(Iid);
                 c.setUserId(Uid);
 
+
                 c.setQuantity(1);
 
                 c.setcQuantity(1);
@@ -90,6 +91,11 @@ public class CartServlet extends HttpServlet {
                 c.setM_year(b.getM_year());
                 c.setPricee(b.getPrice());
                 c.setTotallPrice(b.getPrice());
+
+                System.out.println("");
+                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+                boolean f =dao2.addCart(c);
+
 
                 
                 
@@ -102,6 +108,9 @@ public class CartServlet extends HttpServlet {
                 HttpSession session =request.getSession();
                 ArrayList<cart> cart_list = (ArrayList<cart>) session.getAttribute("cart-list");
                 
+
+                if(f){
+
 
                 if(cart_list == null){
                     cartList.add(c);
@@ -116,10 +125,15 @@ public class CartServlet extends HttpServlet {
 //                    boolean f =dao2.addCart(c);
                     session.setAttribute("cart-list",cartList);
 
+
                     session.setAttribute("addCart","Book added to the cart");
                     response.sendRedirect("all_Laps.jsp");
                 }
                 else{
+
+                    session.setAttribute("failed","something went wrong");
+                    response.sendRedirect("all_Laps.jsp");
+                    System.out.println("Not added card");
 
                     session.setAttribute("failed","something went wrong");
                     response.sendRedirect("all_Laps.jsp");
@@ -152,6 +166,7 @@ public class CartServlet extends HttpServlet {
                         response.sendRedirect("all_Laps.jsp");
                        
                     }
+
 
                 }
                 

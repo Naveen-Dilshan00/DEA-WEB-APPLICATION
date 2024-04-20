@@ -4,28 +4,8 @@
     Author     : Naveen Dilshan
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.DAO.cartDAOImpl"%>
-<%@page import="com.entity.cart"%>
-<%@page import="com.DB.DBConnect"%>
-<%@page import="java.util.List"%>
-<%@page import="com.entity.user"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored ="false"%>
-
-
-<%
-ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
-    List<cart> cartProducts = null;
-    if(cart_list !=null){
-        cartDAOImpl Dao = new cartDAOImpl(DBConnect.getConn());
-        cartProducts = Dao.getCartProducts(cart_list);
-        Double Total = Dao.getTotalCartPrice(cart_list);
-        request.setAttribute("cart_list", cart_list);
-        request.setAttribute("total",Total);
-    }
-%>
-
 
 <div class="container-fluid" style="height:10px;background-color:#303f9f"></div>
 
@@ -40,21 +20,10 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
                 <button class="btn btn-primary my-2 my-sm-0 " type="submit">Search</button>
             </form>
         </div>
-      <% 
-//    user userObj = (user) session.getAttribute("userobj");
-//   if (userObj == null) {
-//        System.out.println("userobj attribute is null");
- //   } else {
- //       cartDAOImpl daodd = new cartDAOImpl(DBConnect.getConn());
- //        List<cart> cart1 = daodd.getItemByUser(userObj.getId());
- //   }
-%>
-
-        
         
         <c:if test="${not empty userobj}">
              <div class="col-md-3">
-                 <a href="checkout.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
             <a href=" " class="btn btn-success">${userobj.name}</a>
             <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
              </div>

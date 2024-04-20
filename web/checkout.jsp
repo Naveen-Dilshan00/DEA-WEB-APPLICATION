@@ -4,7 +4,6 @@
     Author     : Naveen Dilshan
 --%>
 
-<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.entity.cart"%>
 <%@page import="com.entity.user"%>
@@ -16,14 +15,6 @@
 <%@page isELIgnored ="false"%>
 
 <!DOCTYPE html>
-
-<%
-    user u = (user)session.getAttribute("userobj");
-    
-    
-    
-
-%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -55,7 +46,7 @@
                 <div class="col-md-12">
                      <div class="card bg-white">
                 <div class="card-body">
-                    <h3 class="text-center text succes">Your selected</h3>
+                    <h3 class="text-center text succes">Youe selected</h3>
                     <table class="table table-striped">
                             <thead>
                               <tr>
@@ -68,12 +59,15 @@
                             </thead>
                             <tbody>
                                 <%
-                                   
-                                    if(cart_list != null){
-                                        
-                                        for(cart c: cartProducts){ %>
-                                            
-                                            <tr>
+                                    user u = (user)session.getAttribute("userobj");
+                                    
+                                    cartDAOImpl dao = new cartDAOImpl(DBConnect.getConn());
+                                     List<cart> cart = dao.getItemByUser( u.getId());
+                                     Double totallprice =0.00;
+                                     for(cart c:cart){
+                                         totallprice= c.getTotallPrice();
+                                     %>
+                                         <tr>
                                             <th scope="row"><%=c.getItemName()%></th>
 
                                             <td><%=c.getM_year()%></td>
@@ -88,6 +82,7 @@
 
                                             <td><%=c.getPrice()%></td>
                                             <td><a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a></td>
+
 
                                             <td><%=c.getPricee()%></td>
                                             <td>
@@ -105,20 +100,17 @@
                                             <td>
                                                 <a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a>
                                             </td>
-                                          </tr>
-                                          <%
-                                         
-                                    }
 
+                                          </tr>
+                                <%          
                                      }
-                                    %>
-                                         
-                                          
-                                   
+                                %>
                                 <tr>
                                     <td>Total Price</td>
                                     <td></td>
                                     <td></td>
+
+                                    <td><%=totallprice%></td>
 
                                     <td></td>
 
@@ -126,6 +118,7 @@
 
                                     <td></td>
                                     <td>${(total>0)?total:0.00}</td>
+
 
                                 </tr>
                                 <tr>
