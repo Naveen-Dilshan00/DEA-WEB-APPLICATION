@@ -81,26 +81,50 @@ public class CartServlet extends HttpServlet {
                 cart c = new cart();
                 c.setIid(Iid);
                 c.setUserId(Uid);
+
                 c.setQuantity(1);
+
+                c.setcQuantity(1);
+
                 c.setItemName(b.getItemName());
                 c.setM_year(b.getM_year());
                 c.setPricee(b.getPrice());
                 c.setTotallPrice(b.getPrice());
+
                 
                 
+
+                System.out.println("");
+                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+                boolean f =dao2.addCart(c);
+
                 
                 HttpSession session =request.getSession();
                 ArrayList<cart> cart_list = (ArrayList<cart>) session.getAttribute("cart-list");
                 
+
                 if(cart_list == null){
                     cartList.add(c);
                     cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
                     boolean f =dao2.addCart(c);
                     session.setAttribute("cart-list",cartList);
+
+                if(f)
+                if(cart_list == null){
+                    cartList.add(c);
+//                    cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+//                    boolean f =dao2.addCart(c);
+                    session.setAttribute("cart-list",cartList);
+
                     session.setAttribute("addCart","Book added to the cart");
                     response.sendRedirect("all_Laps.jsp");
                 }
                 else{
+
+                    session.setAttribute("failed","something went wrong");
+                    response.sendRedirect("all_Laps.jsp");
+                    System.out.println("Not added card");
+
                     cartList = cart_list;
                     boolean exist =false;
                     
@@ -110,16 +134,25 @@ public class CartServlet extends HttpServlet {
                             out.println("Product exist");
                             session.setAttribute("addCart","item Already exist");
                             response.sendRedirect("all_Laps.jsp");
+
+                            break;
+
                         }
                     }
                     if(!exist){
                         cartList.add(c);
+
                         cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
                         boolean f =dao2.addCart(c);
+
+//                        cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+//                        boolean f =dao2.addCart(c);
+
                         session.setAttribute("addCart","Book added to the cart");
                         response.sendRedirect("all_Laps.jsp");
                        
                     }
+
                 }
                 
                 
