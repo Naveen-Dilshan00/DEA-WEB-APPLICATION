@@ -45,6 +45,8 @@
                  color: black;
                  padding-bottom: 8px;
                  border-bottom: 1px solid silver;
+                 
+                 
              }
              .content
              {
@@ -261,7 +263,11 @@
                width: 100%;
            }
           
-           
+           .cart1
+           {
+               border-left: 1px solid silver;
+               padding:6px;
+           }
         </style>
     </head>
     <body>
@@ -318,9 +324,12 @@
                   </div>
                 </form>
 </section>
-                 <section class="cart">
+                 <section class="cart1">
                     <div class="cart-item-box">
                         <div class="order-summary">
+                            
+                            <p><center>Cart------Delivery------Payment</center></p>
+                        
                             <div>
                             <h2>Order Summary</h2>
                         </div>
