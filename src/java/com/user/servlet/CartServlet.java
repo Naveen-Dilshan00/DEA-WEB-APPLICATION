@@ -92,33 +92,16 @@ public class CartServlet extends HttpServlet {
                 c.setPricee(b.getPrice());
                 c.setTotallPrice(b.getPrice());
 
-                System.out.println("");
-                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-                boolean f =dao2.addCart(c);
 
+//                System.out.println("");
+//                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+//                boolean f =dao2.addCart(c);
 
-                
-                
-
-                System.out.println("");
-                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-                boolean f =dao2.addCart(c);
 
                 
                 HttpSession session =request.getSession();
                 ArrayList<cart> cart_list = (ArrayList<cart>) session.getAttribute("cart-list");
                 
-
-                if(f){
-
-
-                if(cart_list == null){
-                    cartList.add(c);
-                    cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-                    boolean f =dao2.addCart(c);
-                    session.setAttribute("cart-list",cartList);
-
-                if(f)
                 if(cart_list == null){
                     cartList.add(c);
 //                    cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
@@ -131,13 +114,9 @@ public class CartServlet extends HttpServlet {
                 }
                 else{
 
-                    session.setAttribute("failed","something went wrong");
-                    response.sendRedirect("all_Laps.jsp");
-                    System.out.println("Not added card");
-
-                    session.setAttribute("failed","something went wrong");
-                    response.sendRedirect("all_Laps.jsp");
-                    System.out.println("Not added card");
+//                    session.setAttribute("failed","something went wrong");
+//                    response.sendRedirect("all_Laps.jsp");
+//                    System.out.println("Not added card");
 
                     cartList = cart_list;
                     boolean exist =false;
@@ -156,12 +135,8 @@ public class CartServlet extends HttpServlet {
                     if(!exist){
                         cartList.add(c);
 
-                        cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-                        boolean f =dao2.addCart(c);
-
 //                        cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
 //                        boolean f =dao2.addCart(c);
-
                         session.setAttribute("addCart","Book added to the cart");
                         response.sendRedirect("all_Laps.jsp");
                        

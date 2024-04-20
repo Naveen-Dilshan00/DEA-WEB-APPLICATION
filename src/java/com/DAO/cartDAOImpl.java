@@ -25,6 +25,67 @@ public class cartDAOImpl implements cartDAO{
         this.conn=conn;
     }
     
+
+
+     //add a list to get cart item as a session
+    public List<cart> getCartProducts(ArrayList<cart> cartList){
+        List<cart> products = new ArrayList<cart>();
+
+        try{
+
+
+            if(cartList.size()>0){
+                for(cart item:cartList){
+                    String sql = "select *from item_data where Item_ID =? ";
+                    PreparedStatement pst = conn.prepareStatement(sql);
+                    pst.setInt(1,item.getIid());
+//                    pst.setInt(2,item.getId());
+                    ResultSet rs =pst.executeQuery();
+                    while(rs.next()){
+                        cart row = new cart();
+                        row.setIid(rs.getInt("Item_ID"));
+                        row.setItemName(rs.getString("Item_Name"));
+                        row.setPricee(rs.getDouble("price")*item.getcQuantity());
+                        row.setcQuantity(item.getcQuantity());
+                        products.add(row);
+                    }
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+
+    //Get a total value using session array list
+    public double getTotalCartPrice(ArrayList<cart> cartList){
+        double sum=0.0;
+
+        try{
+            if(cartList !=null){
+                for(cart item : cartList){
+                    String sql ="select Price from item_data where Item_ID =?";
+                    PreparedStatement ps = conn.prepareStatement(sql);
+                    ps.setInt(1,item.getIid());
+                    ResultSet rs = ps.executeQuery();
+
+                    while(rs.next()){
+                        sum = rs.getDouble("Price")*item.getcQuantity()+ sum;
+                    }
+                }
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+      
+        return sum;
+    }
+    
+  
     public boolean addCart(cart c){
         
         boolean f=false;
@@ -69,17 +130,13 @@ public class cartDAOImpl implements cartDAO{
                 c.setItemName(rs.getString(4));
                 c.setM_year(rs.getString(5));
 
-                c.setPrice(rs.getDouble(6));
-
 
                 c.setPricee(rs.getDouble(6)* c.getQuantity());
                 c.setQuantity(c.getQuantity());
 
-                c.setPrice(rs.getDouble(6));
-                c.setPricee(rs.getDouble(6)*rs.getInt(8));
-                c.setQuantity(c.getQuantity());
-
-
+                
+//                c.setPricee(rs.getDouble(6)*rs.getInt(8));
+//                c.setQuantity(c.getQuantity());
                 
 //                totallPrice = totallPrice +rs.getDouble(7);
 //                c.setTotallPrice(totallPrice);
