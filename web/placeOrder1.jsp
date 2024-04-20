@@ -261,12 +261,13 @@
            .add
            {
                width: 100%;
+               
            }
           
            .cart1
            {
                border-left: 1px solid silver;
-               padding:6px;
+               padding-left: 40px;
            }
         </style>
     </head>
@@ -324,7 +325,9 @@
                   </div>
                 </form>
 </section>
+                  
                  <section class="cart1">
+                     
                     <div class="cart-item-box">
                         <div class="order-summary">
                             
@@ -370,7 +373,10 @@
                         
                     
                     </div>
+                     
+                       
                 </section>
+
 
             </div>
                     
