@@ -11,6 +11,7 @@
 <%@page import="com.DB.DBConnect"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +38,11 @@
 <!--        check user already loged in-->
         <%
             user u =(user)session.getAttribute("userobj");
-        %>
+            
+   
+
+%>
+        
         
         <%@include file="all_components/navbar.jsp"%>
         
