@@ -35,7 +35,7 @@ public class cartDAOImpl implements cartDAO{
             ps.setInt(2,c.getUserId());
             ps.setString(3,c.getItemName());
             ps.setString(4,c.getM_year());
-            ps.setDouble(5,c.getPrice());
+            ps.setDouble(5,c.getPricee());
             ps.setDouble(6,c.getTotallPrice());
             
             int i = ps.executeUpdate();
@@ -68,10 +68,21 @@ public class cartDAOImpl implements cartDAO{
                 c.setUserId(rs.getInt(3));
                 c.setItemName(rs.getString(4));
                 c.setM_year(rs.getString(5));
+
                 c.setPrice(rs.getDouble(6));
+
+
+                c.setPricee(rs.getDouble(6)* c.getQuantity());
+                c.setQuantity(c.getQuantity());
+
+                c.setPrice(rs.getDouble(6));
+                c.setPricee(rs.getDouble(6)*rs.getInt(8));
+                c.setQuantity(c.getQuantity());
+
+
                 
-                totallPrice = totallPrice +rs.getDouble(7);
-                c.setTotallPrice(totallPrice);
+//                totallPrice = totallPrice +rs.getDouble(7);
+//                c.setTotallPrice(totallPrice);
                 
                 list.add(c);
             }

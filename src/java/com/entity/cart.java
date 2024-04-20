@@ -9,7 +9,16 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
+
 public class cart {
+
+
+public class cart extends item_order {
+
+
+public class cart {
+public class cart extends user {
+
     
     private int cid;
     private int iid;
@@ -59,12 +68,25 @@ public class cart {
         this.m_year = m_year;
     }
 
+
+
+    public Double getPricee() {
+
+
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPricee(Double price) {
         this.price = price;
+
+    public Double getPricee() {
+        return pricee;
+    }
+
+    public void setPricee(Double pricee) {
+        this.pricee = pricee;
+
     }
 
     public Double getTotallPrice() {
