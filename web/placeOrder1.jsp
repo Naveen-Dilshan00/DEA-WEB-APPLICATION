@@ -52,6 +52,7 @@
                  flex-wrap: wrap;
                  justify-content: space-between;
                  padding: 20px 0;
+                  
              }
              .input-box
              {
@@ -116,11 +117,7 @@
             {
                 padding: 20px;
             }
-            .cart
-            {
-                display: flex;
-                width: 100%;
-            }
+            
             .products
             {
                 flex: 0.75;
@@ -259,16 +256,23 @@
                font-size: 15px;
                padding: 15px;
            }
+           .add
+           {
+               width: 100%;
+           }
+          
+           
         </style>
     </head>
     <body>
         
             
-            
+     
            
             <div class="container">
                 <form action="" method="post">
                   <h5>Add Shipping Address</h5>
+                 <section class="checkout">
                   <div class="content">
                       <div class="input-box">
                           
@@ -299,7 +303,7 @@
                       </div>
                       <div class="input-box" >
                           
-                          <textarea  name="address" id="add" cols="30" rows="10" placeholder="Address(Area and Street)"required></textarea>
+                          <textarea  class="add" name="address" id="add" cols="30" rows="5" placeholder="Address(Area and Street)"required></textarea>
                       </div>
                       <div>
                           <p> <input type="checkbox"> Same as Billing Address
@@ -313,11 +317,13 @@
                   </div>
                   </div>
                 </form>
-                <div class="container1">
-                    <form action="" method="post">
-                        <p>Cart------Delivery------Payment</p>
-                        <h2>Order Summary</h2>
+</section>
+                 <section class="cart">
+                    <div class="cart-item-box">
                         <div class="order-summary">
+                            <div>
+                            <h2>Order Summary</h2>
+                        </div>
                             <p>
                                         <span>Order Total</span>
                                         <span>$499.99</span>
@@ -327,7 +333,10 @@
                                         <span>$25.99</span>
                                     </p>
                         </div>
-                        <div class="cart">
+                        <div>
+                            <h2>Delivery Summary</h2>
+                        </div>
+                         <div class="cart">
                             <div class="products">
                                 <div class="product">
                                     <img src="Watch1.jpg">
@@ -349,13 +358,11 @@
                                 </div>
                             </div>
                             
-                        </div>
                         
-                    </form>
                     
-                    
-                    
-                </div>
+                    </div>
+                </section>
+
             </div>
                     
                 
