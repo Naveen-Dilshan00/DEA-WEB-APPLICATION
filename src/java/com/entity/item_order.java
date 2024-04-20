@@ -9,7 +9,7 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
-public class item_order {
+public class item_order  {
     
     private int id;
     private int order_Id;
@@ -20,6 +20,7 @@ public class item_order {
     private String paymenttype;
     private String itemName;
     private String price;
+    private int quantity;
 
     public item_order() {
         super();
@@ -95,6 +96,16 @@ public class item_order {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
+    
     
 
     @Override

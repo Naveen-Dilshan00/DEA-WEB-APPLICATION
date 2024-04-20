@@ -4,29 +4,19 @@
     Author     : Naveen Dilshan
 --%>
 
-<<<<<<< Updated upstream
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.cartDAOImpl"%>
 <%@page import="com.entity.cart"%>
 <%@page import="com.DB.DBConnect"%>
 <%@page import="java.util.List"%>
 <%@page import="com.entity.user"%>
-=======
-<%@page import="com.DAO.cartDAOImpl"%>
-<%@page import="com.DB.DBConnect"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.entity.cart"%>
-<%@page import="com.entity.cart"%>
->>>>>>> Stashed changes
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored ="false"%>
 
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 <%
 ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
     List<cart> cartProducts = null;
@@ -39,10 +29,10 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
     }
 %>
 
-<<<<<<< Updated upstream
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 
-=======
->>>>>>> Stashed changes
+
 <div class="container-fluid" style="height:10px;background-color:#303f9f"></div>
 
 <div class="container-fluid p-3">
@@ -56,25 +46,13 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
                 <button class="btn btn-primary my-2 my-sm-0 " type="submit">Search</button>
             </form>
         </div>
-      <% 
-//    user userObj = (user) session.getAttribute("userobj");
-//   if (userObj == null) {
-//        System.out.println("userobj attribute is null");
- //   } else {
- //       cartDAOImpl daodd = new cartDAOImpl(DBConnect.getConn());
- //        List<cart> cart1 = daodd.getItemByUser(userObj.getId());
- //   }
-%>
-
-        
         
         <c:if test="${not empty userobj}">
-<<<<<<< Updated upstream
              <div class="col-md-3">
-=======
-             <div class="col-md-3">y
->>>>>>> Stashed changes
+
                  <a href="checkout.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+
             <a href=" " class="btn btn-success">${userobj.name}</a>
             <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
              </div>

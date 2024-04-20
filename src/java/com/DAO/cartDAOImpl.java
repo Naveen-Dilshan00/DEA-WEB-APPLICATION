@@ -25,21 +25,15 @@ public class cartDAOImpl implements cartDAO{
         this.conn=conn;
     }
     
-<<<<<<< Updated upstream
-    //add a list to get cart item as a session
-    public List<cart> getCartProducts(ArrayList<cart> cartList){
-        List<cart> products = new ArrayList<cart>();
-        
-        try{
-            
-=======
+
+
      //add a list to get cart item as a session
     public List<cart> getCartProducts(ArrayList<cart> cartList){
         List<cart> products = new ArrayList<cart>();
 
         try{
 
->>>>>>> Stashed changes
+
             if(cartList.size()>0){
                 for(cart item:cartList){
                     String sql = "select *from item_data where Item_ID =? ";
@@ -64,21 +58,12 @@ public class cartDAOImpl implements cartDAO{
         }
         return products;
     }
-<<<<<<< Updated upstream
-    
-    
-    //Get a total value using session array list
-    public double getTotalCartPrice(ArrayList<cart> cartList){
-        double sum=0.0;
-        
-=======
 
 
     //Get a total value using session array list
     public double getTotalCartPrice(ArrayList<cart> cartList){
         double sum=0.0;
 
->>>>>>> Stashed changes
         try{
             if(cartList !=null){
                 for(cart item : cartList){
@@ -86,11 +71,7 @@ public class cartDAOImpl implements cartDAO{
                     PreparedStatement ps = conn.prepareStatement(sql);
                     ps.setInt(1,item.getIid());
                     ResultSet rs = ps.executeQuery();
-<<<<<<< Updated upstream
-                    
-=======
 
->>>>>>> Stashed changes
                     while(rs.next()){
                         sum = rs.getDouble("Price")*item.getcQuantity()+ sum;
                     }
@@ -100,27 +81,23 @@ public class cartDAOImpl implements cartDAO{
         catch(Exception e){
             e.printStackTrace();
         }
-<<<<<<< Updated upstream
-        
-=======
-
->>>>>>> Stashed changes
+      
         return sum;
     }
     
+  
     public boolean addCart(cart c){
         
         boolean f=false;
         try{
-            String sql="insert into cart(Item_Id,User_Id,Item_Name,M_Year,Price,Total_Price,Quantity) values(?,?,?,?,?,?,?)";
+            String sql="insert into cart(Item_Id,User_Id,Item_Name,M_Year,Price,Total_Price) values(?,?,?,?,?,?)";
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setInt(1,c.getIid());
             ps.setInt(2,c.getUserId());
             ps.setString(3,c.getItemName());
             ps.setString(4,c.getM_year());
-            ps.setDouble(5,c.getPrice());
+            ps.setDouble(5,c.getPricee());
             ps.setDouble(6,c.getTotallPrice());
-            ps.setInt(7,c.getQuantity());
             
             int i = ps.executeUpdate();
             if(i==1){
@@ -146,21 +123,12 @@ public class cartDAOImpl implements cartDAO{
             
             while(rs.next())
             {
-                
                 c =new cart();
                 c.setCid(rs.getInt(1));
                 c.setIid(rs.getInt(2));
                 c.setUserId(rs.getInt(3));
                 c.setItemName(rs.getString(4));
                 c.setM_year(rs.getString(5));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                c.setPrice(rs.getDouble(6));
-=======
-                c.setPricee(rs.getDouble(6)*rs.getInt(8));
-                c.setQuantity(c.getQuantity());
->>>>>>> Stashed changes
-=======
 
 
                 c.setPricee(rs.getDouble(6)* c.getQuantity());
@@ -169,12 +137,9 @@ public class cartDAOImpl implements cartDAO{
                 
 //                c.setPricee(rs.getDouble(6)*rs.getInt(8));
 //                c.setQuantity(c.getQuantity());
-
-
->>>>>>> Stashed changes
                 
-                totallPrice = totallPrice +rs.getDouble(7);
-                c.setTotallPrice(totallPrice);
+//                totallPrice = totallPrice +rs.getDouble(7);
+//                c.setTotallPrice(totallPrice);
                 
                 list.add(c);
             }

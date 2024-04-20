@@ -22,12 +22,22 @@
                 <h3>Hello,${userobj.name}</h3>
             </c:if>
             
+            <div class="row p-5">
+                <div class="col-md-6">
+                    <a href="">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h3>Sell Old BooK</h3>
+                            </div>   
+                        </div>
+                    </a>
+                </div
                 
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <a href="edit_profile.jsp">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h3 class="text-danger">Login & security(Edit)</h3>
+                                <h3>Login & security(Edit)</h3>
                             </div>   
                         </div>
                     </a>
@@ -38,7 +48,7 @@
                     <a href="user_address.jsp">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h3 class="text-danger">MY address</h3>
+                                <h3>MY address</h3>
                             </div>   
                         </div>
                     </a>
@@ -48,7 +58,7 @@
                     <a href="orders.jsp">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h3>MY Order</h3>
+                                <h3 class="text-danger" >MY Order</h3>
                             </div>   
                         </div>
                     </a>
@@ -58,7 +68,7 @@
                     <a href="">
                         <div class="card">
                             <div class="card-body text-center">
-                                <h3 class="text-danger">Help Cemter</h3>
+                                <h3>Help Cemter</h3>
                             </div>   
                         </div>
                     </a>
