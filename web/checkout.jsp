@@ -15,6 +15,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored ="false"%>
 
+<%
+    user u = (user)session.getAttribute("userobj");
+    
+%>
+
 <!DOCTYPE html>
 
 <%
@@ -67,15 +72,24 @@
                             </thead>
                             <tbody>
                                 <%
+<<<<<<< Updated upstream
                                    
                                     if(cart_list != null){
                                         
                                         for(cart c: cartProducts){ %>
                                             
                                             <tr>
+=======
+                                     if(cart_list != null){
+                                        
+                                        for(cart c: cartProducts){ %>
+                                        
+                                         <tr>
+>>>>>>> Stashed changes
                                             <th scope="row"><%=c.getItemName()%></th>
 <<<<<<< Updated upstream
                                             <td><%=c.getM_year()%></td>
+<<<<<<< Updated upstream
                                             <td><%=c.getPrice()%></td>
                                             <td><a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a></td>
 =======
@@ -87,13 +101,33 @@
                                                         <a class="btn btn-sn btn decre text-danger"><i class="fa-solid fa-square-minus"></i></a>
                                                         <input type="text" name="quantity"  class="form-control" value="1" readonly>
                                                         <a class="btn btn-sn btn incre"><i class="fa-solid fa-square-plus"></i></a>
+=======
+
+                                            <td>
+                                                <form action="" method="" class="form-inline">
+                                                    <input type="hidden" name="id" value="<%=c.getIid()%>" class="form-input">
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <a class="btn btn-sn btn decre text-danger"><i class="fa-solid fa-square-minus"></i></a>
+                                                        <input type="text" name="quantity"  class="form-control" value="1" readonly>
+                                                        <a class="btn btn-sn btn incre text-success"><i class="fa-solid fa-square-plus"></i></a>
+>>>>>>> Stashed changes
                                                     </div>
                                                 </form>
                                             </td>
+                                                    
+
                                             <td><%=c.getPricee()%></td>
+<<<<<<< Updated upstream
                                             <td>
                                                 <a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a>
                                             </td>
+>>>>>>> Stashed changes
+=======
+                                            <td><a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a></td>
+
+
+                                            
+
 >>>>>>> Stashed changes
                                           </tr>
                                           <%
@@ -101,17 +135,28 @@
                                     }
 
                                      }
+<<<<<<< Updated upstream
                                     %>
                                          
                                           
                                    
+=======
+                                  }
+                                %>
+>>>>>>> Stashed changes
                                 <tr>
                                     <td>Total Price</td>
                                     <td></td>
                                     <td></td>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                     <td><%=totallprice%></td>
 =======
+=======
+
+                                    
+
+>>>>>>> Stashed changes
                                     <td></td>
                                     <td>${(total>0)?total:0.00}</td>
 >>>>>>> Stashed changes

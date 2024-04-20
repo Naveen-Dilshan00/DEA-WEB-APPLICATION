@@ -86,6 +86,7 @@ public class CartServlet extends HttpServlet {
                 c.setPrice(b.getPrice());
                 c.setTotallPrice(b.getPrice());
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 System.out.println("");
                 cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
                 boolean f =dao2.addCart(c);
@@ -93,12 +94,29 @@ public class CartServlet extends HttpServlet {
                 
                
 >>>>>>> Stashed changes
+=======
+
+//                System.out.println("");
+//                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+//                boolean f =dao2.addCart(c);
+
+
+                
+                
+
+                
+
+>>>>>>> Stashed changes
                 
                 HttpSession session =request.getSession();
                 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 if(f){
 =======
+=======
+
+>>>>>>> Stashed changes
                 if(cart_list == null){
                     cartList.add(c);
 //                    cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
@@ -111,10 +129,16 @@ public class CartServlet extends HttpServlet {
                 }
                 else{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     session.setAttribute("failed","something went wrong");
                     response.sendRedirect("all_Laps.jsp");
                     System.out.println("Not added card");
 =======
+=======
+
+
+
+>>>>>>> Stashed changes
                     cartList = cart_list;
                     boolean exist =false;
                     
@@ -129,8 +153,11 @@ public class CartServlet extends HttpServlet {
                     }
                     if(!exist){
                         cartList.add(c);
+<<<<<<< Updated upstream
 //                        cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
 //                        boolean f =dao2.addCart(c);
+=======
+>>>>>>> Stashed changes
                         session.setAttribute("addCart","Book added to the cart");
                         response.sendRedirect("all_Laps.jsp");
                        
