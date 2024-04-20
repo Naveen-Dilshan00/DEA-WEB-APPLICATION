@@ -9,11 +9,13 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
-<<<<<<< Updated upstream
+
+public class cart extends item_order {
+
+
 public class cart {
-=======
 public class cart extends user {
->>>>>>> Stashed changes
+
     
     private int cid;
     private int iid;
@@ -64,21 +66,22 @@ public class cart extends user {
         this.m_year = m_year;
     }
 
-<<<<<<< Updated upstream
+
+    public Double getPricee() {
+
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPricee(Double price) {
         this.price = price;
-=======
     public Double getPricee() {
         return pricee;
     }
 
     public void setPricee(Double pricee) {
         this.pricee = pricee;
->>>>>>> Stashed changes
+
     }
 
     public Double getTotallPrice() {
