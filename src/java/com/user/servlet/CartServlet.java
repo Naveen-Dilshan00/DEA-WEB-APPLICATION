@@ -77,65 +77,25 @@ public class CartServlet extends HttpServlet {
                 cart c = new cart();
                 c.setIid(Iid);
                 c.setUserId(Uid);
-<<<<<<< Updated upstream
-=======
-                c.setcQuantity(1);
->>>>>>> Stashed changes
                 c.setItemName(b.getItemName());
                 c.setM_year(b.getM_year());
                 c.setPrice(b.getPrice());
                 c.setTotallPrice(b.getPrice());
-<<<<<<< Updated upstream
                 System.out.println("");
                 cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
                 boolean f =dao2.addCart(c);
-=======
-                
-               
->>>>>>> Stashed changes
                 
                 HttpSession session =request.getSession();
                 
-<<<<<<< Updated upstream
                 if(f){
-=======
-                if(cart_list == null){
-                    cartList.add(c);
-//                    cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-//                    boolean f =dao2.addCart(c);
-                    session.setAttribute("cart-list",cartList);
->>>>>>> Stashed changes
                     session.setAttribute("addCart","Book added to the cart");
                     response.sendRedirect("all_Laps.jsp");
                     System.out.println("Add cart Succesfully");
                 }
                 else{
-<<<<<<< Updated upstream
                     session.setAttribute("failed","something went wrong");
                     response.sendRedirect("all_Laps.jsp");
                     System.out.println("Not added card");
-=======
-                    cartList = cart_list;
-                    boolean exist =false;
-                    
-                    for(cart cd:cart_list){
-                        if(cd.getIid() == Iid){
-                            exist=true;
-                            out.println("Product exist");
-                            session.setAttribute("addCart","item Already exist");
-                            response.sendRedirect("all_Laps.jsp");
-                            break;
-                        }
-                    }
-                    if(!exist){
-                        cartList.add(c);
-//                        cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-//                        boolean f =dao2.addCart(c);
-                        session.setAttribute("addCart","Book added to the cart");
-                        response.sendRedirect("all_Laps.jsp");
-                       
-                    }
->>>>>>> Stashed changes
                 }
                 
             }
