@@ -5,24 +5,22 @@
  */
 package com.user.servlet;
 
-import com.entity.user;
-import com.DAO.userDAOImpl;
-import com.DB.DBConnect;
+import com.entity.cart;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Naveen Dilshan
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "QuantityIncDecServlet", urlPatterns = {"/QuantityIncDecServlet"})
+public class QuantityIncDecServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +39,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet QuantityIncDecServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet QuantityIncDecServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,15 +60,49 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-         processRequest(request, response);
-        // login session end method
-//             String logoutParam = request.getParameter("logout");
-//             if ("true".equals(logoutParam)) {
-//                    logout(request, response);
-//                } else {
-//                    processRequest(request, response);
-//                }
+//        processRequest(request, response);
+    
+           try(PrintWriter out = response.getWriter()){
+               String action =request.getParameter("action");
+               int Iid = Integer.parseInt(request.getParameter("Iid"));
+               
+               
+               ArrayList<cart> cart_list = (ArrayList<cart>) request.getSession().getAttribute("cart-list");
+               
+               if(action !=null && Iid >= 1){
+                   if(action.equals("inc")){
+                       for(cart c:cart_list){
+                           if(c.getIid() == Iid){
+                               int cQuantity = c.getcQuantity();
+                               cQuantity++;
+                               c.setcQuantity(cQuantity);
+                               response.sendRedirect("checkout.jsp");
+                           }
+                       }
+                   }
+               }
+               if(action !=null && Iid >= 1){
+                   if(action.equals("dec")){
+                       for(cart c:cart_list){
+                           if(c.getIid() == Iid && c.getcQuantity() >1){
+                               int cQuantity = c.getcQuantity();
+                               cQuantity--;
+                               c.setcQuantity(cQuantity);
+                               break;
+                           }
+                       }
+                       response.sendRedirect("checkout.jsp");
+                   }
+               }
+               else{
+                   response.sendRedirect("checkout.jsp");
+               }
+           }
+           catch(Exception e){
+               e.printStackTrace();
+           }
+           
+            
     }
 
     /**
@@ -84,41 +116,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-        
-        try{
-            
-            userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
-            
-            HttpSession session = request.getSession();
-            
-            String name =request.getParameter("uname");
-            String password = request.getParameter("password");
-            
-//            System.out.println(name+" "+password);
-
-            if("admin".equals(name)&& "admin".equals(password)){
-                response.sendRedirect("admin/Addminhome.jsp");
-                }
-            else{
-                
-                user us = dao.login(name,password);
-                if(us !=null){
-                    session.setAttribute("userobj",us);
-                    response.sendRedirect("index.jsp");
-                } 
-                else{
-                    session.setAttribute("failedMsg","Email & Password invalid");
-                    response.sendRedirect("login.jsp");
-                }
-                
-                
-            }
-            
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-        
+        processRequest(request, response);
     }
 
     /**
@@ -130,14 +128,5 @@ public class LoginServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
-    // User log session end
-//     private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        HttpSession session = request.getSession(false); // Pass false to getSession to avoid creating a new session
-//        if (session != null) {
-//            session.invalidate(); // Invalidate the current session
-//        }
-//        response.sendRedirect("index.jsp"); // Redirect to home page or any other page after logout
-//    }
 
 }

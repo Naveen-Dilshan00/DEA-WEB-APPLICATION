@@ -71,7 +71,7 @@
                                         for(cart c: cartProducts){ %>
                                             
                                            
-                                        
+                                        <tr>
                              
 
                                             <th scope="row"><%=c.getItemName()%></th>
@@ -82,12 +82,15 @@
                                                 <form action="" method="" class="form-inline">
                                                     <input type="hidden" name="id" value="<%=c.getIid()%>" class="form-input">
                                                     <div class="form-group d-flex justify-content-between">
-                                                        <a class="btn btn-sn btn decre text-danger"><i class="fa-solid fa-square-minus"></i></a>
-                                                        <input type="text" name="quantity"  class="form-control" value="1" readonly>
-                                                        <a class="btn btn-sn btn incre text-success"><i class="fa-solid fa-square-plus"></i></a>
+                                                        <a href="QuantityIncDecServlet?action=dec&Iid=<%=c.getIid()%>" class="btn btn-sn btn decre text-danger"><i class="fa-solid fa-square-minus"></i></a>
+                                                        <input type="text" name="quantity"  class="form-control" value="<%=c.getcQuantity()%>" readonly>
+                                                        <a href="QuantityIncDecServlet?action=inc&Iid=<%=c.getIid()%>" class="btn btn-sn btn incre text-success"><i class="fa-solid fa-square-plus"></i></a>
+                                                    </div>
+                                                </form>
+                                            </td>
 
+                                            <td><%= dcf.format(c.getPricee()) %></td>
 
-                                            <td><%=c.getPricee()%></td>
                                             <td><a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a></td>
 
 
@@ -99,7 +102,7 @@
 
                   
                                                   }
-                                <%          
+                                %>         
                                 
                                 <tr>
                                     <td>Total Price</td>
@@ -109,7 +112,7 @@
 
 
                                     <td></td>
-                                    <td>${(total>0)?total:0.00}</td>
+                                    <td>${(total>0)?dcf.format(total):0.00}</td>
 
 
                                 </tr>

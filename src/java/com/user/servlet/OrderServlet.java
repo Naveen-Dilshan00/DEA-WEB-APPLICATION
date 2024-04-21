@@ -71,10 +71,11 @@ public class OrderServlet extends HttpServlet {
 //        processRequest(request, response
 
                 
-            try{
+            try(PrintWriter out = response.getWriter()){
                 
                 HttpSession session = request.getSession();
                 user u =(user)session.getAttribute("userobj");
+                ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
                 
                 int id = Integer.parseInt(request.getParameter("id"));
                 String Name = request.getParameter("name");
@@ -92,9 +93,9 @@ public class OrderServlet extends HttpServlet {
                 
                 cartDAOImpl dao =new cartDAOImpl(DBConnect.getConn());
                 
-                List<cart> itemlist = dao.getItemByUser(id);
+//                List<cart> itemlist = dao.getItemByUser(id);
                 
-                if(itemlist.isEmpty())
+                if(cart_list.isEmpty())
                 {
                     session.setAttribute("failedMsg","ADD Item");
                     response.sendRedirect("checkout.jsp");
@@ -107,7 +108,7 @@ public class OrderServlet extends HttpServlet {
                 
                 ArrayList<item_order> orderList = new ArrayList<item_order>();
                 Random r =new Random();
-                for(cart c:itemlist){
+                for(cart c:cart_list){
                     o = new item_order();
 //                    o.setOrder_Id("BOOK-ORD-00"+ r.nextInt(1000));
                     o.setId(u.getId());
@@ -116,7 +117,7 @@ public class OrderServlet extends HttpServlet {
                     o.setPhone(Phonenumber);
                     o.setFullAdd(fullAdd);
                     o.setItemName(c.getItemName());
-                    o.setPrice(c.getPrice()+"");
+                    o.setPrice(c.getPricee()+"");
                     o.setPaymenttype(Paymenttype);
                     
                     orderList.add(o);
@@ -129,7 +130,7 @@ public class OrderServlet extends HttpServlet {
                    response.sendRedirect("placeOrder.jsp");
                }
                else{
-                   
+                    
                     boolean f= dao2.saveOrder(orderList);
                     
                     if(f){
