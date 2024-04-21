@@ -1,31 +1,31 @@
 
 
 <section id="sidebar">
-    <a href="#" class="brand">
+    <a href="Addminhome.jsp" class="brand">
         <i class='bx bxl-apple'></i>
         <span class="text">Admin</span>
     </a>
     <ul class="side-menu top">
         <li class="active">
-            <a href="#">
+            <a href="Addminhome.jsp">
             <i class='bx bxs-dashboard bx-tada' ></i>
             <span class="text">Dashboard</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="add_item.jsp">
             <i class='bx bx-signal-4 bx-tada' ></i>
             <span class="text">Add item</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="orders.jsp">
             <i class='bx bx-git-compare bx-tada bx-rotate-90' ></i>
             <span class="text">Orders</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="all_items.jsp">
             <i class='bx bxs-shopping-bags bx-tada' ></i>
             <span class="text">Products</span>
             </a>

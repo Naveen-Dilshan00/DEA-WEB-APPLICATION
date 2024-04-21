@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.cartDAOImpl"%>
 <%@page import="com.entity.cart"%>
@@ -27,6 +28,9 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         request.setAttribute("cart_list", cart_list);
         request.setAttribute("total",Total);
     }
+    
+    DecimalFormat dcf = new DecimalFormat("#.##");
+    request.setAttribute("dcf",dcf);
 %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

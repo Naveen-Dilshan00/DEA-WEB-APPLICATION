@@ -13,6 +13,7 @@
         <%@include file="adminCSS.jsp"%>
     </head>
     <body style='background-color:#f0f2f2'>
+        
         <%@include file="adminNavbar.jsp"%>
         <div class="container">
             <div class="row">
@@ -34,7 +35,7 @@
                                     
                                     <div class="form-group">
                                       <label for="exampleInputPassword1">Price </label>
-                                      <input name = "price" type="number" class="form-control" id="exampleInputPassword1">
+                                      <input name = "price" type="double" class="form-control" id="exampleInputPassword1">
                                     </div>
                                     
                                     <div class="form-group">
