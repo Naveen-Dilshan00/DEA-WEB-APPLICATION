@@ -6,6 +6,9 @@
 package com.DAO;
 
 import com.entity.cart;
+import com.entity.itemDetailes;
+import com.entity.user;
+import java.util.List;
 /**
  *
  * @author Naveen Dilshan
@@ -13,4 +16,10 @@ import com.entity.cart;
 public interface cartDAO {
         
     public boolean addCart(cart c);
+    
+    public List<cart> getItemByUser(int userId);
+    
+    public boolean deleteItem(int Iid,int Uid);
+    
+    public boolean addDetailes(user u);
 }
