@@ -15,6 +15,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
         .navbar {
@@ -124,10 +125,24 @@
             color: #ccc;
             margin-left: auto;
         }
+        .sign-out-button {
+    margin-top: 20px; /* Adjust margin as needed */
+    background-color: #333; /* Background color for the button */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.sign-out-button:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
 
         .content {
             margin-left: 250px;
             padding: 20px;
+            background-color: #f4f4f4;
         }
 
         .user-profile {
@@ -148,7 +163,8 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            margin-right: 10px; /* Adjust margin as needed */
+            margin-right: 10px; 
+            margin-top: 0;/* Adjust margin as needed */
         }
 
         .user-name {
@@ -169,6 +185,7 @@
  
 
 .prsonalinformation-form {
+    background-color: #ddd;
       display: flex;
       flex-direction: column;
       width: 400px;
@@ -225,6 +242,31 @@
       padding: 5px;
       border: 1px solid #ccc;
     }
+    .form-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.cancel-button,
+.save-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Add some space between buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+.save-button {
+    background-color: #333;
+    color: #fff;
+}
+
     
     </style>
 </head>
@@ -248,6 +290,7 @@
         <li><a href="#">Security</a></li>
         <li><a href="#">Location</a></li>
     </ul>
+    <button class="sign-out-button">Sign Out</button>
 </div>
 <div class="content">
     <div class="user-profile">
@@ -283,6 +326,12 @@
       <label for="phone">Phone Number:</label>
       <input type="text" id="phone" name="phone" placeholder="Enter phone number">
     </div>
+               
+       <div class="form-buttons">
+            <button type="button" class="cancel-button">Cancel</button>
+            <button type="submit" class="save-button">Save Changes</button>
+        </div>
+              
    
   </form>
                  
