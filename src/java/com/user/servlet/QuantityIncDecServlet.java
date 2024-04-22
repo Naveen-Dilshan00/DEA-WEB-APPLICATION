@@ -5,21 +5,22 @@
  */
 package com.user.servlet;
 
+import com.entity.cart;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Naveen Dilshan
  */
-@WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
-public class LogoutServlet extends HttpServlet {
+@WebServlet(name = "QuantityIncDecServlet", urlPatterns = {"/QuantityIncDecServlet"})
+public class QuantityIncDecServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +39,10 @@ public class LogoutServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LogoutServlet</title>");            
+            out.println("<title>Servlet QuantityIncDecServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LogoutServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet QuantityIncDecServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,20 +61,48 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-
-            try{
-                HttpSession session = request.getSession();
-                session.removeAttribute("userobj");
-
-                session.removeAttribute("cart-list");
-
-                HttpSession session2 = request.getSession();
-                session.setAttribute("SuccMsg" , "Logout Succesfully");
-                response.sendRedirect("login.jsp");
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
+    
+           try(PrintWriter out = response.getWriter()){
+               String action =request.getParameter("action");
+               int Iid = Integer.parseInt(request.getParameter("Iid"));
+               
+               
+               ArrayList<cart> cart_list = (ArrayList<cart>) request.getSession().getAttribute("cart-list");
+               
+               if(action !=null && Iid >= 1){
+                   if(action.equals("inc")){
+                       for(cart c:cart_list){
+                           if(c.getIid() == Iid){
+                               int cQuantity = c.getcQuantity();
+                               cQuantity++;
+                               c.setcQuantity(cQuantity);
+                               response.sendRedirect("checkout.jsp");
+                           }
+                       }
+                   }
+               }
+               if(action !=null && Iid >= 1){
+                   if(action.equals("dec")){
+                       for(cart c:cart_list){
+                           if(c.getIid() == Iid && c.getcQuantity() >1){
+                               int cQuantity = c.getcQuantity();
+                               cQuantity--;
+                               c.setcQuantity(cQuantity);
+                               break;
+                           }
+                       }
+                       response.sendRedirect("checkout.jsp");
+                   }
+               }
+               else{
+                   response.sendRedirect("checkout.jsp");
+               }
+           }
+           catch(Exception e){
+               e.printStackTrace();
+           }
+           
+            
     }
 
     /**

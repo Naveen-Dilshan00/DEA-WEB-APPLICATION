@@ -98,7 +98,7 @@ public class LoginServlet extends HttpServlet {
 //            System.out.println(name+" "+password);
 
             if("admin".equals(name)&& "admin".equals(password)){
-                response.sendRedirect("admin/adminHome.jsp");
+                response.sendRedirect("admin/Addminhome.jsp");
                 }
             else{
                 

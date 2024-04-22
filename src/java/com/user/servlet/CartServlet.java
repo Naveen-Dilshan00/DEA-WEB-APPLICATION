@@ -12,6 +12,7 @@ import com.entity.cart;
 import com.entity.itemDetailes;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -66,7 +67,10 @@ public class CartServlet extends HttpServlet {
             throws ServletException, IOException {
 //        processRequest(request, response);
 
-            try{
+            try(PrintWriter out = response.getWriter()){
+                // to find is there this book already added or not
+                
+                ArrayList<cart> cartList = new ArrayList<>();
                 
                 int Iid = Integer.parseInt(request.getParameter("Iid"));
                 int Uid = Integer.parseInt(request.getParameter("Uid"));
@@ -77,26 +81,79 @@ public class CartServlet extends HttpServlet {
                 cart c = new cart();
                 c.setIid(Iid);
                 c.setUserId(Uid);
+
+                c.setcQuantity(1);
+
                 c.setItemName(b.getItemName());
                 c.setM_year(b.getM_year());
-                c.setPrice(b.getPrice());
+                c.setPricee(b.getPrice());
                 c.setTotallPrice(b.getPrice());
-                System.out.println("");
-                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-                boolean f =dao2.addCart(c);
+
+
+                
+//                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+//                boolean f =dao2.addCart(c);
+
+
                 
                 HttpSession session =request.getSession();
+                ArrayList<cart> cart_list = (ArrayList<cart>) session.getAttribute("cart-list");
                 
-                if(f){
+                if(cart_list == null){
+                    cartList.add(c);
+                    cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+                    boolean ff =dao2.addCart(c);
+                    session.setAttribute("cart-list",cartList);
+
+
                     session.setAttribute("addCart","Book added to the cart");
                     response.sendRedirect("all_Laps.jsp");
-                    System.out.println("Add cart Succesfully");
                 }
                 else{
-                    session.setAttribute("failed","something went wrong");
-                    response.sendRedirect("all_Laps.jsp");
-                    System.out.println("Not added card");
+
+//                    session.setAttribute("failed","something went wrong");
+//                    response.sendRedirect("all_Laps.jsp");
+//                    System.out.println("Not added card");
+
+                    cartList = cart_list;
+                    boolean exist =false;
+                    
+                    for(cart cd:cart_list){
+                        if(cd.getIid() == Iid){
+                            exist=true;
+                            out.println("Product exist");
+                            session.setAttribute("addCart","item Already exist");
+                            response.sendRedirect("all_Laps.jsp");
+
+                            break;
+
+                        }
+                    }
+                    if(!exist){
+                        cartList.add(c);
+
+                        cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
+                        boolean fff =dao2.addCart(c);
+                        session.setAttribute("addCart","Book added to the cart");
+                        response.sendRedirect("all_Laps.jsp");
+                       
+                    }
+
+
                 }
+                
+                
+                
+//                if(f){
+//                    session.setAttribute("addCart","Book added to the cart");
+//                    response.sendRedirect("all_Laps.jsp");
+//                    System.out.println("Add cart Succesfully");
+//                }
+//                else{
+//                    session.setAttribute("failed","something went wrong");
+//                    response.sendRedirect("all_Laps.jsp");
+//                    System.out.println("Not added card");
+//                }
                 
             }
             catch(Exception e){
