@@ -109,7 +109,7 @@ public class LoginServlet extends HttpServlet {
                 } 
                 else{
                     session.setAttribute("failedMsg","Email & Password invalid");
-                    response.sendRedirect("login.jsp");
+                    response.sendRedirect("login1.jsp");
                 }
                 
                 
