@@ -65,8 +65,8 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         
         <c:if test="${empty userobj}">
              <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success">Login</a>
-            <a href="register.jsp" class="btn btn-primary text-white">Register</a>
+            <a href="login1.jsp" class="btn btn-success">Login</a>
+            <a href="register1.jsp" class="btn btn-primary text-white">Register</a>
              </div>
         </c:if>
     </div>

@@ -31,12 +31,12 @@ public class userDAOImpl implements userDAO{
         boolean f= false;
         
         try{
-            String sql="insert into user(Name,Email,Phonenumber,Password) values(?,?,?,?)";
+            String sql="insert into user(Name,Email,Password) values(?,?,?)";
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setString(1,us.getName());
             ps.setString(2,us.getEmail());
-            ps.setString(3,us.getPhno());
-            ps.setString(4,us.getPassword());
+//            ps.setString(3,us.getPhno());
+            ps.setString(3,us.getPassword());
             
             int i=ps.executeUpdate();
             if(i==1)
