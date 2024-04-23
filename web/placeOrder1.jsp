@@ -75,7 +75,7 @@
                  border-radius: 5px;
                  border: 1px solid silver;
                  
-                  outline-color: silver;
+                  outline-color: mediumseagreen;
              }
              .button-container
              {
@@ -108,7 +108,7 @@
                  margin-bottom: 16px;
                  border: 1px solid silver;
                  border-radius: 5px;
-                 outline-color: silver;
+                 outline-color: mediumseagreen;
                  height:150px;
                  padding-top:5px;
                  padding-left: 10px;
@@ -272,25 +272,7 @@
                padding-left: 40px;
              
            }
-           .input-box2
-           {
-                 display: flex;
-                 flex-wrap: wrap;
-                 width: 50%;
-                 padding-bottom: 20px; 
-                 
-           }
-           .input-box2 input
-             {
-                 height: 50px;
-                 width: 95%;
-                 padding: 0 10px;
-                 border-radius: 5px;
-                 border: 1px solid black;
-                 outline: none;
-                 
-                
-             }
+         
              h4
              {
                  color: silver;
@@ -301,10 +283,7 @@
                  color: mediumseagreen;
                  padding-left: 5px;
              }
-             checkbox
-             {
-                 color: green;
-             }
+             
              
         </style>
     </head>
@@ -360,7 +339,7 @@
                      
                   
                       <div class="link">
-                          <p> <input type="checkbox" class="bill"> Same as Billing Address
+                          <p> <input type="checkbox" > Same as Billing Address
                               
                             <a href="#" >  Add Billing Address</a></p>
                       </div>
