@@ -74,7 +74,8 @@
                  padding: 0 10px;
                  border-radius: 5px;
                  border: 1px solid silver;
-                 outline: none;
+                 
+                  outline-color: silver;
              }
              .button-container
              {
@@ -107,11 +108,11 @@
                  margin-bottom: 16px;
                  border: 1px solid silver;
                  border-radius: 5px;
-                 
                  outline-color: silver;
                  height:150px;
                  padding-top:5px;
                  padding-left: 10px;
+                 font-family: sans-serif;
              }
              
             .container1
