@@ -61,7 +61,7 @@
                  display: flex;
                  flex-wrap: wrap;
                  width: 50%;
-                 padding-bottom: 15px;
+                 padding-bottom: 20px;
              }
              .input-box:nth-child(2n)
              {
@@ -69,7 +69,7 @@
              }
              .input-box input
              {
-                 height: 40px;
+                 height: 50px;
                  width: 95%;
                  padding: 0 10px;
                  border-radius: 5px;
@@ -78,7 +78,7 @@
              }
              .button-container
              {
-                 margin: 15px 0;
+                 margin: 50px 0;
                  width: 100%;
              }
              .button-container button
@@ -103,13 +103,17 @@
              textarea
              {
                  width:100%;
-                 margin-top: 6px;
+                 margin-top: 0px;
                  margin-bottom: 16px;
                  border: 1px solid gray;
                  border-radius: 5px;
                  border: 1px solid black;
                  outline-color: black;
+                 height:150px;
+                 padding-top:5px;
+                 padding-left: 10px;
              }
+             
             .container1
             {
                 max-width: 100%;
@@ -258,17 +262,15 @@
                font-size: 15px;
                padding: 15px;
            }
-           .add
-           {
-               width: 100%;
-               
-           }
+           
           
            .cart1
            {
                border-left: 1px solid silver;
                padding-left: 40px;
+             
            }
+           
         </style>
     </head>
     <body>
@@ -308,9 +310,14 @@
                           <input type="text" name="city" placeholder="City/District/Town"required>
                       
                       </div>
-                      <div class="input-box" >
+                      
+                     
+                      
+                  </div>
+                      <div class="input-box1" >
                           
                           <textarea  class="add" name="address" id="add" cols="30" rows="5" placeholder="Address(Area and Street)"required></textarea>
+                      
                       </div>
                       <div>
                           <p> <input type="checkbox"> Same as Billing Address
@@ -320,8 +327,6 @@
                       <div class="button-container">
                           <center><button type="submit">Save & Deliver here </button></center> 
                       </div>
-                      
-                  </div>
                   </div>
                 </form>
 </section>
