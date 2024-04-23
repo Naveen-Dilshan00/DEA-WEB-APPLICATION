@@ -16,7 +16,7 @@
                 background-image: url("image/main.jpg");
                 position: absolute;
                 width: 100%;
-                height: 97vh; /* Adjusted to occupy full height of the viewport */
+                height: 97vh; 
                 border-radius: 0% 3% 3% 0%;
                 top: 0;
                 left: 0;
@@ -28,7 +28,7 @@
             .heading{
                 color:white; position: absolute; top: 12%; width: 100%;text-align: center; font-size: 3rem; font-weight: 800; 
             }
-            
+
             .font{
                 color: black;
             }
@@ -46,38 +46,48 @@
             }
 
             .right {
-                margin-top: 40%;
+                margin-top: 35%;
 
             }
             
 
+            .form-check {
+                margin-top: 5%; 
+                font-size: 0.75rem;
+            }
+
+
+
             .btn {
                 font-size: 0.8rem;
                 font-weight: 650;
-                
+
             }
 
             a {
-                text-decoration: underline;
+                text-decoration: none;
+                font-size: 0.9rem;
+                color: #303f9f;
             }
 
             a:hover {
-                text-decoration: underline;
+                text-decoration: none;
             }
 
             h1 {
-                font-family: Arial, sans-serif; /* Change font family */
-                font-size: 2.5rem; /* Adjusted font size for "Sign In" */
+                font-family: Arial, sans-serif; 
+                font-size: 2.5rem; 
                 font-weight: bold;
                 margin-bottom: 10px;
                 color:#303f9f
             }
 
-            .text-secondary {
+            .text{
                 font-size: 0.8rem;
                 font-family: Arial, sans-serif;
+                color: black;
                 font-weight: 400;
-                /* Reduced font size for the accompanying text */
+                
             }
 
             .social-logos {
@@ -88,21 +98,21 @@
                 width: 40px;
                 margin-right: 10px;
                 margin-bottom: 10px;
-                border: 1px solid transparent; /* Add border */
-                padding: 5px; /* Add padding */
-                background-color: white; /* White background */
+                border: 1px solid transparent; 
+                padding: 5px;
+                background-color: white; 
             }
 
             .social-logos .row {
-                justify-content: center; /* Center align the row */
+                justify-content: center; 
             }
 
 
-            /* Adjustments for smaller screens */
+            
             @media screen and (min-width: 900px) {
                 .bg-holder .right {
                     flex-direction: row;
-                    height: 97.5vh; /* Maintain full height on smaller screens */
+                    height: 97.5vh; 
                 }
             }
 
@@ -114,11 +124,11 @@
                 width: 40px;
                 margin-right: 10px;
                 margin-bottom: 10px;
-                border: 1px solid transparent; /* Add border */
-                padding: 5px; /* Add padding */
+                border: 1px solid transparent; 
+                padding: 5px; 
                 background-color: white;
-                
-                
+
+
             }
         </style>
     </head>
@@ -139,7 +149,7 @@
                         <form action="#" class="right">
                             <div class="header">
                                 <h1>Sign in</h1>
-                                <p class="text-secondary">Please enter your login details to sign in</p>
+                                <p class="text">Please enter your login details to sign in</p>
                             </div>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control form-control-lg fs-6" placeholder="Email Address">
@@ -147,10 +157,21 @@
                             <div class="input-group mb-3">
                                 <input type="password" class="form-control form-control-lg fs-6" placeholder="Password">
                             </div>
-                            <div class="input-group mb-3">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Keep me logged in </small></label>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check" name="check" value="">
+                                        <label class="form-check-label" for="check">Keep me logged in</label>
+                                    </div>
+                                    
+                                </div>
+                                &nbsp; &nbsp;
+                                <div class="col">
+                                    <a href="#">Forgot password?</a>
+                                </div>
                             </div>
+
+
                             <!--admin and user login buttons -->
                             <div class="row mb-3">
                                 <div class="col">
@@ -172,13 +193,13 @@
                             <div class="social-logos">
                                 <div class="row">
                                     <div class="col">
-                                       <button class="sbtn"><img src="image/google.jpg" alt="Google"></button>
+                                        <a href=""><button class="sbtn"><img src="image/google.jpg" alt="Google"></button></a>
                                     </div>
                                     <div class="col">
-                                        <button class="sbtn"><img src="image/facebook.jpg" alt="Facebook"></button>
+                                        <a href=""><button class="sbtn"><img src="image/facebook.jpg" alt="Facebook"></button></a>
                                     </div>
                                     <div class="col">
-                                        <button class="sbtn"><img src="image/apple.jpg" alt="Apple"></button>
+                                        <a href=""><button class="sbtn"><img src="image/apple.jpg" alt="Apple"></button></a>
                                     </div>
                                 </div>
                             </div>
