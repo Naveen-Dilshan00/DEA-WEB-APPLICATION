@@ -92,14 +92,14 @@
                  color: white;
                  border: none;
                  border-radius: 5px;
-                 background-image:linear-gradient(to right,green,yellowgreen);
+                 background-image:linear-gradient(to right,mediumseagreen,mediumseagreen);
                  
                  
                  
              }
              .button-container button:hover
              {
-                 background-image: linear-gradient(to right,green,yellowgreen);
+                 background-image: linear-gradient(to right,mediumseagreen,mediumseagreen);
              }
              textarea
              {
@@ -170,15 +170,15 @@
                 bottom: 20px;
                 right: 20px;
                 padding: 10px 25px;
-                background-color: green;
-                color: white;
+                background-color: white;
+                color: mediumseagreen;
                 cursor: pointer;
                 border-radius: 5px;
             }
             .product-chnage:hover
             {
                 background-color: white;
-                color: green;
+                color: mediumseagreen;
                 font-weight: 600;
                 border: 1px solid green;
             }
@@ -234,6 +234,7 @@
                {
                    margin-bottom: 10px;
                }
+               
            }
            @media screen and (max-width:900px)
            {
@@ -290,6 +291,20 @@
                  
                 
              }
+             h4
+             {
+                 color: silver;
+                 
+             }
+             .link a
+             {
+                 color: mediumseagreen;
+                 padding-left: 5px;
+             }
+             checkbox
+             {
+                 color: green;
+             }
              
         </style>
     </head>
@@ -344,10 +359,10 @@
                     
                      
                   
-                      <div>
-                          <p> <input type="checkbox"> Same as Billing Address
+                      <div class="link">
+                          <p> <input type="checkbox" class="bill"> Same as Billing Address
                               
-                            <a href="#">  Add Billing Address</a></p>
+                            <a href="#" >  Add Billing Address</a></p>
                       </div>
                       <div class="button-container">
                           <center><button type="submit">Save & Deliver here </button></center> 
@@ -362,7 +377,7 @@
                         <div class="order-summary">
                             
                             <p><center>Cart------Delivery------Payment</center></p>
-                        
+                      
                             <div>
                             <h2>Order Summary</h2>
                         </div>
@@ -385,7 +400,7 @@
                                     <div class="product-info">
                                         <h3 class="product-del">Standard Delivery</h3>
                                         <h4 class="product-date">Expected on 21 May 2024</h4>
-                                        <h4 class="product-price">$499.99</h4>
+                                        <h3 class="product-price">$499.99</h3>
                                         <p class="product-chnage">
                                             <span class="Change">Change</span>
                                         </p>
