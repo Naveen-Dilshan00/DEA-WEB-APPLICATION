@@ -73,7 +73,7 @@
                  width: 95%;
                  padding: 0 10px;
                  border-radius: 5px;
-                 border: 1px solid black;
+                 border: 1px solid silver;
                  outline: none;
              }
              .button-container
@@ -105,10 +105,10 @@
                  width:100%;
                  margin-top: 0px;
                  margin-bottom: 16px;
-                 border: 1px solid gray;
+                 border: 1px solid silver;
                  border-radius: 5px;
-                 border: 1px solid black;
-                 outline-color: black;
+                 
+                 outline-color: silver;
                  height:150px;
                  padding-top:5px;
                  padding-left: 10px;
@@ -188,7 +188,7 @@
                padding: 20px;
                height: 150px;
                width: 100%;
-               border: 1px solid silver;
+               border: 1px solid white;
                border-radius: 5px;
                
               
@@ -270,7 +270,26 @@
                padding-left: 40px;
              
            }
-           
+           .input-box2
+           {
+                 display: flex;
+                 flex-wrap: wrap;
+                 width: 50%;
+                 padding-bottom: 20px; 
+                 
+           }
+           .input-box2 input
+             {
+                 height: 50px;
+                 width: 95%;
+                 padding: 0 10px;
+                 border-radius: 5px;
+                 border: 1px solid black;
+                 outline: none;
+                 
+                
+             }
+             
         </style>
     </head>
     <body>
@@ -300,25 +319,30 @@
                           <input type="text" name="email" placeholder="Email"required>
                       </div>
                       
-                      
                       <div class="input-box">
                           
                           <input type="text" name="state" placeholder="State"required>
                       
                       </div>
+                     
                       <div class="input-box">
                           <input type="text" name="city" placeholder="City/District/Town"required>
                       
                       </div>
                       
+                      
                      
                       
                   </div>
+                     
                       <div class="input-box1" >
                           
                           <textarea  class="add" name="address" id="add" cols="30" rows="5" placeholder="Address(Area and Street)"required></textarea>
                       
                       </div>
+                    
+                     
+                  
                       <div>
                           <p> <input type="checkbox"> Same as Billing Address
                               
