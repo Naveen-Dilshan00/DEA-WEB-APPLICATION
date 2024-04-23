@@ -171,7 +171,7 @@
             .product-chnage
             {
                 position: absolute;
-                bottom: 50px;
+                bottom: 30px;
                 right: 10px;
                 padding: 10px 25px;
                 background-color: white;
@@ -385,7 +385,7 @@
                                     <img src="Watch1.jpg">
                                     <div class="product-info">
                                         <b> <p class="product-del">Standard Delivery</p></b>
-                                        <p class="product-date">Expected on 21 May 2024</p>
+                                        <p class="product-date">Expected on 21 May 2024</p><br>
                                         <b><p class="product-price">$225.99</p></b>
                                         <p class="product-chnage">
                                             <span class="Change">Change</span>
