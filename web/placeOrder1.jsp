@@ -79,8 +79,9 @@
              }
              .button-container
              {
-                 margin: 50px 0;
+                 margin: 40px 0;
                  width: 100%;
+              
              }
              .button-container button
              {
@@ -128,15 +129,18 @@
             .products
             {
                 flex: 0.75;
+                
             }
             .product
             {
                 display: flex;
                 width: 100%;
-                height: 200px;
+                height: 170px;
                 overflow: hidden;
                 border: 1px solid silver;
                 margin-bottom: 20px;
+                
+                
             }
             .product:hover
             {
@@ -147,7 +151,7 @@
             .product>img
             {
                 width: 300px;
-                height: 200px;
+                height: 170px;
                 object-fit: cover;
             }
             .product>img:hover
@@ -167,13 +171,14 @@
             .product-chnage
             {
                 position: absolute;
-                bottom: 20px;
-                right: 20px;
+                bottom: 50px;
+                right: 10px;
                 padding: 10px 25px;
                 background-color: white;
                 color: mediumseagreen;
                 cursor: pointer;
                 border-radius: 5px;
+                
             }
             .product-chnage:hover
             {
@@ -182,7 +187,7 @@
                 font-weight: 600;
                 border: 1px solid green;
             }
-           .product-total
+          .product-total
            {
                
                flex: 0.25;
@@ -191,7 +196,7 @@
                width: 100%;
                border: 1px solid white;
                border-radius: 5px;
-               
+              
               
            }
            .product-total p{
@@ -209,11 +214,12 @@
                background-color: tomato;
                color: white;
                text-decoration: none;
-               
+               border-radius: 5px;
            }
            .product-total a:hover
            {
                background-color: red;
+            
            }
            @media screen and (max-width:700px)
            {
@@ -246,6 +252,7 @@
                {
                    margin-left: 0;
                    margin-bottom: 20px;
+                   
                   
                }
            }
@@ -273,7 +280,7 @@
              
            }
          
-             h4
+             .product-date 
              {
                  color: silver;
                  
@@ -358,7 +365,7 @@
                             <p><center>Cart------Delivery------Payment</center></p>
                       
                             <div>
-                            <h2>Order Summary</h2>
+                            <h3>Order Summary</h3>
                         </div>
                             <p>
                                         <span>Order Total</span>
@@ -366,20 +373,20 @@
                             </p><br>
                             <p>
                                         <span>Delivery Charges </span>
-                                        <span>$25.99</span>
-                                    </p>
+                                        <span>$10.99</span>
+                            </p><br>
                         </div>
                         <div>
-                            <h2>Delivery Summary</h2>
+                            <h3>Delivery Summary</h3><br>
                         </div>
                          <div class="cart">
                             <div class="products">
                                 <div class="product">
                                     <img src="Watch1.jpg">
                                     <div class="product-info">
-                                        <h3 class="product-del">Standard Delivery</h3>
-                                        <h4 class="product-date">Expected on 21 May 2024</h4>
-                                        <h3 class="product-price">$499.99</h3>
+                                        <b> <p class="product-del">Standard Delivery</p></b>
+                                        <p class="product-date">Expected on 21 May 2024</p>
+                                        <b><p class="product-price">$225.99</p></b>
                                         <p class="product-chnage">
                                             <span class="Change">Change</span>
                                         </p>
@@ -387,8 +394,8 @@
                                     </div>
                                 <div class="product-total" >
                                     <p>
-                                        <span>Total Price</span>
-                                        <span>$525.20</span>
+                                        <span><b>Total Payable</b></span>
+                                        <span><b>$236.98</b></span>
                                     </p>
                                     <a href="#">Place Order</a>
                                 </div>
