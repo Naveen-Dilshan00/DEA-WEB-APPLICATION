@@ -48,12 +48,12 @@ to {
 	bottom: 0;
 	opacity: 0;
 }
+}
 
 
-<<<<<<< Updated upstream
-=======
+
 /*Navbar css part*/
->>>>>>> Stashed changes
+
 
 *{
     margin: 0;
@@ -166,11 +166,11 @@ nav .nav-bar .logo a
 }
 
 
-<<<<<<< Updated upstream
-@media (max-width: 790px)
-=======
+
+
+
 @media (max-width: 790px) 
->>>>>>> Stashed changes
+
 {
     nav .nav-bar .sidebarOpen
     {
