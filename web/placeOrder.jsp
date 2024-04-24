@@ -89,7 +89,7 @@
                                   <br>
                                   
                              </div>
-                                <button class="btn btn-warning">Ortder Now</button>
+                                <button class="btn btn-warning">Order Now</button>
                                   <a href="index.jsp" class="btn btn-success">Continue</a>
                             </form>
                         </div>

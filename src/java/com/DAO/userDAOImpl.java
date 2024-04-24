@@ -5,11 +5,16 @@
  */
 package com.DAO;
 
+import com.entity.cart;
 import java.sql.Connection;
 import com.entity.user;
 import com.mysql.cj.protocol.Resultset;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -132,6 +137,41 @@ public class userDAOImpl implements userDAO{
         }
         
         return f;
+    }
+    
+    public int getUserCount() {
+        int count = 0;
+        try {
+            String sql ="SELECT COUNT(*) FROM user";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public int getProductCount() {
+        int count = 0;
+        try {
+            String sql ="SELECT COUNT(*) FROM item_data ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 }
     

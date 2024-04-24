@@ -10,23 +10,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
+         <%@include file="all_components/allCSS.jsp" %>
         <style type="text/css">
             *{
-                padding: 0;
-                margin: 0;
+/*                padding: 0;
+                margin: 0;*/
                 font-family: sans-serif;
                 box-sizing: border-box;
                 
              }
              body
              {
-                 display: flex;
-                 
-                height: 100vh;
-                
+               height: 80vh; 
              }
-             .container,.container1
+             .full-body{
+                 display: flex;
+                 margin: 20px 80px;
+             }
+             .container1
              {
                  max-width: 650px;
                  padding: 28px;
@@ -59,6 +60,7 @@
                  flex-wrap: wrap;
                  width: 50%;
                  padding-bottom: 15px;
+                 border-radius: 10px
              }
              .input-box:nth-child(2n)
              {
@@ -162,9 +164,8 @@
             }
             .product-chnage
             {
-                position: absolute;
-                bottom: 20px;
-                right: 20px;
+                
+               
                 padding: 10px 25px;
                 background-color: green;
                 color: white;
@@ -251,7 +252,7 @@
                    max-width: 100%;
                }
            }
-           .order-summary p
+           .order-summary h5
            {
                display: flex;
                justify-content: space-between;
@@ -260,14 +261,31 @@
                padding: 15px;
            }
         </style>
+        
+           
     </head>
     <body>
         
-            
-            
+           <%@include file="all_components/navbar.jsp" %> 
            
-            <div class="container">
-                <form action="" method="post">
+           <c:if test="${empty userobj}">
+            <c:redirect url="login.jsp"></c:redirect>
+            </c:if>
+
+
+            <c:if test="${ not empty OfailedMsg}">
+                <div class="alert alert-danger" role="alert">
+                 ${OfailedMsg}
+                </div>
+                 <c:remove var="OfailedMsg" scope="session"/>
+            </c:if>
+           
+            
+           <div class="full-body">
+               
+            
+<!--               <div class="container col-md-7">-->
+<!--                <form action="" method="post">
                   <h5>Add Shipping Address</h5>
                   <div class="content">
                       <div class="input-box">
@@ -312,51 +330,126 @@
                       
                   </div>
                   </div>
-                </form>
-                <div class="container1">
+                </form>-->
+                <div class="container1 col-md-5">
                     <form action="" method="post">
-                        <p>Cart------Delivery------Payment</p>
                         <h2>Order Summary</h2>
+                        <hr>
                         <div class="order-summary">
-                            <p>
+                            <h5>
                                         <span>Order Total</span>
-                                        <span>$499.99</span>
-                            </p><br>
-                            <p>
+                                        <span>$${(total>0)?dcf.format(total):0.00}</span>
+                            </h5>
+                            <h5>
+                                      <span>Standard Delivery</span>
+                                      
+                                      <span class="Change product-chnage">Change</span>
+                                            
+                                              
+                                      
+                            </h5>
+                             
+                            <h5>
                                         <span>Delivery Charges </span>
                                         <span>$25.99</span>
-                                    </p>
+                            </h5>
                         </div>
                         <div class="cart">
                             <div class="products">
-                                <div class="product">
-                                    <img src="Watch1.jpg">
-                                    <div class="product-info">
-                                        <h3 class="product-del">Standard Delivery</h3>
-                                        <h4 class="product-date">Expected on 21 May 2024</h4>
-                                        <h4 class="product-price">$499.99</h4>
-                                        <p class="product-chnage">
-                                            <span class="Change">Change</span>
-                                        </p>
-                                    </div>
+                                <div class="product" style="overflow-x:auto">
+                                    <%
+                                     if(cart_list != null){
+                                        
+                                        for(cart c: cartProducts){ %>
+                                        <img class="img-fluid ml-2" src="Items_img/<%=c.getcPhoto()%>">
+                                    <%}
+                                        }%>
+                                    
                                     </div>
                                 <div class="product-total" >
                                     <p>
                                         <span>Total Price</span>
-                                        <span>$525.20</span>
+                                        <span>$${(total>0)?dcf.format(total+25.99):0.00}</span>
                                     </p>
-                                    <a href="#">Place Order</a>
+                                    <a href="checkout1.jsp">Back to Cart</a>
                                 </div>
                             </div>
                             
                         </div>
                         
                     </form>
-                    
-                    
-                    
+                  </div>
+
+
+                     
+               
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Your Detailes</h5>
+                            <form action="OrderServlet">
+                                <input type="hidden" name="id" value="${userobj.id}">
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label name="name"for="inputEmail4">Name</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.name}" name="username">
+                                  </div>
+                                 
+                                </div>
+                                
+                              <div class="form-row">
+                               <div class="form-group col-md-6">
+                                 <label for="inputEmail4">Email</label>
+                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}" name="email">
+                               </div>
+                               <div class="form-group col-md-6">
+                                 <label for="inputPassword4">Phone Number</label>
+                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}" name="phno">
+                               </div>
+                             </div>
+                                                            <div class="form-row">
+                               <div class="form-group col-md-6">
+                                 <label for="inputEmail4">Address</label>
+                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="address" value="${userobj.email}">
+                               </div>
+                               <div class="form-group col-md-6">
+                                 <label for="inputPassword4">LandMark</label>
+                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="landmark" value="${userobj.email}">
+                               </div>
+                             </div>
+                              <div class="form-row">
+                               <div class="form-group col-md-6">
+                                   
+                                 <label for="inputEmail4">City</label>
+                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="city"  value="${userobj.email}">
+                               </div>
+                               <div class="form-group col-md-6">
+                                 <label for="inputPassword4">Zip</label>
+                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="zip"  value="${userobj.email}">
+                               </div>
+                                  <div class="form-group">
+                                      <label>Payment Mode</label>
+                                      <select name="payment">
+                                          <option value="nonselect">-Select-</option>
+                                          <option value="c">Cash on dilivary</option>
+                                      </select>
+                                  </div>
+                                  <br>
+                                  
+                             </div>
+                                <div class="button-container">
+                          <center><button type="submit">Place Order</button></center> 
+                                </div>
+                                  
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+
+                    
+           </div>
+            
                     
                 
                     

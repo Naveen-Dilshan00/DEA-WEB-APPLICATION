@@ -4,6 +4,8 @@
     Author     : damik
 --%>
 
+<%@page import="com.DAO.userDAOImpl"%>
+<%@page import="com.DB.DBConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,6 +45,12 @@
 
     </head>
     <body>
+        <%
+            userDAOImpl count = new userDAOImpl(DBConnect.getConn());
+            int i = count.getUserCount();
+            userDAOImpl count2 = new userDAOImpl(DBConnect.getConn());
+            int b = count2.getProductCount();
+        %>
         <%@include file="sidebar.jsp" %>
         <section id="content">
 
@@ -63,14 +71,14 @@
                             <i class='bx bx-user-pin' ></i>
                             <span class="text">
                                 <p>Total Customers</p>
-                                <h1>1254</h1>
+                                <h1><%=i%></h1>
                             </span>
                         </li>
                         <li>
                             <i class='bx bxs-shopping-bags bx-rotate-270' ></i>
                             <span class="text">
                                 <p>Total Products</p>
-                                <h1>57</h1>
+                                <h1><%=b%></h1>
                             </span>
                         </li>
                     </ul>
