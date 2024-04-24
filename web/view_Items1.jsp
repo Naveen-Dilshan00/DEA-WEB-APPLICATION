@@ -275,7 +275,7 @@ a:hover{
           <div class="preview col-md-6">
             
             <div class="preview-pic tab-content">
-              <div class="tab-pane active" id="pic-1"><img src="images/14green.jpg" /></div>
+              <div class="tab-pane active" id="pic-1"><img src="Items_img/14green.jpg" /></div>
               <div class="tab-pane" id="pic-2"><img src="images/14purple.jpg" /></div>
               <div class="tab-pane" id="pic-3"><img src="images/14gold.jpg" /></div>
               <div class="tab-pane" id="pic-4"><img src="images/14white.jpg" /></div>

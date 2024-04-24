@@ -29,9 +29,7 @@
     <body>
         <%@include file="all_components/navbar.jsp" %>
         
-        <c:if test="${empty userobj}">
-            <c:redirect url="login.jsp"></c:redirect>
-        </c:if>
+       
         
          <c:if test="${ not empty succMsg}">
             <div class="alert alert-success" role="alert">

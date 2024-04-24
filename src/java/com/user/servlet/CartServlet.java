@@ -86,9 +86,10 @@ public class CartServlet extends HttpServlet {
 
                 c.setItemName(b.getItemName());
                 c.setM_year(b.getM_year());
+                c.setcPhoto(b.getPhotoName());
                 c.setPricee(b.getPrice());
                 c.setTotallPrice(b.getPrice());
-
+     
 
                 
 //                cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());

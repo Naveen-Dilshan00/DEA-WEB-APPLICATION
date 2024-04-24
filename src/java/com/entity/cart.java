@@ -21,6 +21,7 @@ package com.entity;
     private Double pricee;
     private int cQuantity;
     private Double totallPrice;
+    private String cPhoto;
 
     public int getCid() {
         return cid;
@@ -88,6 +89,16 @@ package com.entity;
     public void setTotallPrice(Double totallPrice) {
         this.totallPrice = totallPrice;
     }
+
+    public String getcPhoto() {
+        return cPhoto;
+    }
+
+    public void setcPhoto(String cPhoto) {
+        this.cPhoto = cPhoto;
+    }
+    
+    
     
     
 } 

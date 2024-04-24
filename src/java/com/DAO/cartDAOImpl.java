@@ -47,6 +47,7 @@ public class cartDAOImpl implements cartDAO{
                         row.setItemName(rs.getString("Item_Name"));
                         row.setPricee(rs.getDouble("price")*item.getcQuantity());
                         row.setcQuantity(item.getcQuantity());
+                        row.setcPhoto(rs.getString("Photo"));
                         products.add(row);
                     }
                 }

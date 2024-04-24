@@ -54,8 +54,8 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         <c:if test="${not empty userobj}">
              <div class="col-md-3">
 
-                 <a href="checkout.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
-                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+                 <a href="checkout1.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                
 
             <a href=" " class="btn btn-success">${userobj.name}</a>
             <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
@@ -65,8 +65,8 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         
         <c:if test="${empty userobj}">
              <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success">Login</a>
-            <a href="register.jsp" class="btn btn-primary text-white">Register</a>
+            <a href="login1.jsp" class="btn btn-success">Login</a>
+            <a href="register1.jsp" class="btn btn-primary text-white">Register</a>
              </div>
         </c:if>
     </div>
