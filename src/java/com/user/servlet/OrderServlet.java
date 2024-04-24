@@ -97,8 +97,8 @@ public class OrderServlet extends HttpServlet {
                 
                 if(cart_list.isEmpty())
                 {
-                    session.setAttribute("failedMsg","ADD Item");
-                    response.sendRedirect("checkout.jsp");
+                    session.setAttribute("OfailedMsg","ADD Item");
+                    response.sendRedirect("checkout1.jsp");
                 }
                 else{
                     itemOrderDAOImpl dao2 = new itemOrderDAOImpl(DBConnect.getConn());
@@ -126,8 +126,8 @@ public class OrderServlet extends HttpServlet {
                 
                 
                if(Paymenttype.equals("nonselect")){
-                   session.setAttribute("failedMsg", "choose Payment Method");
-                   response.sendRedirect("placeOrder.jsp");
+                   session.setAttribute("OfailedMsg", "choose Payment Method");
+                   response.sendRedirect("placeOrder1.jsp");
                }
                else{
                     
@@ -136,6 +136,7 @@ public class OrderServlet extends HttpServlet {
                     if(f){
                         response.sendRedirect("succes.jsp");
                         System.out.println("Order succesfull");
+                        session.removeAttribute("cart-list");
                     }
                     else{
                         System.out.println("Order failed");

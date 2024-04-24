@@ -90,14 +90,14 @@
                            <div class="right">
                            <div class="text mb-5">
                                
-                               <c:if test="${ not empty SuccMsg}">
+                               <c:if test="${ not empty RSuccMsg}">
                                         <div class="alert alert-success" role="alert">
                                             <P>${SuccMsg}</P>
                                         </div>
                                          <c:remove var="SuccMsg" scope="session"/>
                                      </c:if>
 
-                                    <c:if test="${ not empty faildMsg}">
+                                    <c:if test="${ not empty RfaildMsg}">
                                         <div class="alert alert-danger" role="alert">
                                          ${faildMsg}
                                         </div>

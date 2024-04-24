@@ -104,13 +104,14 @@ public class registerServlet extends HttpServlet {
 
                     if(f){
 //                        System.out.println("Account created succesfully");
-                           httpSession.setAttribute("SuccMsg" , "Registration Succesfully");
+                           httpSession.setAttribute("RSuccMsg" , "Registration Succesfully");
+                           
                            response.sendRedirect("register1.jsp");
                          
                     }
                     else{
 //                        System.out.println("Something went wrong");
-                           httpSession.setAttribute("faildMsg","Something wrong on server");
+                           httpSession.setAttribute("RfaildMsg","Something wrong on server");
                            response.sendRedirect("register1.jsp");
                            
                     }
@@ -118,7 +119,7 @@ public class registerServlet extends HttpServlet {
             else{
 //                System.out.println("Please check agree &term conditions");
                    
-                   httpSession.setAttribute("faildMsg","please check terms and conditions");
+                   httpSession.setAttribute("RfaildMsg","please check terms and conditions");
                     response.sendRedirect("register1.jsp");
             }
             
