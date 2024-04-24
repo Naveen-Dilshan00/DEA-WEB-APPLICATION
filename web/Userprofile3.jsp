@@ -1,8 +1,9 @@
 <%-- 
-    Document   : Userprofile1
-    Created on : 21-Apr-2024, 23:34:21
+    Document   : Userprofile3
+    Created on : 24-Apr-2024, 16:23:33
     Author     : HP
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -80,9 +81,8 @@
         }
 
         .sidebar ul li.account a {
-            background-color: #ccc;
-             border-top-right-radius: 20px; /* Border radius for the top-right corner */
-             border-bottom-right-radius: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
             padding: 10px 60px;
             bottom: 15cm;
         }
@@ -91,18 +91,16 @@
         .sidebar ul li:not(.account) a {
             padding: 10px 20px;
         }
-     
 
         
-             .sidebar ul li.security::after
+     .sidebar ul li.security::after
         .sidebar ul li.account::after,
-         .sidebar ul li.orders::after {
-        content: ">";
-        font-size: 20px;
-        color: #666; /* Adjust the color as needed */
-        margin-left: auto;
-        }
-
+        .sidebar ul li.orders::after {
+    content: ">";
+    font-size: 20px;
+    color: #666; /* Adjust the color as needed */
+    margin-left: auto;
+     }        
         .sidebar ul li::after {
             content: ">";
             font-size: 20px;
@@ -118,10 +116,19 @@
         /* Remove spacing and greater than mark between My Orders and Security */
         .sidebar ul li:nth-child(3) {
             padding-top: 0.5cm;
+            
         }
 
         .sidebar ul li:nth-child(3)::after {
             content: none;
+        }
+        .sidebar ul li.orders a{
+            
+            background-color: #ccc; 
+            border-top-right-radius: 20px; 
+             border-bottom-right-radius: 20px;
+             width: 4cm;
+        
         }
 
         /* Remove spacing and greater than mark between Security and Location */
@@ -141,7 +148,7 @@
             margin-left: auto;
         }
        .sign-out-button {
-    margin-top: 5cm; /* Adjust margin as needed */
+    margin-top: 4.5cm; /* Adjust margin as needed */
     background-color: #333; /* Background color for the button */
     color: #fff; /* Text color */
     padding: 10px 20px; /* Padding */
@@ -152,6 +159,9 @@
 .sign-out-button:hover {
     background-color: #555; /* Darker background color on hover */
 }
+
+
+
 
         .content {
             margin-left: 250px;
@@ -164,7 +174,7 @@
             flex-direction: column; /* Align items vertically */
             align-items: flex-start; 
             border-bottom: 3px solid #333;
-            padding-bottom: 5px;
+            padding-bottom: 1px;
            
         }
 
@@ -258,103 +268,36 @@
     color: #fff;
     margin-right: 10px
 }
+ hr {
+            border: none;
+            height: 0.5px; /* Adjust the height as needed */
+            background-color: gray; /* Adjust the color as needed */
+            margin: 20px 0; /* Adjust the margin as needed */
+            width: 31cm;
+        }
 
        
-        
  
 
-.prsonalinformation-form {
-    background-color: #ddd;
-      display: flex;
-      flex-direction: column;
-      width: 100px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ddd;
-    }
-    
-    .form-group {
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5cm;
-      margin-top: 0.5cm;
-    }
-    
-    .form-group label {
-      width: 150px;
-      text-align: center;
-      
-    }
-    
-    .form-group input[type="text"] {
-      width: 410px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    .form-group1 {
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5cm;
-      margin-top: 1cm;
-    }
-    
-    .form-group1 label {
-      width: 150px;
-      text-align:center;
-    }
-    
-    .form-group1 input[type="text"] {
-      width: 1020px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    .form-group2 {
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5cm;
-      margin-top: 1cm;
-    }
-    
-    .form-group2 label {
-      width: 150px;
-      text-align: center;
-    }
-    
-    .form-group2 input[type="text"] {
-      width: 410px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    
-    .form-buttons {
-    display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
-    margin-top: 20px; /* Adjust margin as needed */
-}
+  table {
+            width: 18cm;
+            height: 8cm;
+            border-collapse: collapse;
+            margin-left: 4cm;
+        }
 
-.cancel-button,
-.save-button {
-    padding: 10px 20px;
-    margin-left: 10px; /* Add some space between buttons */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 0.5cm;
-    margin-bottom: 1cm;
-}
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
 
-.cancel-button {
-    background-color: #ccc;
-    color: #333;
-}
-
-.save-button {
-    background-color: #333;
-    color: #fff;
-}
+        th {
+            background-color: #ccc;
+            height: 1cm
+        }
+  
+ 
 
 
     .still-have-questions {
@@ -364,6 +307,8 @@
             font-size: 20px; /* Adjust font size as needed */
             color: #666; 
             margin-bottom: 0.2cm;
+            margin-top: 1cm;
+            margin-right: 3px;
 }
 .contact-support-team{
      position: relative;
@@ -385,8 +330,8 @@
             border-radius: 10px;
             cursor: pointer;
             width: 120px;
-         
             text-align: center; /* Center the button text */
+           
             
            
 
@@ -397,8 +342,6 @@
     color: #fff;
     font-size: 14px;
     font-weight: bold;
-       
-      
     
     
 }
@@ -427,6 +370,7 @@
     <li class="security"><a href="#">Security</a></li>
     
 </ul>
+    
     <button class="sign-out-button">Sign Out</button>
     <ul>
                
@@ -460,34 +404,56 @@
 
                 
   
-           <form class="personalinformation-form" action="userprofile.jsp" method="post">
-    <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" placeholder="eg. Hande">
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" placeholder="eg. MErcel">
-    </div>
-    <div class="form-group1">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" placeholder="eg. Hande.Ercel">
-    </div>
-               <hr>
-               
-    <div class="form-group2">
-      <label for="email">Email Address:</label>
-      <input type="text" id="email" name="email" placeholder="Enter your email">
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" placeholder="Enter phone number">
-    </div>
-               <hr>
-               
-       <div class="form-buttons">
-            <button type="button" class="cancel-button">Cancel</button>
-            <button type="submit" class="save-button">Save Changes</button>
-        </div>
-              
+      <table>
+    <tr>
+        <th>Order ID</th>
+        <th>Order Item</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Payment Type</th>
+   <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>     
    
-  </form>
+   <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>     
+   
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>     
+   
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>     
+    
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>     
+      </table>
+        
+        <hr>
+   
+ 
                  <div class="still-have-questions">
                      Still have questions? </div>
                  <div class=" contact-support-team">
@@ -513,3 +479,4 @@
 
       
         
+

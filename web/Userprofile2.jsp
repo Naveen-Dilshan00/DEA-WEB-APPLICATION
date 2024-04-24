@@ -1,8 +1,9 @@
 <%-- 
-    Document   : Userprofile1
-    Created on : 21-Apr-2024, 23:34:21
+    Document   : Userprofile2
+    Created on : 24-Apr-2024, 11:08:15
     Author     : HP
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -80,44 +81,60 @@
         }
 
         .sidebar ul li.account a {
-            background-color: #ccc;
-             border-top-right-radius: 20px; /* Border radius for the top-right corner */
-             border-bottom-right-radius: 20px;
+          
+            border-radius: 5px;
             padding: 10px 60px;
             bottom: 15cm;
         }
+        
+        .sidebar ul li.security a {
+          background-color: #ccc;
+          border-radius: 5px;
+            padding: 10px 800px;
+            bottom: 15cm;
+            width: 6cm;
+            margin-top:0.2cm;
+            
+        }
+
+
        
 
         .sidebar ul li:not(.account) a {
             padding: 10px 20px;
         }
-     
 
-        
-             .sidebar ul li.security::after
+      
+        .sidebar ul li.security::after
         .sidebar ul li.account::after,
-         .sidebar ul li.orders::after {
-        content: ">";
-        font-size: 20px;
-        color: #666; /* Adjust the color as needed */
-        margin-left: auto;
-        }
+        .sidebar ul li.orders::after {
+    content: ">";
+    font-size: 20px;
+    color: #666; /* Adjust the color as needed */
+    margin-left: auto;
+}
 
-        .sidebar ul li::after {
+         .sidebar ul li::after {
             content: ">";
             font-size: 20px;
             color: #666;
             margin-left: auto;
         }
-
+   
         /* Apply spacing only between My Account and My Orders */
         .sidebar ul li:nth-child(2) {
             padding-top: 2cm;
+             
         }
 
         /* Remove spacing and greater than mark between My Orders and Security */
         .sidebar ul li:nth-child(3) {
             padding-top: 0.5cm;
+        }
+        .sidebar ul li.security a{
+            border-top-right-radius: 20px; /* Border radius for the top-right corner */
+             border-bottom-right-radius: 20px;
+             width: 4cm;
         }
 
         .sidebar ul li:nth-child(3)::after {
@@ -141,7 +158,7 @@
             margin-left: auto;
         }
        .sign-out-button {
-    margin-top: 5cm; /* Adjust margin as needed */
+    margin-top: 4.5cm; /* Adjust margin as needed */
     background-color: #333; /* Background color for the button */
     color: #fff; /* Text color */
     padding: 10px 20px; /* Padding */
@@ -149,9 +166,6 @@
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.sign-out-button:hover {
-    background-color: #555; /* Darker background color on hover */
-}
 
         .content {
             margin-left: 250px;
@@ -277,8 +291,8 @@
       margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 0.5cm;
-      margin-top: 0.5cm;
+      margin-bottom:  1cm;
+      margin-top: 1cm;
     }
     
     .form-group label {
@@ -287,7 +301,7 @@
       
     }
     
-    .form-group input[type="text"] {
+    .form-group input[type="password"] {
       width: 410px;
       padding: 10px;
       border: 1px solid #ccc;
@@ -296,38 +310,21 @@
       margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 0.5cm;
+      margin-bottom: 1cm;
       margin-top: 1cm;
     }
     
     .form-group1 label {
       width: 150px;
-      text-align:center;
+      text-align:left;
     }
-    
-    .form-group1 input[type="text"] {
+  
+    .form-group1 input[type="password"] {
       width: 1020px;
       padding: 10px;
       border: 1px solid #ccc;
     }
-    .form-group2 {
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5cm;
-      margin-top: 1cm;
-    }
     
-    .form-group2 label {
-      width: 150px;
-      text-align: center;
-    }
-    
-    .form-group2 input[type="text"] {
-      width: 410px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
     
     .form-buttons {
     display: flex;
@@ -385,8 +382,9 @@
             border-radius: 10px;
             cursor: pointer;
             width: 120px;
-         
             text-align: center; /* Center the button text */
+            
+}
             
            
 
@@ -397,6 +395,7 @@
     color: #fff;
     font-size: 14px;
     font-weight: bold;
+    
        
       
     
@@ -420,13 +419,15 @@
     
 </div>
 <div class="sidebar">
-     <ul>
+    <ul>
         
     <li class="account"><a href="#">My Account</a></li> 
     <li class="orders"><a href="#">My Orders</a></li> 
     <li class="security"><a href="#">Security</a></li>
     
 </ul>
+
+   
     <button class="sign-out-button">Sign Out</button>
     <ul>
                
@@ -462,23 +463,18 @@
   
            <form class="personalinformation-form" action="userprofile.jsp" method="post">
     <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" placeholder="eg. Hande">
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" placeholder="eg. MErcel">
+      <label for="currentpassword">Current Password:</label>
+      <input type="password" id="currentpassword" name="currentpassword" placeholder="">
+      <label for="newpassword">New password:</label>
+      <input type="password" id="newpassword" name="newpassword" placeholder="">
     </div>
     <div class="form-group1">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" placeholder="eg. Hande.Ercel">
+      <label for="confirmnewtpassword">Confirm New Password:</label>
+      <input type="password" id="confirmnewtpassword" name="confirmnewtpassword" placeholder="">
     </div>
-               <hr>
+             
                
-    <div class="form-group2">
-      <label for="email">Email Address:</label>
-      <input type="text" id="email" name="email" placeholder="Enter your email">
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" placeholder="Enter phone number">
-    </div>
+    
                <hr>
                
        <div class="form-buttons">
@@ -497,6 +493,11 @@
                  <div class="get-support-button">
             <button type="button" class="get-support-button">Get Support</button>
                  </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
                 
                  
@@ -513,3 +514,4 @@
 
       
         
+
