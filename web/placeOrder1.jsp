@@ -45,6 +45,8 @@
                  color: black;
                  padding-bottom: 8px;
                  border-bottom: 1px solid silver;
+                 
+                 
              }
              .content
              {
@@ -52,13 +54,14 @@
                  flex-wrap: wrap;
                  justify-content: space-between;
                  padding: 20px 0;
+                  
              }
              .input-box
              {
                  display: flex;
                  flex-wrap: wrap;
                  width: 50%;
-                 padding-bottom: 15px;
+                 padding-bottom: 20px;
              }
              .input-box:nth-child(2n)
              {
@@ -66,17 +69,19 @@
              }
              .input-box input
              {
-                 height: 40px;
+                 height: 50px;
                  width: 95%;
                  padding: 0 10px;
                  border-radius: 5px;
-                 border: 1px solid black;
-                 outline: none;
+                 border: 1px solid silver;
+                 
+                  outline-color: mediumseagreen;
              }
              .button-container
              {
-                 margin: 15px 0;
+                 margin: 40px 0;
                  width: 100%;
+              
              }
              .button-container button
              {
@@ -88,25 +93,29 @@
                  color: white;
                  border: none;
                  border-radius: 5px;
-                 background-image:linear-gradient(to right,green,yellowgreen);
+                 background-image:linear-gradient(to right,mediumseagreen,mediumseagreen);
                  
                  
                  
              }
              .button-container button:hover
              {
-                 background-image: linear-gradient(to right,green,yellowgreen);
+                 background-image: linear-gradient(to right,mediumseagreen,mediumseagreen);
              }
              textarea
              {
                  width:100%;
-                 margin-top: 6px;
+                 margin-top: 0px;
                  margin-bottom: 16px;
-                 border: 1px solid gray;
+                 border: 1px solid silver;
                  border-radius: 5px;
-                 border: 1px solid black;
-                 outline-color: black;
+                 outline-color: mediumseagreen;
+                 height:150px;
+                 padding-top:5px;
+                 padding-left: 10px;
+                 font-family: sans-serif;
              }
+             
             .container1
             {
                 max-width: 100%;
@@ -116,23 +125,22 @@
             {
                 padding: 20px;
             }
-            .cart
-            {
-                display: flex;
-                width: 100%;
-            }
+            
             .products
             {
                 flex: 0.75;
+                
             }
             .product
             {
                 display: flex;
                 width: 100%;
-                height: 200px;
+                height: 170px;
                 overflow: hidden;
                 border: 1px solid silver;
                 margin-bottom: 20px;
+                
+                
             }
             .product:hover
             {
@@ -143,7 +151,7 @@
             .product>img
             {
                 width: 300px;
-                height: 200px;
+                height: 170px;
                 object-fit: cover;
             }
             .product>img:hover
@@ -163,31 +171,32 @@
             .product-chnage
             {
                 position: absolute;
-                bottom: 20px;
-                right: 20px;
+                bottom: 30px;
+                right: 10px;
                 padding: 10px 25px;
-                background-color: green;
-                color: white;
+                background-color: white;
+                color: mediumseagreen;
                 cursor: pointer;
                 border-radius: 5px;
+                
             }
             .product-chnage:hover
             {
                 background-color: white;
-                color: green;
+                color: mediumseagreen;
                 font-weight: 600;
                 border: 1px solid green;
             }
-           .product-total
+          .product-total
            {
                
                flex: 0.25;
                padding: 20px;
                height: 150px;
                width: 100%;
-               border: 1px solid silver;
+               border: 1px solid white;
                border-radius: 5px;
-               
+              
               
            }
            .product-total p{
@@ -205,11 +214,12 @@
                background-color: tomato;
                color: white;
                text-decoration: none;
-               
+               border-radius: 5px;
            }
            .product-total a:hover
            {
                background-color: red;
+            
            }
            @media screen and (max-width:700px)
            {
@@ -230,6 +240,7 @@
                {
                    margin-bottom: 10px;
                }
+               
            }
            @media screen and (max-width:900px)
            {
@@ -241,6 +252,7 @@
                {
                    margin-left: 0;
                    margin-bottom: 20px;
+                   
                   
                }
            }
@@ -259,16 +271,38 @@
                font-size: 15px;
                padding: 15px;
            }
+           
+          
+           .cart1
+           {
+               border-left: 1px solid silver;
+               padding-left: 40px;
+             
+           }
+         
+             .product-date 
+             {
+                 color: silver;
+                 
+             }
+             .link a
+             {
+                 color: mediumseagreen;
+                 padding-left: 5px;
+             }
+             
+             
         </style>
     </head>
     <body>
         
             
-            
+     
            
             <div class="container">
                 <form action="" method="post">
                   <h5>Add Shipping Address</h5>
+                 <section class="checkout">
                   <div class="content">
                       <div class="input-box">
                           
@@ -287,54 +321,72 @@
                           <input type="text" name="email" placeholder="Email"required>
                       </div>
                       
-                      
                       <div class="input-box">
                           
                           <input type="text" name="state" placeholder="State"required>
                       
                       </div>
+                     
                       <div class="input-box">
                           <input type="text" name="city" placeholder="City/District/Town"required>
                       
                       </div>
-                      <div class="input-box" >
+                      
+                      
+                     
+                      
+                  </div>
+                     
+                      <div class="input-box1" >
                           
-                          <textarea  name="address" id="add" cols="30" rows="10" placeholder="Address(Area and Street)"required></textarea>
+                          <textarea  class="add" name="address" id="add" cols="30" rows="5" placeholder="Address(Area and Street)"required></textarea>
+                      
                       </div>
-                      <div>
-                          <p> <input type="checkbox"> Same as Billing Address
+                    
+                     
+                  
+                      <div class="link">
+                          <p> <input type="checkbox" > Same as Billing Address
                               
-                            <a href="#">  Add Billing Address</a></p>
+                            <a href="#" >  Add Billing Address</a></p>
                       </div>
                       <div class="button-container">
                           <center><button type="submit">Save & Deliver here </button></center> 
                       </div>
-                      
-                  </div>
                   </div>
                 </form>
-                <div class="container1">
-                    <form action="" method="post">
-                        <p>Cart------Delivery------Payment</p>
-                        <h2>Order Summary</h2>
+</section>
+                  
+                 <section class="cart1">
+                     
+                    <div class="cart-item-box">
                         <div class="order-summary">
+                            
+                            <p><center>Cart------Delivery------Payment</center></p>
+                      
+                            <div>
+                            <h3>Order Summary</h3>
+                        </div>
                             <p>
                                         <span>Order Total</span>
                                         <span>$499.99</span>
                             </p><br>
                             <p>
                                         <span>Delivery Charges </span>
-                                        <span>$25.99</span>
-                                    </p>
+                                        <span>$10.99</span>
+                            </p><br>
                         </div>
-                        <div class="cart">
+                        <div>
+                            <h3>Delivery Summary</h3><br>
+                        </div>
+                         <div class="cart">
                             <div class="products">
                                 <div class="product">
                                     <img src="Watch1.jpg">
                                     <div class="product-info">
-                                        <h3 class="product-del">Standard Delivery</h3>
-                                        <h4 class="product-date">Expected on 21 May 2024</h4>
-                                        <h4 class="product-price">$499.99</h4>
+                                        <b> <p class="product-del">Standard Delivery</p></b>
+                                        <p class="product-date">Expected on 21 May 2024</p><br>
+                                        <b><p class="product-price">$225.99</p></b>
                                         <p class="product-chnage">
                                             <span class="Change">Change</span>
                                         </p>
@@ -342,20 +394,21 @@
                                     </div>
                                 <div class="product-total" >
                                     <p>
-                                        <span>Total Price</span>
-                                        <span>$525.20</span>
+                                        <span><b>Total Payable</b></span>
+                                        <span><b>$236.98</b></span>
                                     </p>
                                     <a href="#">Place Order</a>
                                 </div>
                             </div>
                             
-                        </div>
                         
-                    </form>
                     
-                    
-                    
-                </div>
+                    </div>
+                     
+                       
+                </section>
+
+
             </div>
                     
                 
