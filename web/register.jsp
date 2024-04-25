@@ -4,7 +4,11 @@
     Author     : Naveen Dilshan
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+                            <h4 class="text-center">Registration Page</h4>
+                            
+                            <form method="POST" action="registerServlet">
+                                
+ <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,11 +27,7 @@
                         
                        
                         <div class="card-body">
-                            <h4 class="text-center">Registration Page</h4>
-                            
-                            <form method="POST" action="registerServlet">
-                                
-                                <div class="form-group">
+                               <div class="form-group">
                                         <label for="exampleInputPassword1">Name</label>
                                         <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Name" name="fname">
                                 </div>
