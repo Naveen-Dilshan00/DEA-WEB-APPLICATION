@@ -284,6 +284,17 @@
     </div>
 </div>
 <div class="sidebar">
+<<<<<<< Updated upstream
+=======
+     <ul>
+        
+    <li class="account"><a href="Userprofile1.jsp">My Account</a></li> 
+    <li class="orders"><a href="Userprofile3.jsp">My Orders</a></li> 
+    <li class="security"><a href="Userprofile2.jsp">Security</a></li>
+    
+</ul>
+    <button class="sign-out-button">Sign Out</button>
+>>>>>>> Stashed changes
     <ul>
         <li class="account"><a href="#">My Account</a></li>
         <li><a href="#">My Orders</a></li>
