@@ -403,27 +403,19 @@
 }
 
     </style>
+    <%@include file="all_components/allCSS.jsp" %>
 </head>
 <body>
-<div class="navbar">
-    <div class="navbar-logo">
-        <img src="apple_phone_image.png" alt="Apple Phone">
-    </div>
-    <div class="navbar-nav">
-        <a href="#">iPhone</a>
-        <a href="#">Mac</a>
-        <a href="#">AirPods</a>
-        <a href="#">iPads</a>
-        <a href="#">Support</a>
-    </div>
+<%@include file="all_components/navbar.jsp" %>
     
-</div>
+
+
 <div class="sidebar">
     <ul>
         
-    <li class="account"><a href="#">My Account</a></li> 
-    <li class="orders"><a href="#">My Orders</a></li> 
-    <li class="security"><a href="#">Security</a></li>
+    <li class="account"><a href="Userprofile1.jsp">My Account</a></li> 
+    <li class="orders"><a href="Userprofile3.jsp">My Orders</a></li> 
+    <li class="security"><a href="Userprofile2.jsp">Security</a></li>
     
 </ul>
 
@@ -461,10 +453,11 @@
 
                 
   
-           <form class="personalinformation-form" action="userprofile.jsp" method="post">
+           <form class="personalinformation-form" action="UpdateProfileServlet" method="POST">
     <div class="form-group">
+      <input type="hidden"   name="id" value="${userobj.id}"  >
       <label for="currentpassword">Current Password:</label>
-      <input type="password" id="currentpassword" name="currentpassword" placeholder="">
+      <input type="password" id="currentpassword" name="currentpassword" >
       <label for="newpassword">New password:</label>
       <input type="password" id="newpassword" name="newpassword" placeholder="">
     </div>
@@ -478,7 +471,7 @@
                <hr>
                
        <div class="form-buttons">
-            <button type="button" class="cancel-button">Cancel</button>
+            <button type="reset" class="cancel-button">Cancel</button>
             <button type="submit" class="save-button">Save Changes</button>
         </div>
               
