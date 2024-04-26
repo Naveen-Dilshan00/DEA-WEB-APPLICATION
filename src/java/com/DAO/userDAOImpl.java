@@ -115,6 +115,29 @@ public class userDAOImpl implements userDAO{
         return f;
     }
     
+    
+    public boolean updatePassword(user us){
+        boolean f=false;
+            
+        try{
+           String sql ="update user set Password =? where Id =?";
+           PreparedStatement ps = conn.prepareStatement(sql);
+           ps.setString(1,us.getPassword());
+           ps.setInt(2,us.getId());
+           
+           int i =ps.executeUpdate();
+           if(i==1){
+               f=true;
+           }
+           
+        }
+        catch(Exception e){
+            
+        }
+        
+        return f;
+    }
+    
     public boolean updateProfile(user us){
         boolean f=false;
             

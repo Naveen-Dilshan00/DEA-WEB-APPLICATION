@@ -67,7 +67,7 @@ public class validateServlet extends HttpServlet {
 
             if(cart_list == null)
                 {
-                    session.setAttribute("failedMsg","ADD Item");
+                    session.setAttribute("EmptyfailedMsg","ADD some Items");
                     response.sendRedirect("checkout1.jsp");
                 }
             else{
