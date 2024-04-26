@@ -316,63 +316,6 @@
             
            <div class="full-body">
                
-            
-<!--               <div class="container col-md-7">-->
-<!--                <form action="" method="post">
-                  <h5>Add Shipping Address</h5>
-                 <section class="checkout">
-                  <div class="content">
-                      <div class="input-box">
-                          
-                          <input type="text" name="name" placeholder="Name"required>
-                      </div>
-                      <div class="input-box">
-                          
-                          <input type="tel" name="phone" placeholder="Phone Number"required>
-                      </div>
-                      <div class="input-box">
-                          
-                          <input type="text" name="pincode" placeholder="Pin code"required>
-                      </div>
-                      <div class="input-box">
-                          
-                          <input type="text" name="email" placeholder="Email"required>
-                      </div>
-                      
-                      <div class="input-box">
-                          
-                          <input type="text" name="state" placeholder="State"required>
-                      
-                      </div>
-                     
-                      <div class="input-box">
-                          <input type="text" name="city" placeholder="City/District/Town"required>
-                      
-                      </div>
-                      
-                      
-                     
-                      
-                  </div>
-                     
-                      <div class="input-box1" >
-                          
-                          <textarea  class="add" name="address" id="add" cols="30" rows="5" placeholder="Address(Area and Street)"required></textarea>
-                      
-                      </div>
-                    
-                     
-                  
-                      <div class="link">
-                          <p> <input type="checkbox" > Same as Billing Address
-                              
-                            <a href="#" >  Add Billing Address</a></p>
-                      </div>
-                      <div class="button-container">
-                          <center><button type="submit">Save & Deliver here </button></center> 
-                      </div>
-                  </div>
-                </form>-->
                 <div class="container1 col-md-5">
                     <form action="" method="post">
                         <h2>Order Summary</h2>
@@ -424,7 +367,7 @@
                     </form>
                   </div>
 
-
+                </div>
                      
                
                 <div class="col-md-7">
@@ -451,7 +394,7 @@
                                  <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}" name="phno">
                                </div>
                              </div>
-                                                            <div class="form-row">
+                             <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">Address</label>
                                  <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="address" value="${userobj.email}">
@@ -491,8 +434,8 @@
                 </div>
 
 
-                    
-           </div>
+                </div>        
+           
             
                     
                 

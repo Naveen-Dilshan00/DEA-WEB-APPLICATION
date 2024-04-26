@@ -1,4 +1,6 @@
-    <%-- 
+    <%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DAO.itemDAOImpl"%>
+<%-- 
         Document   : shop
         Created on : Apr 11, 2024, 9:56:35 AM
         Author     : ASUS TUF
@@ -179,7 +181,11 @@
              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         </head>
         <body>
-            <p>navbar</p>
+            <%
+            user u =(user)session.getAttribute("userobj");
+            %>
+            
+            <%@include file="all_components/navbar.jsp"%>
 
             <section class="main">
                <div class="container">
@@ -257,122 +263,62 @@
     <!-- Products  -->
 
                         <!-- 1st row  -->
-       <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="image/ipad.jpg" alt="Card image cap">
+              
+    <div class="container">
+        <div class="row">
+        <%
+                    itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+                    List<itemDetailes> list2 = dao.getAllipad();
+                    for(itemDetailes b : list2){
+                    %>
+     
+      <div class="col-md-3">
+       <div class="card card-ho">
+           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad Pro</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$800</span></h5></div>
+                <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
             </div>
          
-          <p class="card-text">128GB</p>
+          <p class="card-text">512GB</p>
         </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
+            <%
+                if(b.getStatus().equals("Active")){
+            %>
+                      <%
+                            if(u == null){
+                      %>
+                            <div class="card-footer">
+                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
+                            </div>
+                      <%
+                            } else{
+                      %>
+                            <div class="card-footer">
+                                <a class="btn btn-outline-dark" href="view_Items1.jsp?Iid=<%=b.getItemId()%>" class="card-button">Buy Now</a>
+                            </div>
+                      <%
+                            }
+                      %>
+            <%
+                } else{
+            %>
+                <div class="card-footer">
+                   <a href="view_Items1.jsp?Iid=<%=b.getItemId()%>" class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                </div>
+            <%
+                }
+            %>
       </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipad2.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad Air 5</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$699</span></h5></div>
-            </div>         
-            <p class="card-text">10.9 inch</p>
-        </div>
-        <div class="card-footer">
-          <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipad3.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad 9</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$599</span></h5></div>
-            </div>          
-            <p class="card-text">10.2 inche</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-
-    <div class="card">
-        <img class="card-img-top" src="image/ipad4.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad 10</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$499</span></h5></div>
-            </div>         
-            <p class="card-text">10.9 inch(2022)</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
+     </div>
+      <%
+      }
+      %>
+   </div>
     </div>
 
-
-
-                         <!-- 2nd row  -->
-
-      <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="image/ipad9.jpg" alt="Card image cap">
-        <div class="card-body">
-         <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad Pro</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$999</span></h5></div>
-            </div>          
-            <p class="card-text">M2 chip</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipad6.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad Mini 6</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$550</span></h5></div>
-            </div>        
-            <p class="card-text">8.3 inch</p>
-        </div>
-        <div class="card-footer">
-          <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipad7.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad 8</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$499</span></h5></div>
-            </div>          
-            <p class="card-text">10.2 inch</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-
-    <div class="card">
-        <img class="card-img-top" src="image/ipad8.jpg" alt="Card image cap">
-        <div class="card-body">
- <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPad air 4</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$699</span></h5></div>
-            </div>          
-            <p class="card-text">M1 chip</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-    </div>
+       
 
     <div class="section layout_padding">
                 <div class="container">

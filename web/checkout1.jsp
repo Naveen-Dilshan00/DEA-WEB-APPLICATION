@@ -220,11 +220,11 @@ a:hover{
                         </div>
                     </div>    
             
-             <c:if test="${ not empty SuccMsg}">
+             <c:if test="${ not empty RemoveSuccMsg}">
                <div class="alert alert-success" role="alert">
-                    ${SuccMsg}
+                    ${RemoveSuccMsg}
                </div>
-               <c:remove var="SuccMsg" scope="session"/>
+               <c:remove var="RemoveSuccMsg" scope="session"/>
             </c:if>
         
             <c:if test="${ not empty OfailedMsg}">
