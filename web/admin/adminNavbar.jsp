@@ -17,7 +17,7 @@
                 <button class="btn btn-primary my-2 my-sm-0 " type="submit">Search</button>
             </form>
         </div>
-        
+
         <div class="col-md-3">
             <a href="login.jsp" class="btn btn-success">Login</a>
             <a href="register.jsp" class="btn btn-primary text-white">Register</a>
@@ -51,5 +51,7 @@
       </li>-->
     </form>
   </div>
+
 </nav>
  
+

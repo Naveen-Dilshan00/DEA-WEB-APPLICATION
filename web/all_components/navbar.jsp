@@ -4,6 +4,39 @@
     Author     : Naveen Dilshan
 --%>
 
+
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.cartDAOImpl"%>
+<%@page import="com.entity.cart"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.user"%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
+
+
+
+<%
+ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
+    List<cart> cartProducts = null;
+    if(cart_list !=null){
+        cartDAOImpl Dao = new cartDAOImpl(DBConnect.getConn());
+        cartProducts = Dao.getCartProducts(cart_list);
+        Double Total = Dao.getTotalCartPrice(cart_list);
+        request.setAttribute("cart_list", cart_list);
+        request.setAttribute("total",Total);
+    }
+    
+    DecimalFormat dcf = new DecimalFormat("#.##");
+    request.setAttribute("dcf",dcf);
+%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
+
+
 <div class="container-fluid" style="height:10px;background-color:#303f9f"></div>
 
 <div class="container-fluid p-3">
@@ -18,10 +51,24 @@
             </form>
         </div>
         
-        <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success">Login</a>
-            <a href="register.jsp" class="btn btn-primary text-white">Register</a>
-        </div>
+        <c:if test="${not empty userobj}">
+             <div class="col-md-3">
+
+                 <a href="checkout1.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                
+
+            <a href=" " class="btn btn-success">${userobj.name}</a>
+            <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
+             </div>
+        
+        </c:if>
+        
+        <c:if test="${empty userobj}">
+             <div class="col-md-3">
+            <a href="login1.jsp" class="btn btn-success">Login</a>
+            <a href="register1.jsp" class="btn btn-primary text-white">Register</a>
+             </div>
+        </c:if>
     </div>
 </div>
 
@@ -36,16 +83,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Watches</a>
+        <a class="nav-link" href="ipadh.jsp"><i class="fa-solid fa-book-open"></i>Ipad</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Phones</a>
+        <a class="nav-link" href="iphoneh.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa-solid fa-book-open"></i>Laptops</a>
+        <a class="nav-link" href="mach.jsp"><i class="fa-solid fa-book-open"></i>MacBook</a>
       </li>
 <!--      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +110,7 @@
       </li>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</button>
+      <a href="settings.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
       <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fa-regular fa-address-book"></i>Contact Us</button>
     </form>
   </div>
