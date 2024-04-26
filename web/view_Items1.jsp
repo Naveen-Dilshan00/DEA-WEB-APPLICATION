@@ -4,6 +4,10 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.entity.user"%>
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DAO.itemDAOImpl"%>
+<%@page import="com.DB.DBConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -267,6 +271,16 @@ a:hover{
   </head>
 
   <body>
+      <%
+            user u =(user)session.getAttribute("userobj");
+            %>
+      
+      <%
+          int id = Integer.parseInt(request.getParameter("Iid"));
+          itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+          itemDetailes b = dao.getItemsById(id);
+        
+      %>
   
   <div class="container">
     <div class="card">
@@ -275,14 +289,14 @@ a:hover{
           <div class="preview col-md-6">
             
             <div class="preview-pic tab-content">
-              <div class="tab-pane active" id="pic-1"><img src="Items_img/14green.jpg" /></div>
+              <div class="tab-pane active" id="pic-1"><img src="Items_img/<%=b.getPhotoName()%>" /></div>
               <div class="tab-pane" id="pic-2"><img src="images/14purple.jpg" /></div>
               <div class="tab-pane" id="pic-3"><img src="images/14gold.jpg" /></div>
               <div class="tab-pane" id="pic-4"><img src="images/14white.jpg" /></div>
               <div class="tab-pane" id="pic-5"><img src="images/14blue.jpg" /></div>
             </div>
             <ul class="preview-thumbnail nav nav-tabs">
-              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="Items_img/14green.jpg" /></a></li>
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="Items_img/<%=b.getPhotoName()%>" /></a></li>
               <li><a data-target="#pic-2" data-toggle="tab"><img src="Items_img/14purple.jpg" /></a></li>
               <li><a data-target="#pic-3" data-toggle="tab"><img src="Items_img/14gold.jpg" /></a></li>
               <li><a data-target="#pic-4" data-toggle="tab"><img src="Items_img/14white.jpg" /></a></li>
@@ -291,12 +305,12 @@ a:hover{
             
           </div>
           <div class="details col-md-6">
-                                            <span class="review-no1">Home > iPhone > <span class="hed">iPhone 15 Pro Max</span></span>
-            <h3 class="product-title">iPhone 14 Pro</h3>
+                                            <span class="review-no1">Home > iPhone > <span class="hed">iPhone 15 </span></span>
+            <h3 class="product-title"><%=b.getItemName()%></h3>
             <div class="rating">
-              <span class="review-no">In stock</span>
+              <span class="review-no"><%=b.getStatus()%></span>
             </div>
-            <h4 class="price">$799</h4>
+            <h4 class="price"><%=b.getPrice()%></h4>
                                                 <p class="pdrop"> <s>$869</s></p>
                                                 <br><br><br><br>
                                                 <div class="colors">
@@ -338,7 +352,7 @@ a:hover{
                                                 <div class="col">
                                                     <div><br></div>
                                                     <div> 
-                                                    <button class="btn2">Add To Cart</button>
+                                                    <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
                                                     <button class="btn3">Buy Now</button>
                                                     </div>
                                                 </div>

@@ -42,9 +42,9 @@
                                         <label for="exampleFormControlSelect1">Item catergories</label>
                                         <select  name="iCater "class="form-control" id="exampleFormControlSelect1">
                                           <option>--Select--</option>
-                                          <option value="Phone">Phone</option>
-                                          <option value="Laptop">Laptop</option>
-                                          <option>4</option>
+                                          <option value="IPhone">IPhone</option>
+                                          <option value="Laptop">MacBook</option>
+                                          <option value="IPad">Ipad</option>
                                           
                                         </select>
                                      </div>
