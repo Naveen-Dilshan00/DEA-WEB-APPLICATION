@@ -167,6 +167,169 @@ margin-bottom: 30px;
     .b2:hover b {
       color: white !important;
     }
+    
+     /*contact form*/
+
+
+.contacted{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    margin: auto;
+    margin-top: 5em;
+}
+
+.sectionHeader{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--primaryColor);
+    margin-bottom: .5em;
+}
+
+.heading,.sub-heading{
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+.heading{
+    font-size: 1.5rem;
+}
+
+.sub-heading{
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.contactForm{
+    display: grid;
+    gap: 3em;
+}
+
+form{
+    width: 100%;
+    margin-top: 3em;
+}
+
+.para{
+    color: var(--paraColor);
+    font-size: 1.1rem;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+.para2{
+    text-align: left;
+}
+
+.input{
+    width: 95%;
+    max-width: 700px;
+    border: none;
+    font-size: .9rem;
+    padding: 1em;
+    outline: none;
+    background-color: var(--formBg);
+    color: var(--paraColor);
+    border-radius: 10px;
+    border: 1px solid rgb(53, 53, 53);
+    margin-bottom: 1em;
+
+}
+.input-submit{
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.input-submit:hover{
+  background-color: rgb(37, 0, 101);
+  color: white;
+  
+}
+
+.input:focus{
+    border: 1px solid var(--primaryColor);
+}
+
+.input::placeholder{
+    text-transform: capitalize;
+}
+
+.submit{
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.map-container{
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.mapBg{
+    position: absolute;
+    background-color: var(--primaryColor);
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 90%;
+    border-radius: 20px;
+}
+
+.map{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+}
+
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.contactMethod{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    text-align: left;
+}
+
+.method{
+    display: flex;
+    align-items: center;
+}
+
+.contactIcon{
+    font-size: 2rem;
+    color: var(--primaryColor);
+    width: 70px;
+    padding: 5px;
+    margin: 5px;
+}
+
+@media screen and (min-width:800px) {
+    .contacted{
+        max-width: 1100px;
+    }
+    .contactForm{
+        grid-template-columns: 1fr 1fr;
+    }   
+
+    .contactMethod{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 
 </style>
   
@@ -353,7 +516,60 @@ margin-bottom: 30px;
   </div>
   </section>
   
+<!-- Contact Form -->
 
+   <section class="contact-form">
+    <div class = "contacted">
+    <h1 class="sectionHeader">contact us</h1>
+    <h3 class="heading">Get In Touch!</h3>
+    <p class="para">We are happy to help you 24 x 7 for your better experience.</p>
+    
+    <div class="contactForm">
+        <form action="#">
+         <h1 class="sub-heading">Need Support !</h1>
+         <p class="para para2">Contact us. We are happy to help you.</p>
+         <input type="text" class="input" placeholder="your name">
+         <input type="text" class="input" placeholder="your email">
+         <input type="text" class="input" placeholder="your Subject">
+         <textarea class="input" cols="30" rows="5" placeholder="Your message..."></textarea>
+         <input type="submit" class="input-submit" value="Send Message">
+        </form>
+
+        <div class="map-container">
+            <div class="mapBg"></div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63389.390851899916!2d79.89510953610319!3d6.789688842325403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24f91d281cc5d%3A0xea4b2fcd3ce0e74e!2sPiliyandala!5e0!3m2!1sen!2slk!4v1714107302817!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactMethod">
+        <div class="method">
+            <i class="fa-solid fa-location-dot contactIcon"></i>
+            <article class="text">
+                <h1 class="sub-heading">Location</h1>
+                <p class="para">No 15/2C , Samagi Mawatha , Piliyandala</p>
+            </article>
+        </div>
+
+        <div class="method">
+            <i class="fa-solid fa-envelope contactIcon"></i>
+            <article class="text">
+                <h1 class="sub-heading">Email</h1>
+                <p class="para">tharusharasath@gmail.com </p>
+            </article>
+        </div>
+
+        <div class="method">
+            <i class="fa-solid fa-phone contactIcon"></i>
+            <article class="text">
+                <h1 class="sub-heading">Phone</h1>
+                <p class="para">+ 94-76 39 466 18</p>
+            </article>
+        </div>
+    </div>
+  </div>
+   </section>
  
 </body>
 </html>
