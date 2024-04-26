@@ -185,7 +185,7 @@ margin-bottom: 30px;
     text-transform: capitalize;
     font-weight: bold;
     font-size: 2.5rem;
-    color: var(--primaryColor);
+   
     margin-bottom: .5em;
 }
 
@@ -252,7 +252,7 @@ form{
 }
 
 .input:focus{
-    border: 1px solid var(--primaryColor);
+    border: 1px solid 
 }
 
 .input::placeholder{
@@ -260,7 +260,7 @@ form{
 }
 
 .submit{
-    background-color: var(--primaryColor);
+    background-color: black;
     color: var(--textColor);
     font-weight: bold;
     cursor: pointer;
@@ -275,7 +275,7 @@ form{
 
 .mapBg{
     position: absolute;
-    background-color: var(--primaryColor);
+    background-color:white ;
     top: 0;
     right: 0;
     width: 200px;
@@ -310,7 +310,7 @@ form{
 
 .contactIcon{
     font-size: 2rem;
-    color: var(--primaryColor);
+    color: black;
     width: 70px;
     padding: 5px;
     margin: 5px;
@@ -329,8 +329,6 @@ form{
         justify-content: space-between;
     }
 }
-
-
 </style>
   
 
