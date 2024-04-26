@@ -155,11 +155,17 @@
                         <form action="LoginServlet" method="POST" class="right">
                             
                             
-                             <c:if test="${ not empty failedMsg}">
+                             <c:if test="${ not empty LogfailedMsg}">
                                         <div class="alert alert-danger" role="alert">
-                                         ${failedMsg}
+                                         ${LogfailedMsg}
                                         </div>
-                                         <c:remove var="failedMsg" scope="session"/>
+                                         <c:remove var="LogfailedMsg" scope="session"/>
+                                    </c:if>
+                            <c:if test="${ not empty LogSuccMsg}">
+                                        <div class="alert alert-success" role="alert">
+                                         ${LogSuccMsg}
+                                        </div>
+                                         <c:remove var="LogSuccMsg" scope="session"/>
                                     </c:if>
                                         
                                

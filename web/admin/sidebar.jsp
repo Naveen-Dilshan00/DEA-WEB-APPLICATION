@@ -51,7 +51,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="logout">
+            <a href="../index.jsp" class="logout">
             <i class='bx bx-log-out bx-flip-horizontal' ></i>
             <span class="text">LogOut</span>
             </a>

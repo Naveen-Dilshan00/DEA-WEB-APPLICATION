@@ -78,46 +78,60 @@ public class UpdateProfileServlet extends HttpServlet {
             throws ServletException, IOException {
 //        processRequest(request, response);
 
-         try{
-            int id = Integer.parseInt(request.getParameter("id"));
-            String name=request.getParameter("fname");
-            String email = request.getParameter("email");
-            String phno =request.getParameter("phno");
-            String password = request.getParameter("password");
-            
-            userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
-            boolean f = dao.checkPassword(password,id);
-            
-            HttpSession session = request.getSession();
-            
-            user us = new user();
-            us.setId(id);
-            us.setName(name);
-            us.setEmail(email);
-            us.setPhno(phno);
+
+
+
+           try(PrintWriter out = response.getWriter()){
+               
+               int id = Integer.parseInt(request.getParameter("id"));
+               out.println(id);
+               
+           }
            
-            
-            if(f){
-                boolean f2=dao.updateProfile(us);
-                if(f2){
-                    session.setAttribute("SuccMsg" , "Profile Update Succesfully");
-                    response.sendRedirect("edit_profile.jsp");
-                }
-                else{
-                    session.setAttribute("SuccMsg" , "Something went wrong");
-                    response.sendRedirect("edit_profile.jsp");
-                }
-            }
-            else{
-                session.setAttribute("failedMsg" , "your passsword is inncorrect");
-                response.sendRedirect("edit_profile.jsp");
-            }
-            
-            
-              
-          }catch(Exception e){
-              e.printStackTrace();
-          }
+           catch(Exception e){
+               e.printStackTrace();
+           }
+
+//         try{
+//            int id = Integer.parseInt(request.getParameter("id"));
+//            String name=request.getParameter("fname");
+//            String email = request.getParameter("email");
+//            String phno =request.getParameter("phno");
+//            String password = request.getParameter("password");
+//            
+//            userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
+//            boolean f = dao.checkPassword(password,id);
+//            
+//            HttpSession session = request.getSession();
+//            
+//            user us = new user();
+//            us.setId(id);
+//            us.setName(name);
+//            us.setEmail(email);
+//            us.setPhno(phno);
+//           
+//            
+//            if(f){
+//                boolean f2=dao.updateProfile(us);
+//                if(f2){
+//                    session.setAttribute("SuccMsg" , "Profile Update Succesfully");
+//                    response.sendRedirect("edit_profile.jsp");
+//                }
+//                else{
+//                    session.setAttribute("SuccMsg" , "Something went wrong");
+//                    response.sendRedirect("edit_profile.jsp");
+//                }
+//            }
+//            else{
+//                session.setAttribute("failedMsg" , "your passsword is inncorrect");
+//                response.sendRedirect("edit_profile.jsp");
+//            }
+//            
+//            
+//              
+//          }catch(Exception e){
+//              e.printStackTrace();
+//          }
     }
 
 

@@ -54,8 +54,8 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         <c:if test="${not empty userobj}">
              <div class="col-md-3">
 
-                 <a href="checkout.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
-                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+                 <a href="checkout1.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                
 
             <a href=" " class="btn btn-success">${userobj.name}</a>
             <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
@@ -86,13 +86,13 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href=""><i class="fa-solid fa-book-open"></i>Watches</a>
+        <a class="nav-link" href="ipadh.jsp"><i class="fa-solid fa-book-open"></i>Ipad</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="all_Phones.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
+        <a class="nav-link" href="iphoneh.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="all_Laps.jsp"><i class="fa-solid fa-book-open"></i>Laptops</a>
+        <a class="nav-link" href="mach.jsp"><i class="fa-solid fa-book-open"></i>MacBook</a>
       </li>
 <!--      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
