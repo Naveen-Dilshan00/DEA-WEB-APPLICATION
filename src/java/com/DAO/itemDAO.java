@@ -14,8 +14,22 @@ import java.util.List;
  */
 public interface itemDAO {
     
+    //Add item from admin panel
     public boolean addItem(itemDetailes b);
     
+    //All items view in admin panel
     public List<itemDetailes> getAllItems();
     
+    // Edit items(admin panel)
+    public itemDetailes getItemsById(int id);
+    
+    public boolean updateEditItems(itemDetailes b); 
+    
+    public boolean deleteItems(int id);
+    
+    public List<itemDetailes> getPhones();
+    
+    public List<itemDetailes> getLaps();
+    
+    public List<itemDetailes> getAllLaps();
 }

@@ -1,0 +1,269 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 11, 2024, 11:32:52 AM
+    Author     : ASUS TUF
+*/
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+    background: url(image/topbg1.jpeg)no-repeat;
+    background-size: cover;
+    height: 75vh;
+    background-position: 50% 50%;
+    width: 100%;
+   
+}
+
+.main h1{
+    font-size: 4rem;
+    font-weight: 700;
+    color: whitesmoke;
+}
+.btn1{
+    height: 45px;
+    width: 25%;
+    border: none;
+    outline: none;
+    background-color: gray;
+    font-weight: 700;
+    border-radius: 60pc;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn1:hover {
+    background-color: blue; 
+    color: black;
+}
+
+/* New Arrivals*/
+
+.new_arrivals
+{
+	width: 100%;
+}
+.new_arrivals_title
+{
+	margin-top: 74px;
+}
+
+
+.grid_sorting_button
+{
+	height: 40px;
+	min-width: 102px;
+	padding-left: 25px;
+	padding-right: 25px;
+	cursor: pointer;
+	border: solid 1px #ebebeb;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: #FFFFFF;
+	border-radius: 3px;
+	margin: 0;
+	float: left;
+	margin-left: -1px;
+}
+.grid_sorting_button:first-child
+{
+	margin-left: 0px;
+}
+.grid_sorting_button:last-child
+{
+
+}
+.grid_sorting_button.active:hover
+{
+	background: #FE7C7F !important;
+}
+.grid_sorting_button.active
+{
+	color: #FFFFFF;
+	background: #fe4c50;
+}
+
+/**Newsletter**/
+
+.newsletter
+{
+	width: 100%;
+	background: #f2f2f2;
+	margin-top: 81px;
+}
+.newsletter_text
+{
+	height: 120px;
+}
+.newsletter_text h4
+{
+	margin-bottom: 0px;
+	line-height: 24px;
+}
+.newsletter_text p
+{
+	margin-bottom: 0px;
+	line-height: 1.7;
+	color: #51545f;
+}
+.newsletter_form
+{
+	height: 120px;
+}
+#newsletter_text
+{
+	width: 300px;
+	height: 46px;
+	background: #FFFFFF;
+	padding-left: 20px;
+        border: 1px;
+        border-color: black;
+}
+#newsletter_text:focus
+{
+	border: solid 1px #7f7f7f !important;
+	box-shadow: none !important;
+}
+:focus
+{
+	outline: none !important;
+}
+#newsletter_text::-webkit-input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400;
+	color: #b9b4c7 !important;
+}
+#newsletter_text:-moz-placeholder /* older Firefox*/
+{
+	font-size: 14px !important;
+	font-weight: 400;
+	color: #b9b4c7 !important;
+}
+#newsletter_text::-moz-placeholder /* Firefox 19+ */
+{
+	font-size: 14px !important;
+	font-weight: 400;
+	color: #b9b4c7 !important;
+}
+#newsletter_text:-ms-input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400;
+	color: #b9b4c7 !important;
+}
+#newsletter_text::input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400;
+	color: #b9b4c7 !important;
+}
+.newsletter_submit_btn
+{
+	width: 160px;
+	height: 46px;
+	border: none;
+	background: #fe4c50;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+        
+}
+.newsletter_submit_btn:hover
+{
+	background: #FE7C7F;
+}
+
+
+/**section**/
+.section{
+    width: 100%;
+    float: left; 
+    height: auto;
+    background-size: 100%; 
+    padding-bottom: 90px;
+    margin-top: 120px;
+}
+
+
+
+.section_2{
+    width: 100%;
+    float: left;
+}
+
+._text{
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: black;
+   margin: 0px;
+}
+
+.uni_text {
+    width: 100%;
+    float: left;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+  
+}
+.rate_text {
+    width: 100%;
+    float: left;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+
+
+
+.read_bt1 {
+    width: 170px;
+    float: left;
+    margin-top: 15px;
+}
+.read_bt1 a {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #b60213;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.read_bt1 a:hover{
+    color: #000;
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 25, 2024, 10:13:55 AM
+    Author     : ASUS TUF
+*/
+

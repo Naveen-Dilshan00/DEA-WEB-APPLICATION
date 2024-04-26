@@ -17,4 +17,8 @@ public interface userDAO {
     
     //user login
     public user login(String name,String password);
+    
+    public boolean checkPassword(String ps,int id);
+    
+    public boolean updateProfile(user us);
 }
