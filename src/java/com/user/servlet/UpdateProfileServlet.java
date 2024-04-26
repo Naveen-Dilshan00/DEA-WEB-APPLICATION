@@ -83,9 +83,36 @@ public class UpdateProfileServlet extends HttpServlet {
 
            try(PrintWriter out = response.getWriter()){
                
+               HttpSession session = request.getSession();
                int id = Integer.parseInt(request.getParameter("id"));
-               out.println(id);
+               String cPass = request.getParameter("currentpass");    
+               String nPass = request.getParameter("newpass");
+               String cnPass = request.getParameter("confirmpass");
                
+               userDAOImpl dao = new userDAOImpl(DBConnect.getConn());
+               boolean f = dao.checkPassword(cPass, id);
+               
+               if(f){
+                   if(nPass.equals(cnPass)){
+                        user u = new user();
+                        u.setId(id);
+                        u.setPassword(nPass);
+                        
+                        dao.updatePassword(u);
+                        
+                        session.setAttribute("UpdateSuccMsg","Profile Edited");
+                        response.sendRedirect("Userprofile2.jsp");
+                        
+                   }
+                   else{
+                       session.setAttribute("UpdateFailedMsg","Doesn't match new Password and confirm password");
+                       response.sendRedirect("Userprofile2.jsp");
+                   }
+               }
+               else{
+                   session.setAttribute("UpdateFailedMsg","Wrong Password ");
+                   response.sendRedirect("Userprofile2.jsp");
+               }
            }
            
            catch(Exception e){
