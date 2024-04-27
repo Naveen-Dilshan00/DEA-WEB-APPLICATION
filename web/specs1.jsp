@@ -277,18 +277,18 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="images/14green.jpg" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="images/14purple.jpg" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="images/14gold.jpg" /></div>
-                                <div class="tab-pane" id="pic-4"><img src="images/14white.jpg" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="images/14blue.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="Items_img/14green.jpg" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/14purple.jpg" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/14gold.jpg" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="Items_img/14white.jpg" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/14blue.jpg" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="images/14green.jpg" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="images/14purple.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="images/14gold.jpg" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="images/14white.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="images/14blue.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/14green.jpg" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/14purple.jpg" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/14gold.jpg" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/14white.jpg" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/14blue.jpg" /></a></li>
                             </ul>
 
                         </div>
