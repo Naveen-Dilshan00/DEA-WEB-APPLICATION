@@ -39,7 +39,7 @@
                 flex-direction: column; }
             body {
                 font-family: Arial, sans-serif;
-                background-color: #fdfdfd;
+                background-color: #fafafa;
                 margin: 0;
             }
             .additional-info-container {
