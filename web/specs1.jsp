@@ -38,6 +38,41 @@
                 -webkit-flex-direction: column;
                 -ms-flex-direction: column;
                 flex-direction: column; }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa;
+                margin: 0;
+            }
+            .additional-info-container {
+                display: grid;
+                grid-template-columns: auto 1fr; /* Left column auto-sized, right column takes remaining space */
+                grid-gap: 1px; /* Gap between rows */
+                justify-content: center; /* Center the grid horizontally */
+                padding: 10px;
+                max-width: 90%; /* Limit maximum width of the container */
+                margin: 0 auto; /* Center the container horizontally */
+            }
+            .info-heading {
+                padding: 10px;
+                background-color: #fff;
+                text-align: left; /* Align heading text to left */
+                font-size: 16px; /* Reduce heading font size */
+                font-weight: 580; /* Make heading text bold */
+            }
+            .info-description {
+                padding: 10px;
+                background-color: #fff;
+                text-align: right; /* Align description text to left */
+                font-size: 14px; /* Reduce description font size */
+                line-height: 1.3; /* Reduce line spacing */
+                color: gray;
+            }
+            .spec-heading {
+                text-align: center; /* Center the subheading */
+                font-size: 24px; /* Increase subheading font size */
+                margin-top: 50px;
+                bottom: 10px;/* Add space below the subheading */
+            }
             @media screen and (max-width: 996px) {
                 .preview {
                     margin-bottom: 20px; } }
@@ -348,6 +383,38 @@
                             </div></div>
 
                     </div>
+                </div>
+            </div>
+            <h2 class="spec-heading">Specifications</h2>
+            <div class="additional-info-container">
+                <div class="info-heading">Brand</div>
+                <div class="info-description">
+                    <p>Apple</p>
+                </div>
+
+                <div class="info-heading">Warranty</div>
+                <div class="info-description">
+                    <p>USA Region LL/A(E-SIM), Apple Care Warranty, Genxt Warranty</p>
+                </div>
+
+                <div class="info-heading">Storage</div>
+                <div class="info-description">
+                    <p>128GB,256GB,512GB,1TB</p>
+                </div>
+
+                <div class="info-heading">Camera</div>
+                <div class="info-description">
+                    <p>12MP Front/48MP Back</p>
+                </div>
+
+                <div class="info-heading">Color</div>
+                <div class="info-description">
+                    <p>Deep Purple,Gold,Silver,Light Blue,Green</p>
+                </div>
+
+                <div class="info-heading">Operating System</div>
+                <div class="info-description">
+                    <p>iOS 16</p>
                 </div>
             </div>
         </div>
