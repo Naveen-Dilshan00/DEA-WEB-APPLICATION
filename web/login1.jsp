@@ -4,6 +4,8 @@
     Author     : Senur
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,6 +29,10 @@
 
             .heading{
                 color:white; position: absolute; top: 12%; width: 100%;text-align: center; font-size: 3rem; font-weight: 800; 
+            }
+
+            .header{
+                background-color: #fff:
             }
 
             .font{
@@ -146,16 +152,32 @@
                 <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
                     <div class="col col-sm-6 col-lg-7 col-xl-6">
                         <!--Sign in Form -->
-                        <form action="#" class="right">
+                        <form action="LoginServlet" method="POST" class="right">
+                            
+                            
+                             <c:if test="${ not empty LogfailedMsg}">
+                                        <div class="alert alert-danger" role="alert">
+                                         ${LogfailedMsg}
+                                        </div>
+                                         <c:remove var="LogfailedMsg" scope="session"/>
+                                    </c:if>
+                            <c:if test="${ not empty LogSuccMsg}">
+                                        <div class="alert alert-success" role="alert">
+                                         ${LogSuccMsg}
+                                        </div>
+                                         <c:remove var="LogSuccMsg" scope="session"/>
+                                    </c:if>
+                                        
+                               
                             <div class="header">
                                 <h1>Sign in</h1>
                                 <p class="text">Please enter your login details to sign in</p>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control form-control-lg fs-6" placeholder="Email Address">
+                                <input type="text" class="form-control form-control-lg fs-6" placeholder="User Name " name="uname">
                             </div>
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control form-control-lg fs-6" placeholder="Password">
+                                <input type="password" class="form-control form-control-lg fs-6" placeholder="Password" name="password">
                             </div>
                             <div class="row mb-3">
                                 <div class="col">
@@ -182,7 +204,7 @@
                                 </div>
                             </div>
                             <div class="text-center mb-3">
-                                <small>Don't have an account? <a href="#" class="fw-bold">Sign Up</a></small>
+                                <small>Don't have an account? <a href="register1.jsp" class="fw-bold">Sign Up</a></small>
                             </div>
 
                             <div class="position-relative mb-3">

@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +17,20 @@
     </head>
     <body style="background-color: #f0f1f2">
         <%@include file="all_components/navbar.jsp"%>
+        
+        <c:if test="${ not empty succMsg}">
+            <div class="alert alert-success" role="alert">
+             This is a success alert—check it out!
+            </div>
+             <c:remove var="succMsg" scope="session"/>
+         </c:if>
+        
+        <c:if test="${ not empty failedMsg}">
+            <div class="alert alert-danger" role="alert">
+             ${failedMsg}
+            </div>
+             <c:remove var="failedMsg" scope="session"/>
+        </c:if>
         
         <div class="container">
             <div class="row">
