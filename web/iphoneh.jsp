@@ -1,4 +1,9 @@
-    <%-- 
+
+<%@page import="com.DAO.itemDAOImpl"%>
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBConnect"%>
+<%-- 
         Document   : shop
         Created on : Apr 11, 2024, 9:56:35 AM
         Author     : ASUS TUF
@@ -72,6 +77,7 @@
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
     }
+ 
 
     .card-button:hover {
         background-color: #0056b3;
@@ -179,7 +185,11 @@
              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         </head>
         <body>
-            <p>navbar</p>
+            <%
+            user u =(user)session.getAttribute("userobj");
+            %>
+            
+            <%@include file="all_components/navbar.jsp"%>
 
             <section class="main">
                <div class="container">
@@ -259,124 +269,62 @@
 
 
     <!-- Products  -->
-
-                        <!-- 1st row  -->
-       <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="image/ipn1.jpg" alt="Card image cap">
+    <div class="container">
+        <div class="row">
+        <%
+                    itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+                    List<itemDetailes> list2 = dao.getAlliphone();
+                    for(itemDetailes b : list2){
+                    %>
+     
+      <div class="col-md-3">
+       <div class="card card-ho">
+           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 15 Pro Max </h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$1290</span></h5></div>
+                <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
             </div>
          
           <p class="card-text">512GB</p>
         </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
+            <%
+                if(b.getStatus().equals("Active")){
+            %>
+                      <%
+                            if(u == null){
+                      %>
+                            <div class="card-footer">
+                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
+                            </div>
+                      <%
+                            } else{
+                      %>
+                            <div class="card-footer">
+                                <a class="btn btn-outline-dark" href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a>
+                            </div>
+                      <%
+                            }
+                      %>
+            <%
+                } else{
+            %>
+                <div class="card-footer">
+                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                </div>
+            <%
+                }
+            %>
       </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipn2.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 15</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$850</span></h5></div>
-            </div>         
-            <p class="card-text">256GB</p>
-        </div>
-        <div class="card-footer">
-          <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipn3.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 14 Pro Max</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$1099</span></h5></div>
-            </div>          
-            <p class="card-text">256GB</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-
-    <div class="card">
-        <img class="card-img-top" src="image/ipn4.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 15 Pro</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$980</span></h5></div>
-            </div>         
-            <p class="card-text">128GB</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
+     </div>
+      <%
+      }
+      %>
+   </div>
     </div>
 
-
-
-                         <!-- 2nd row  -->
-
-      <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="image/ipn5.jpg" alt="Card image cap">
-        <div class="card-body">
-         <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 14 Pro </h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$990</span></h5></div>
-            </div>          
-            <p class="card-text">128GB</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipn6.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 14 Plus </h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$720</span></h5></div>
-            </div>        
-            <p class="card-text">128GB</p>
-        </div>
-        <div class="card-footer">
-          <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/ipn7.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 13</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$645</span></h5></div>
-            </div>          
-            <p class="card-text">156GB</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-
-    <div class="card">
-        <img class="card-img-top" src="image/ipn8.jpg" alt="Card image cap">
-        <div class="card-body">
- <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">iPhone 12 Pro Max</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$720</span></h5></div>
-            </div>          
-            <p class="card-text">128GB</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-    </div>
+                    
+                    
 
                          <div class="section layout_padding sec1" style=" margin-bottom: 0px;">
                 <div class="container">

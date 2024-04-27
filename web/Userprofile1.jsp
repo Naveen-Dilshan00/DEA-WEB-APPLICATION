@@ -420,19 +420,15 @@
     
 </div>
 <div class="sidebar">
+
      <ul>
         
-    <li class="account"><a href="#">My Account</a></li> 
-    <li class="orders"><a href="#">My Orders</a></li> 
-    <li class="security"><a href="#">Security</a></li>
+    <li class="account"><a href="Userprofile1.jsp">My Account</a></li> 
+    <li class="orders"><a href="Userprofile3.jsp">My Orders</a></li> 
+    <li class="security"><a href="Userprofile2.jsp">Security</a></li>
     
 </ul>
     <button class="sign-out-button">Sign Out</button>
-    <ul>
-               
-
-        
-    </ul>
     
      
                  

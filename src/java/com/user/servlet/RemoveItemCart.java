@@ -78,7 +78,7 @@ public class RemoveItemCart extends HttpServlet {
                                if(c.getIid()==Integer.parseInt(Iid)){
                                    cart_list.remove(cart_list.indexOf(c));
                                    
-                                   session.setAttribute("SuccMsg","Item Removed");
+                                   session.setAttribute("RemoveSuccMsg","Item Removed");
                                    response.sendRedirect("checkout1.jsp");
                                    break;
                                }

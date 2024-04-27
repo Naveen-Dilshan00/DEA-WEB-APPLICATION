@@ -103,7 +103,7 @@ public class CartServlet extends HttpServlet {
                 if(cart_list == null){
                     cartList.add(c);
                     cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
-                    boolean ff =dao2.addCart(c);
+                    boolean ff=dao2.addCart(c);
                     session.setAttribute("cart-list",cartList);
 
 
