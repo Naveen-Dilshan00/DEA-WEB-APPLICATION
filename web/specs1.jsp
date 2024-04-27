@@ -6,10 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,9 +66,11 @@
             }
             .spec-heading {
                 text-align: center; /* Center the subheading */
-                font-size: 24px; /* Increase subheading font size */
                 margin-top: 50px;
                 bottom: 10px;/* Add space below the subheading */
+            }
+            .accordion-body{
+                color: gray;
             }
             @media screen and (max-width: 996px) {
                 .preview {
@@ -385,7 +384,7 @@
                     </div>
                 </div>
             </div>
-            <h2 class="spec-heading">Specifications</h2>
+            <h1 class="spec-heading">Specifications</h1>
             <div class="additional-info-container">
                 <div class="info-heading">Brand</div>
                 <div class="info-description">
@@ -417,10 +416,88 @@
                     <p>iOS 16</p>
                 </div>
             </div>
+            <div class="container rounded h-75 w-77">
+                <div style="margin: 50px auto 10px"><h1 class="text-center" >FAQs</h1></div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                How to buy Apple products?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Place your order by adding items to the cart and go to the checkout page to make the payment.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                What payment methods are accepted?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Credit card/Debit card payments and Paypal payments are Accepted.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                Are there any warranties?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Yes, you will receive 1 year Apple Care Warranty.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                Can I track my order?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                No You can not track your order.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
         <!-- JavaScript -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous">
+        </script>
+        
         <script>
                                         function increaseQuantity() {
                                             var quantityInput = document.getElementById("quantity");
@@ -479,5 +556,5 @@
                                         }
 
         </script>
-        </body>
-        </html>
+    </body>
+</html>
