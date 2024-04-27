@@ -4,6 +4,10 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.entity.user"%>
+<%@page import="com.DAO.itemDAOImpl"%>
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DB.DBConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -304,6 +308,17 @@
     </head>
 
     <body>
+        
+        <%
+            user u =(user)session.getAttribute("userobj");
+        %>
+        
+         <%
+        int id = Integer.parseInt(request.getParameter("Iid"));
+        itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+        itemDetailes b = dao.getItemsById(id);
+    
+        %>
 
         <div class="container">
             <div class="card">
@@ -312,29 +327,29 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/14green.jpg" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="Items_img/14purple.jpg" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/14gold.jpg" /></div>
-                                <div class="tab-pane" id="pic-4"><img src="Items_img/14white.jpg" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="Items_img/14blue.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="Items_img/<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/purple<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="Items_img/white<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/blue<%=b.getPhotoName()%>" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/14green.jpg" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/14purple.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/14gold.jpg" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/14white.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/14blue.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/purple<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/white<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/blue<%=b.getPhotoName()%>" /></a></li>
                             </ul>
 
                         </div>
                         <div class="details col-md-6">
-                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPhone</a>><span class="hed"> iPhone 15 Pro Max</span></span>
+                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPhone</a>><span class="hed"> <%=b.getItemName()%></span></span>
                             <h3 class="product-title">iPhone 14 Pro</h3>
                             <div class="rating">
-                                <span class="review-no">In stock</span>
+                                <span class="review-no"><%=b.getStatus()%></span>
                             </div>
-                            <h4 class="price">$799</h4>
-                            <p class="pdrop"> <s>$869</s></p>
+                            <h4 class="price"><%=b.getPrice()%></h4>
+                            <p class="pdrop"> <s><%=b.getPrice()-100.0%></s></p>
                             <br><br>
                             <div class="colors">
                                 <div class=""><p class="colo">Choose a Color</p></div>
@@ -367,16 +382,11 @@
                             </div>
                             <br>
                             <div class="action">
-                                <div class="quantity">
-                                    <p>Qty:</p>
-
-
-                                    <input type="number" id="quantity" name="quantity" min="1" value="1">
-                                </div>
+                                
                                 <div class="col">
                                     <div><br></div>
                                     <div> 
-                                        <button class="btn2">Add To Cart</button>
+                                        <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
                                         <button class="btn3">Buy Now</button>
                                     </div>
                                 </div>
