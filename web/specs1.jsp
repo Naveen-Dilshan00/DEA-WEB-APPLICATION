@@ -403,7 +403,7 @@
 
                 <div class="info-heading">Camera</div>
                 <div class="info-description">
-                    <p>12MP Front/48MP Back</p>
+                    <p>12MP Front / 48MP Back</p>
                 </div>
 
                 <div class="info-heading">Color</div>
