@@ -230,7 +230,7 @@
                 color: gray;
                 background-color: #D2D4E7;
                 padding: 4px;
-                width: 50%;
+                width: 70%;
                 margin-bottom: 6px;
 
             }
