@@ -1,10 +1,3 @@
-<%-- 
-    Document   : index2
-    Created on : Apr 26, 2024, 1:09:00 AM
-    Author     : DELL
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,18 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<style>
-     .c-item {
-  height:550px;
-}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel = "stylesheet" href = "all_components/owl.carousel.css">
+<link rel = "stylesheet" href = "all_components/owl.theme.default.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="all_components/carouselstyle.css">
 
-.c-img {
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
-}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/*4 boxes */
 
 .btn-primary {
   background-color: white;
@@ -142,33 +137,173 @@
   display: flex;
 }
 
-.bestsellers {
-  margin-top: 50px;
-  padding: 10px;
+/*best sellers*/
+
+
+
+.product-item{
+    border: 1px solid rgb(219, 219, 219);
+}
+.product-img{
+    position: relative;
+    overflow: hidden;
+}
+.btns{
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    font-size: 15px;
+    font-weight:bolder;
+    transition: all 0.3s ease-in-out;
+}
+.btns button{
+    width:100%;
+    height:35px;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    background-color: hsl(0, 0%, 0%)
 }
 
-.rowbs {
-margin-bottom: 30px;
+.product-img:hover .btns{
+    bottom: 0;
 }
 
-.card:hover{
-  box-shadow: -2px -1px 25px -4px rgba(0,0,0,75);
-  -webkit-box-shadow: -2px -1px 25px -4px rgba(0,0,0,75);
-  -moz-box-shadow: -2px -1px 25px -4px rgba(0,0,0,75);
 
+.product-name{
+    transition: all 0.3s ease-in-out;
+    color:black;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.product-name:hover{
+    color: #00095e!important;
+}
+.product-price{
+    color:  #00095e;
+    font-size: 20px;
+    font-weight:500;
+}
+.product-item{
+    width: 300px;
+    height: 300px;
 }
 
-.b2:hover,
-    .b2:hover {
-      background-color: rgb(11, 0, 114) !important;
-      border-color: black !important;
-    }
-    .b2:hover b,
-    .b2:hover b {
-      color: white !important;
-    }
-    
-     /*contact form*/
+/*about us*/
+
+        .about-us-section .h1,h2,h3,h4{
+            font-weight: 900;
+        }
+        
+        .about-us-section .h5,h6,a,p {
+            font-weight: 300;
+        }
+        .center-vertical {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            align-items: center;
+        }
+        .about-us-section {
+            width: 100%;
+            padding: calc(5% + 30px) 0px;
+        }
+
+        .about-us-section .img-head {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            
+        }
+        .about-us-section .img-head img{
+          width:100%;
+          transition: transform .3s;  
+        }
+       
+        .about-us-section .img-head::after {
+            content:"";
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            left: 0;
+            top: 0;
+            opacity: .5;
+            
+        }
+
+        .about-us-section .a-head {
+            font-size: 28px;
+            color: black;
+        
+        }
+        .about-us-section .break-small {
+            width :80px;
+            height : 3px;
+            background-color: black;
+        }
+
+        .about-us-section .atext-para{
+            font-size: 22px;
+        }
+        
+        .about-us-section .box {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0px;
+            position: relative;
+            overflow: hidden;
+            height:190px;
+            margin:5px;
+
+        }
+
+        .about-us-section .box i {
+            font-size:42px;
+        }
+
+        .about-us-section .box h4 {
+            font-size:14px;
+        }
+
+        .about-us-section .box p {
+            font-size:22px;
+        }
+        .about-us-section .box::after,
+        .about-us-section .box::before {
+          
+            content:"";
+            position:absolute;
+            width:100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transition: transform .3s;
+        }
+
+        .about-us-section .box::after {
+            left:-50px;
+            top: -50px;
+
+        }
+
+        .about-us-section .box::before {
+            right:-50px;
+            bottom: -50px;
+        }
+
+        .about-us-section .box:hover:after,
+        .about-us-section .box:hover:before {
+
+        transform: scale(1.2);
+
+        }
+ 
+
+
+
+
+    /*contact form*/
 
 
 .contacted{
@@ -178,7 +313,7 @@ margin-bottom: 30px;
     width: 90%;
     max-width: 550px;
     margin: auto;
-    margin-top: 5em;
+   
 }
 
 .sectionHeader{
@@ -329,51 +464,166 @@ form{
         justify-content: space-between;
     }
 }
+
+ 
+
 </style>
   
 
-  <title>Bootstrap 5 Carousel Slider</title>
+  <title>Home Page</title>
 </head>
 <body>
-  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <!-- Carousel -->
 
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      
-    </div>
 
-    <div class="carousel-inner">
-      <div class="carousel-item active c-item">
-        <img src= "image/indivar-kaushik-gcA0W3OOOts-unsplash.jpg" class="d-block w-100 c-img" alt="Slide 1">
-        <div class="carousel-caption top-0 mt-4">
-          <p class="mt-5 fs-3 text-uppercase">Think Different</p>
-          <h1 class="display-1 fw-bolder text-capitalize">Who We Are</h1>
-          <button class="btn btn-primary px-4 py-2 fs-5 mt-5">About us</button>
-        </div>
+  <div class="carousel">
+      <!-- list item -->
+      <div class="list">
+          <div class="item">
+              <img src="image/carousel1.jpg">
+              <div class="content">
+                  <div class="author">APPLE</div>
+                  <div class="title">WHO WE ARE</div>
+                  <div class="topic">Think DIfferent</div>
+                  <div class="des1">
+                      Be aware of scams involving Apple Gift Cards, App Store & iTunes Gift Cards, and Apple Store Gift Cards.
+                      
+                  </div>
+                  <div class="buttons">
+                      <button>About US</button>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <img src="image/carousel2.png">
+              <div class="content">
+                  <div class="author">APPLE</div>
+                  <div class="title">Titanium. So Strong. So smart</div>
+                  <div class="topic">iPhone 15 Pro</div>
+                  <div class="des2">
+                      The No. 01 Smart phone in the world right now with all the new features.
+                  </div>
+                  <div class="buttons">
+                      <button>BUY NOW</button>
+                     
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <img src="image/carousel3.png">
+              <div class="content">
+                  <div class="author">APPLE</div>
+                  <div class="title">The Ultimate Theatre.</div>
+                  <div class="topic">VISION PRO</div>
+                  <div class="des1">
+                      Experience the all world infront of your Eyes with Apple Vision Pro
+                  </div>
+                  <div class="buttons">
+                      <button>BUY NOW</button>  
+                  </div>
+              </div>
+          </div>
+         
       </div>
-      <div class="carousel-item c-item">
-        <img src="image/mobile-phone-different-perspectives_52683-51648.jpg" class="d-block w-100 c-img" alt="Slide 2">
-        <div class="carousel-caption top-0 mt-4">
-          <p class="text-uppercase fs-3 mt-5">Titanium. So Strong. So light</p>
-          <p class="display-1 fw-bolder text-capitalize">iPhone 15 Pro Max</p>
-          <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
-            data-bs-target="#booking-modal">Buy Now</button>
-        </div>
+      <!-- list thumnail -->
+      <div class="thumbnail">
+          <div class="item">
+              <img src="image/carousel1.jpg">
+              <div class="content">
+                  <div class="title">
+                      Who We Are
+                  </div>
+                  <div class="description">
+                      About Us
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <img src="image/carousel2.png">
+              <div class="content">
+                  <div class="title">
+                      iPhone 15 Pro
+                  </div>
+                  <div class="description">
+                      Buy Now
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <img src="image/carousel3.png">
+              <div class="content">
+                  <div class="title">
+                  Vision Pro
+                  </div>
+                  <div class="description">
+                      Buy Now
+                  </div>
+              </div>
+          </div>
+          
       </div>
-      <div class="carousel-item c-item">
-        <img src="image/56ad99dd-4c57-45b3-9c77-aaae7959939b_1920x1080.jpg" class="d-block w-100 c-img" alt="Slide 3">
-        <div class="carousel-caption top-0 mt-4">
-          <p class="text-uppercase fs-3 mt-5">The Ultimate Theatre. Wherever You Are.</p>
-          <p class="display-1 fw-bolder text-capitalize">Apple Vision Pro</p>
-          <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
-            data-bs-target="#booking-modal">Buy Now</button>
-        </div>
+      <!-- next prev -->
+
+      <div class="arrows">
+          <button id="prev"><</button>
+          <button id="next">></button>
       </div>
-    </div>
-  
+      <!-- time running -->
+      <div class="time"></div>
   </div>
+
+  <script>
+//step 1: get DOM
+let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
+
+let carouselDom = document.querySelector('.carousel');
+let SliderDom = carouselDom.querySelector('.carousel .list');
+let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+let timeDom = document.querySelector('.carousel .time');
+
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 5000;
+
+nextDom.onclick = function(){
+  showSlider('next');    
+}
+
+prevDom.onclick = function(){
+  showSlider('prev');    
+}
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+  next.click();
+}, timeAutoNext)
+function showSlider(type){
+  let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+  let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+  
+  if(type === 'next'){
+      SliderDom.appendChild(SliderItemsDom[0]);
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+      carouselDom.classList.add('next');
+  }else{
+      SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+      thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+      carouselDom.classList.add('prev');
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+      carouselDom.classList.remove('next');
+      carouselDom.classList.remove('prev');
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+      next.click();
+  }, timeAutoNext)
+}
+
+  </script>
 
   <!-- 4 boxes -->
 
@@ -383,7 +633,7 @@ form{
       <div class="col-md-6">
         <div class="box1">
           <div class="boximage1">
-            <img src="image/wwdc24-p1-og.png" class="img-fluid" alt="Apple Worldwide Developers Conference">
+            <img src="image/box1.png" class="img-fluid" alt="Apple Worldwide Developers Conference">
           </div>
           <div class="text-container1">
             <h4>Apple Worldwide Developers Conference</h4>
@@ -406,7 +656,7 @@ form{
             </div>
           </div>
           <div class="boximage2">
-            <img src="image/macbookair-og-202402-removebg-preview.png" class="img-fluid" alt="MacBooks">
+            <img src="image/box2.png" class="img-fluid" alt="MacBooks">
           </div>
         </div>
       </div>
@@ -424,7 +674,7 @@ form{
             </div>
           </div>
           <div class="boximage2">
-            <img src="image/image-for-representation-removebg-preview.png" class="img-fluid" alt="iPhone 15 PRO">
+            <img src="image/box3.png" class="img-fluid" alt="iPhone 15 PRO">
           </div>
         </div>
       </div>
@@ -440,7 +690,7 @@ form{
             </div>
           </div>
           <div class="boximage2">
-            <img src="image/v4_34.png" class="img-fluid" alt="iWATCHES">
+            <img src="image/box4.png" class="img-fluid" alt="iWATCHES">
           </div>
         </div>
       </div>
@@ -453,68 +703,255 @@ form{
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
  <!-- Best Sellers -->
- <section class="bestsellers">
-  <div class = "conatinerbs">
-    <div class = "rowbs">
-      <div class="col-lg-5 m-auto text-center">
-        <h1><b> The Best Sellers </b></h1>
+ 
+ <div class = "container">
+  <div class = "row my-5">
+      <h1 class = "text-center">Best Sellers</h1>
+      <h5 class = "fw-light w-75 mx-auto text-center">These are the items that are loved most by our beloved customers</h5>
+  </div>
+
+  <div class = "row g-4 my-5 mx-auto owl-carousel owl-theme">
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/bs1.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/bs2.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple Watch SE</a>
+              <span class = "product-price">From $ 249</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/bs3.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">AirPods Max</a>
+              <span class = "product-price">From $ 459</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/bs4.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">iPhone 15 Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+      
+  </div>
+</div>
+
+
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- owl carousel -->
+<script src = "all_components/owl.carousel.js"></script>
+<script>
+  $('.owl-carousel').owlCarousel({
+loop: true,
+margin: 0,
+responsiveClass: true,
+responsive: {
+  0:{
+      items: 1,
+  },
+  768:{
+      items: 2,
+  },
+  1100:{
+      items: 3,
+  },
+  1400:{
+      items: 4,
+      loop: false,
+  }
+}
+});
+</script>
+
+<!-- About Us -->
+
+<div class = "center-vertical">
+  <div class = "about-us-section ">
+      <div class ="containeraboutus">
+          <div class ="row">
+              <div class ="col-12 col-lg-6 mb-4 mb-lg-0">
+                  <div class ="img-head">
+                      <img src = "image/appleaboutus.jpg">
+                  </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                  <h2 class="a-head">
+                      MORE ABOUT US
+                  </h2>
+                  <div class ="break-small mb-2"></div>
+                  <p class="atext-para">
+                      At Apple, we're dedicated to bringing the magic of Apple products closer to you. With a passion for innovation and a commitment to excellence, we strive to provide an unmatched shopping experience. Our curated selection of iPhones, MacBooks, iPads, and accessories ensures that you have access to the latest and greatest Apple has to offer. Backed by expert advice and personalized service, we're here to guide you every step of the way, ensuring that your journey with Apple is nothing short of extraordinary.
+                  </p>
+                  <div class="row">
+                      <div class="col-12 col-md-4 mb-2 mb-md-0">
+                          <div class ="box">
+                              <i class ="fa fa-users mb-3"></i>
+                              <h4 class="mb-0">TOTAL CLIENTS</h4>
+                              <p class ="mb-0">1289</p>
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-4 mb-2 mb-md-0">
+                          <div class ="box">
+                              <i class ="fa fa-wrench mb-3"></i>
+                              <h4 class="mb-0">ORDERS</h4>
+                              <p class ="mb-0">5433</p>
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-4 mb-2 mb-md-0">
+                          <div class ="box">
+                              <i class ="fa fa-paper-plane mb-3"></i>
+                              <h4 class="mb-0">Countries</h4>
+                              <p class ="mb-0">245</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
       </div>
-    </div>
-    <div class ="row">
-      <div class = "col-lg-3 text-center mb-3">
-      <div class ="card border-0 bg-light mb2">
-        <div class ="card-body">
-          <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" class ="img-fluid" alt ="">
-        </div>
-      </div>
-      <h3> MacBook Air</h3>
-      <h5>From $ 999</h5>
-      <div class = "button-bs">
-        <a href=""><button class="b2"><h6><b>Buy Now</b></h6></button></a>
-      </div>
-      </div>
-      <div class = "col-lg-3 text-center mb-3">
-        <div class ="card border-0 bg-light mb2">
-          <div class ="card-body">
-            <img src = "image/iphone-15-pro-finish-select-202309-6-1inch-removebg-preview.png" class ="img-fluid" alt ="">
-          </div>
-        </div>
-        <h3> iPhone 15 Pro</h3>
-        <h5>From $ 999</h5>
-        <div class = "button-bs">
-          <a href=""><button class="b2"><h6><b>Buy Now</b></h6></button></a>
-        </div>
-        </div>
-        <div class = "col-lg-3 text-center mb-3">
-          <div class ="card border-0 bg-light mb2">
-            <div class ="card-body">
-              <img src = "image/se-case-unselect-gallery-1-202403_FMT_WHH-removebg-preview (1).png" class ="img-fluid" alt ="">
-            </div>
-          </div>
-          <h3> Apple Watch SE</h3>
-          <h5>From $ 249</h5>
-          <div class = "button-bs">
-            <a href=""><button class="b2"><h6><b>Buy Now</b></h6></button></a>
-          </div>
-          </div>
-          <div class = "col-lg-3 text-center mb-3">
-            <div class ="card border-0 bg-light mb2">
-              <div class ="card-body">
-                <img src = "image/AirPods-Max-silver-removebg-preview.png" class ="img-fluid" alt ="">
-              </div>
-            </div>
-            <h3> Air Pods MAx</h3>
-            <h5>From $ 549</h5>
-            <div class = "button-bs">
-              <a href=""><button class="b2"><h6><b>Buy Now</b></h6></button></a>
-            </div>
-            </div>
-    </div>
   </div>
-  </section>
-  
-<!-- Contact Form -->
+</div>
+
+   <!-- Contact Form -->
 
    <section class="contact-form">
     <div class = "contacted">
@@ -568,6 +1005,7 @@ form{
     </div>
   </div>
    </section>
+
  
 </body>
 </html>
