@@ -358,7 +358,7 @@
                       %>
                             <div class="card-footer">
 <<<<<<< Updated upstream
-                                <a class="btn btn-outline-dark" href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a>
+                               <button class="card-button"> <a  href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a></button>
 =======
                                <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
 >>>>>>> Stashed changes
