@@ -260,7 +260,7 @@
                         <!-- 1st row  -->
        <div class="card-deck">
       <div class="card">
-        <img class="card-img-top" src="image/watch7.jpg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch7.jpg" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple watch S9</h5></div>
@@ -273,8 +273,9 @@
            <button class="card-button">Buy Now</button>
         </div>
       </div>
+           
       <div class="card">
-        <img class="card-img-top" src="image/watch2jpg.jpg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch2jpg.jpg" alt="Card image cap">
         <div class="card-body">
         <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple watch Ultra 2</h5></div>
@@ -287,7 +288,7 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="image/watch3.jpg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch3_1.jpg" alt="Card image cap">
         <div class="card-body">
         <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple watch SE</h5></div>
@@ -301,7 +302,7 @@
       </div>
 
     <div class="card">
-        <img class="card-img-top" src="image/watch4.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch4.jpeg" alt="Card image cap">
         <div class="card-body">
         <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple watch S8</h5></div>
@@ -321,7 +322,7 @@
 
       <div class="card-deck">
       <div class="card">
-        <img class="card-img-top" src="image/watch5.jpg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch5_1.jpg" alt="Card image cap">
         <div class="card-body">
          <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple Watch S7</h5></div>
@@ -334,7 +335,7 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="image/watch6.png" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch6.png" alt="Card image cap">
         <div class="card-body">
         <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple Watch Hermès</h5></div>
@@ -347,7 +348,7 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="image/watch7.jpg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch7.jpg" alt="Card image cap">
         <div class="card-body">
         <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple Watch Ultra</h5></div>
@@ -361,7 +362,7 @@
       </div>
 
     <div class="card">
-        <img class="card-img-top" src="image/watch8.jpg" alt="Card image cap">
+        <img class="card-img-top" src="Items_img/watch8.jpg" alt="Card image cap">
         <div class="card-body">
  <div class="row">
                 <div class="col-md-8"> <h5 class="card-title">Apple Watch Ultra 2</h5></div>
