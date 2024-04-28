@@ -385,11 +385,7 @@
                                 <div class="col">
                                     <div><br></div>
                                     <div> 
-                                          <%
-                                          
-                                            HttpSession Session = request.getSession();
-                                            Session.setAttribute("Itemid",b.getItemId());
-                                          %>
+                                         
                                         <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
                                         <a href="DirplaceOrder.jsp?Iid=<%=b.getItemId()%>" class="btn3">Buy Now</a>
                                       
