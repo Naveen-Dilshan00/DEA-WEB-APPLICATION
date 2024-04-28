@@ -78,6 +78,35 @@ public class itemOrderDAOImpl implements itemOrderDAO{
         }
         return f;
     }
+     public boolean dirsaveOrder(item_order o){
+        boolean f=false;
+        
+        try{
+            String sql="insert into order_detailes(ID,User_Name,Email,Address,Phone,item_Name,Price,payment_type) values(?,?,?,?,?,?,?,?)";
+            PreparedStatement ps=conn.prepareStatement(sql);
+            
+            
+//               ps.setString(1,b.getOrder_Id());
+               ps.setInt(1, o.getId());
+               ps.setString(2,o.getUserName());
+               ps.setString(3,o.getEmail());
+               ps.setString(4,o.getFullAdd());
+               ps.setString(5,o.getPhone());
+               ps.setString(6,o.getItemName());
+               ps.setString(7,o.getPrice());
+               ps.setString(8,o.getPaymenttype());
+               
+             int i = ps.executeUpdate();
+             if(i==1){
+                 f=true;
+             }
+           
+            
+            }catch(Exception e){
+            e.printStackTrace();
+        }
+        return f;
+    }
     
     public List<item_order> getItem(int id){
         List<item_order> list =new ArrayList <item_order>();
