@@ -125,7 +125,7 @@
             }
 
             input[type="radio"]:checked + .color-option {
-                border: 1px solid #4C4C4C; /* Add border for selected color */
+                border: 2px solid #4C4C4C; /* Add border for selected color */
             }
 
             .blue {
@@ -322,11 +322,11 @@
                                 <div class="tab-pane" id="pic-5"><img src="Items_img/watchBlack.jpg" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/watchBlue.jpg" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/watchGreen2.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/watchRed.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'blue', this)"><img src="Items_img/watchBlue.jpg" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/watchGreen2.jpg" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'red', this)"><img src="Items_img/watchRed.jpg" /></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/watchWhite2.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/watchBlack.jpg" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'black', this)"><img src="Items_img/watchBlack.jpg" /></a></li>
                             </ul>
 
                         </div>
