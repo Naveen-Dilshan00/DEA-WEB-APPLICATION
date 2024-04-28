@@ -9,15 +9,19 @@ package com.entity;
  *
  * @author Naveen Dilshan
  */
-public class cart {
-    
+
+
+  public class cart extends item_order{
+
     private int cid;
     private int iid;
     private int userId;
     private String itemName;
     private String m_year;
-    private Double price;
+    private Double pricee;
+    private int cQuantity;
     private Double totallPrice;
+    private String cPhoto;
 
     public int getCid() {
         return cid;
@@ -58,14 +62,25 @@ public class cart {
     public void setM_year(String m_year) {
         this.m_year = m_year;
     }
-
-    public Double getPrice() {
-        return price;
+    
+    public void setPricee(Double pricee) {
+        this.pricee = pricee;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public Double getPricee() {
+        return pricee;
     }
+
+    public int getcQuantity() {
+        return cQuantity;
+    }
+
+    public void setcQuantity(int cQuantity) {
+        this.cQuantity = cQuantity;
+    }
+    
+    
+
 
     public Double getTotallPrice() {
         return totallPrice;
@@ -74,6 +89,16 @@ public class cart {
     public void setTotallPrice(Double totallPrice) {
         this.totallPrice = totallPrice;
     }
+
+    public String getcPhoto() {
+        return cPhoto;
+    }
+
+    public void setcPhoto(String cPhoto) {
+        this.cPhoto = cPhoto;
+    }
+    
+    
     
     
 } 

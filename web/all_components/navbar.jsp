@@ -1,16 +1,42 @@
 <%-- 
-    Document   : navbar01
-    Created on : Apr 12, 2024, 8:42:26 PM
-    Author     : admin
+    Document   : navbar
+    Created on : 05-Apr-2024, 20:23:19
+    Author     : Naveen Dilshan
 --%>
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.cartDAOImpl"%>
+<%@page import="com.entity.cart"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.user"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored ="false"%>
 
->>>>>>> b4ff9bdd637508bb57fcffb6c877a6ac83b2b74d
+
+
+<%
+ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
+    List<cart> cartProducts = null;
+    if(cart_list !=null){
+        cartDAOImpl Dao = new cartDAOImpl(DBConnect.getConn());
+        cartProducts = Dao.getCartProducts(cart_list);
+        Double Total = Dao.getTotalCartPrice(cart_list);
+        request.setAttribute("cart_list", cart_list);
+        request.setAttribute("total",Total);
+    }
+    
+    DecimalFormat dcf = new DecimalFormat("#.##");
+    request.setAttribute("dcf",dcf);
+%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
+
+
 <div class="container-fluid" style="height:10px;background-color:#303f9f"></div>
 
 <div class="container-fluid p-3">
@@ -27,7 +53,10 @@
         
         <c:if test="${not empty userobj}">
              <div class="col-md-3">
-                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                 <a href="checkout1.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                
+
             <a href=" " class="btn btn-success">${userobj.name}</a>
             <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
              </div>
@@ -36,59 +65,34 @@
         
         <c:if test="${empty userobj}">
              <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success">Login</a>
-            <a href="register.jsp" class="btn btn-primary text-white">Register</a>
+            <a href="login1.jsp" class="btn btn-success">Login</a>
+            <a href="register1.jsp" class="btn btn-primary text-white">Register</a>
              </div>
         </c:if>
     </div>
 </div>
-=======
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--CSS link -->
-    <link rel="stylesheet" href="style.css">
-        
-    <!-- Boxicons CSS -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!--font-awesome link-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
->>>>>>> Stashed changes
 
-  </head>
-  <body>
-    <nav>
-        <div class="nav-bar">
-            <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#home"><img src="apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
+<!--change color navbar background-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom"> 
+  <a class="navbar-brand" href="#"><i class="fa-solid fa-house-chimney-user"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <div class="menu">
-                <div class="logo-toggle">
-                    <span class="logo"><a href="#home"><img src="image\apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
-                    <i class='bx bx-x siderbarClose'></i>
-                </div>
-
-<<<<<<< Updated upstream
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href=""><i class="fa-solid fa-book-open"></i>Watches</a>
+        <a class="nav-link" href="ipadh.jsp"><i class="fa-solid fa-book-open"></i>Ipad</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="all_Phones.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
+        <a class="nav-link" href="iphoneh.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="all_Laps.jsp"><i class="fa-solid fa-book-open"></i>Laptops</a>
+        <a class="nav-link" href="mach.jsp"><i class="fa-solid fa-book-open"></i>MacBook</a>
       </li>
 <!--      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,54 +110,9 @@
       </li>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</button>
+      <a href="settings.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
       <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fa-regular fa-address-book"></i>Contact Us</button>
     </form>
   </div>
 </nav>
  
-=======
-                <ul class="nav-links">
-                    <li><a href="#iphone.jsp">iPhone</a></li>
-                    <li><a href="#watch.jsp">Watch</a></li>
-                    <li><a href="#mac.jsp">Mac</a></li>
-                    <li><a href="#airpods.jsp">Airpods</a></li>
-                    <li><a href="#ipads.jsp">iPads</a></li>
-                 <li><a href="#support.jsp">Support</a></li>
-                 <li></li>
-                 <li></li>
-                 <li class="toggle"><input type="text" placeholder="Search...">
-                    <a href="#search-bar">
-                         <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                </li>
-                <li class="toggle"><a href="#cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li> <!-- Added cart icon -->
-                <li class="toggle"><a href="#login.jsp"><i class="fa-solid fa-user"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-  <script>
-     const body = document.querySelector("body"),
-     nav = document.querySelector("nav"),
-     sidebarOpen = document.querySelector(".sidebarOpen"),
-     siderbarClose = document.querySelector(".siderbarClose");
-
-     // javascript code to toggle sidebar
-     sidebarOpen.addEventListener("click" , () =>{
-     nav.classList.add("active"); 
-     });
-
-     body.addEventListener("click" , e =>{
-     let clickedElm = e.target;
-
-     if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-     nav.classList.remove("active");
-     }
-     });
-
-  </script>
-  </body>
-</html>
->>>>>>> Stashed changes
