@@ -380,18 +380,30 @@
                             </div>
                             <br>
                             <div class="action">
-                                <div class="quantity">
+<!--                                <div class="quantity">
                                     <p>Qty:</p>
 
 
                                     <input type="number" id="quantity" name="quantity" min="1" value="1">
-                                </div>
+                                </div>-->
                                 <div class="col">
                                     <div><br></div>
+                                    
+                                    <%
+                                        if(b.getStatus().equals("Active")){
+                                    
+                                    %>
                                     <div> 
                                         <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
                                         <a href="DirplaceOrder.jsp?Iid=<%=b.getItemId()%>" class="btn3">Buy Now</a>
                                     </div>
+                                    <%} else{
+
+                                     %>
+                                     <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                                    <%
+                                        }
+                                    %>
                                 </div>
                             </div></div>
 

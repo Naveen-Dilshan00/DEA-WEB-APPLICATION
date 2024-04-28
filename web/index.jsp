@@ -479,6 +479,10 @@ form{
         <%
             user u =(user)session.getAttribute("userobj");
         %>
+          
+        
+        
+        
     <!-- Carousel -->
 
 
@@ -583,7 +587,7 @@ form{
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 
-let carouselDom = document.querySelector('.carousel');
+let carouselDom= document.querySelector('.carousel');
 let SliderDom = carouselDom.querySelector('.carousel .list');
 let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
@@ -630,6 +634,8 @@ function showSlider(type){
 }
 
   </script>
+
+     
 
   <!-- 4 boxes -->
 

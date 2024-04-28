@@ -39,7 +39,7 @@
             user u =(user)session.getAttribute("userobj");
         %>
         
-        <%@include file="all_components/navbar.jsp"%>
+        <%@include file="all_components/navbar01.jsp"%>
         
         
         <div class="container-fluid back-img">
