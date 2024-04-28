@@ -53,6 +53,27 @@
 }
 
 
+
+
+/*Navbar css part*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+
+img
+  {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+  }
+
+nav
 /*header section css part*/
 .header
 {
@@ -136,7 +157,79 @@ a
     margin-top: 0px;
     
 }
-.box:hover input
+
+.nav-links li:hover a::before
+{
+    opacity: 1;
+}
+
+
+
+
+
+@media (max-width: 790px) 
+
+{
+    nav .nav-bar .sidebarOpen
+    {
+        display: block;
+    }
+
+    .menu
+    {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color:#000;
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu
+    {
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a
+    {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle
+    {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose
+    {
+        color:#000;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links
+    {
+        
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a
+    {
+        display: block;
+        margin-top: 20px;
+    }
+   
+}
+.toggle:hover input
 {
     width: 200px;
 }
