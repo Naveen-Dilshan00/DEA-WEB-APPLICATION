@@ -1,19 +1,18 @@
 <%-- 
-    Document   : specs
-    Created on : Apr 21, 2024, 4:31:35 PM
+    Document   : specsL
+    Created on : Apr 27, 2024, 6:28:43 PM
     Author     : THARINDU DISSANAYAKE
 --%>
 
-<%@page import="com.entity.user"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +43,7 @@
                 flex-direction: column; }
             body {
                 font-family: Arial, sans-serif;
-                background-color: #f8f9fa;
+                background-color: #fafafa;
                 margin: 0;
             }
             .additional-info-container {
@@ -73,9 +72,13 @@
             }
             .spec-heading {
                 text-align: center; /* Center the subheading */
-                font-size: 24px; /* Increase subheading font size */
+                /* Increase subheading font size */
                 margin-top: 50px;
                 bottom: 10px;/* Add space below the subheading */
+            }
+
+            .accordion-body{
+                color: gray;
             }
             @media screen and (max-width: 996px) {
                 .preview {
@@ -113,7 +116,7 @@
 
             .card {
                 margin-top: 50px;
-                background: #eee;
+                background: #fdfdfd;
                 padding: 3em;
                 line-height: 1.5em; }
             .color-option {
@@ -129,20 +132,16 @@
                 border: 1px solid #4C4C4C; /* Add border for selected color */
             }
 
-            .blue {
-                background: #A3C1DC; }
+            .black {
+                background: #181818; }
 
             .gold {
                 background: #FFEF99; }
 
             .white {
-                background: #FFFFFF; }
+                background: #d6d6d6; }
 
-            .green {
-                background: #17411E; }
 
-            .purple {
-                background: #8E5A95; }
 
             /* Hide radio buttons */
             .color-options input[type="radio"] {
@@ -235,7 +234,7 @@
                 color: gray;
                 background-color: #D2D4E7;
                 padding: 4px;
-                width: 50%;
+                width: 70%;
                 margin-bottom: 6px;
 
             }
@@ -304,7 +303,7 @@
         </style>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-        <%@include file="all_components/allCSS.jsp"%>
+
     </head>
 
     <body>
@@ -319,8 +318,7 @@
         itemDetailes b = dao.getItemsById(id);
     
         %>
-        
- 
+
         <div class="container">
             <div class="card">
                 <div class="container-fliud">
@@ -328,24 +326,27 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="Items_img/purple<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-4"><img src="Items_img/white<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="Items_img/blue<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="Items_img/black.jpg" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/upview.jpg" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold.jpg" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="Items_img/sideview.jpg" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/white.jpg" /></div>
+                                
+
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/purple<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/white<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/blue<%=b.getPhotoName()%>" /></a></li>
-                            </ul>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'black', this)"><img src="Items_img/black.jpg" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'front', this)"><img src="Items_img/upview.jpg" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold.jpg" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'side', this)"><img src="Items_img/sideview.jpg" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'white', this)"><img src="Items_img/white.jpg" /></a></li>
+
+
 
                         </div>
                         <div class="details col-md-6">
-                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPhone</a>><span class="hed"> <%=b.getItemName()%></span></span>
-                            <h3 class="product-title">iPhone 14 Pro</h3>
+                            <span class="review-no1"><a href="#">Home ></a><a href="#">MacBook</a>><span class="hed"><%=b.getItemName()%></span></span>
+                            <h3 class="product-title">><%=b.getItemName()%></h3>
                             <div class="rating">
                                 <span class="review-no"><%=b.getStatus()%></span>
                             </div>
@@ -356,8 +357,8 @@
                                 <div class=""><p class="colo">Choose a Color</p></div>
                                 <!-- Inside the color-options div, add onclick event to each color-option -->
                                 <div class="color-options">
-                                    <input type="radio" id="color_blue" name="phone_color" value="blue" onclick="selectColorFromOptions('blue')">
-                                    <label for="color_blue" class="color-option blue"></label>
+                                    <input type="radio" id="color_black" name="phone_color" value="black" onclick="selectColorFromOptions('black')">
+                                    <label for="color_black" class="color-option black"></label>
 
                                     <input type="radio" id="color_gold" name="phone_color" value="gold" onclick="selectColorFromOptions('gold')">
                                     <label for="color_gold" class="color-option gold"></label>
@@ -365,48 +366,70 @@
                                     <input type="radio" id="color_white" name="phone_color" value="white" onclick="selectColorFromOptions('white')">
                                     <label for="color_white" class="color-option white"></label>
 
-                                    <input type="radio" id="color_green" name="phone_color" value="green" onclick="selectColorFromOptions('green')">
-                                    <label for="color_green" class="color-option green"></label>
 
-                                    <input type="radio" id="color_purple" name="phone_color" value="purple" onclick="selectColorFromOptions('purple')">
-                                    <label for="color_purple" class="color-option purple"></label>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="storage">
                                 <p class="colo">Choose a Storage</p>
                                 <div class="storage-options">
-                                    <label><input type="radio" name="storage" value="128GB"> 128GB</label>
                                     <label><input type="radio" name="storage" value="256GB"> 256GB</label>
                                     <label><input type="radio" name="storage" value="512GB"> 512GB</label>
+                                    <label><input type="radio" name="storage" value="1TB"> 1TB</label>
                                 </div>
                             </div>
                             <br>
                             <div class="action">
-                                
+<!--                                <div class="quantity">
+                                    <p>Qty:</p>
+
+
+                                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                                </div>-->
                                 <div class="col">
                                     <div><br></div>
+                                    
+                                    <%
+                                        if(b.getStatus().equals("Active")){
+                                    
+                                    %>
                                     <div> 
-                                          <%
-                                          
-                                            HttpSession Session = request.getSession();
-                                            Session.setAttribute("Itemid",b.getItemId());
-                                          %>
                                         <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
                                         <a href="DirplaceOrder.jsp?Iid=<%=b.getItemId()%>" class="btn3">Buy Now</a>
-                                      
                                     </div>
+                                    <%} else{
+
+                                     %>
+                                     <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                                    <%
+                                        }
+                                    %>
                                 </div>
                             </div></div>
 
                     </div>
                 </div>
             </div>
-            <h2 class="spec-heading">Specifications</h2>
+            <h1 class="spec-heading">Specifications</h1>
             <div class="additional-info-container">
                 <div class="info-heading">Brand</div>
                 <div class="info-description">
                     <p>Apple</p>
+                </div>
+                
+                <div class="info-heading">Size</div>
+                <div class="info-description">
+                    <p>14-inch Display , 16-inch Display</p>
+                </div>
+                
+                <div class="info-heading">RAM</div>
+                <div class="info-description">
+                    <p>16GB</p>
+                </div>
+                
+                <div class="info-heading">Storage</div>
+                <div class="info-description">
+                    <p>512GB,1TB</p>
                 </div>
 
                 <div class="info-heading">Warranty</div>
@@ -414,87 +437,143 @@
                     <p>USA Region LL/A(E-SIM), Apple Care Warranty, Genxt Warranty</p>
                 </div>
 
-                <div class="info-heading">Storage</div>
-                <div class="info-description">
-                    <p>128GB,256GB,512GB,1TB</p>
-                </div>
-
-                <div class="info-heading">Camera</div>
-                <div class="info-description">
-                    <p>12MP Front/48MP Back</p>
-                </div>
-
                 <div class="info-heading">Color</div>
                 <div class="info-description">
-                    <p>Deep Purple,Gold,Silver,Light Blue,Green</p>
-                </div>
-
-                <div class="info-heading">Operating System</div>
-                <div class="info-description">
-                    <p>iOS 16</p>
+                    <p>Silver, Space Grey</p>
                 </div>
             </div>
+
+            <div class="container rounded h-75 w-77">
+                <div style="margin: 50px auto 10px"><h1 class="text-center" >FAQs</h1></div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                How to buy Apple products?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Place your order by adding items to the cart and go to the checkout page to make the payment.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                What payment methods are accepted?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Credit card/Debit card payments and Paypal payments are Accepted.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                Are there any warranties?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Yes, you will receive 1 year Apple Care Warranty.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                Can I track my order?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                No You can not track your order.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- JavaScript -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous">
+        </script>
+
         <script>
-                                        function increaseQuantity() {
-                                            var quantityInput = document.getElementById("quantity");
-                                            quantityInput.value = parseInt(quantityInput.value) + 1;
-                                        }
+            function increaseQuantity() {
+                var quantityInput = document.getElementById("quantity");
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            }
 
-                                        function decreaseQuantity() {
-                                            var quantityInput = document.getElementById("quantity");
-                                            if (parseInt(quantityInput.value) > 1) {
-                                                quantityInput.value = parseInt(quantityInput.value) - 1;
-                                            }
-                                        }
+            function decreaseQuantity() {
+                var quantityInput = document.getElementById("quantity");
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                }
+            }
 
-                                        function changeMainImage(imageId, color, element) {
-                                            $('.preview-pic .tab-pane').removeClass('active');
-                                            $('.preview-thumbnail .nav-tabs li').removeClass('active');
-                                            $('.preview-thumbnail .nav-tabs li a').removeClass('glow'); // Remove glow from all circles
+            function changeMainImage(imageId, color, element) {
+                $('.preview-pic .tab-pane').removeClass('active');
+                $('.preview-thumbnail .nav-tabs li').removeClass('active');
+                $('.preview-thumbnail .nav-tabs li a').removeClass('glow'); // Remove glow from all circles
 
-                                            $('#' + imageId).addClass('active');
-                                            $('.preview-thumbnail .nav-tabs a[data-target="#' + imageId + '"]').parent().addClass('active');
-                                            $(element).addClass('glow'); // Add glow to selected circle
+                $('#' + imageId).addClass('active');
+                $('.preview-thumbnail .nav-tabs a[data-target="#' + imageId + '"]').parent().addClass('active');
+                $(element).addClass('glow'); // Add glow to selected circle
 
-                                            // Auto-select color radio button
-                                            $('input[name="phone_color"]').prop('checked', false); // Uncheck all radio buttons
-                                            $('input[name="phone_color"][value="' + color + '"]').prop('checked', true);
+                // Auto-select color radio button
+                $('input[name="phone_color"]').prop('checked', false); // Uncheck all radio buttons
+                $('input[name="phone_color"][value="' + color + '"]').prop('checked', true);
 
-                                            // Auto-select image based on color
-                                            var imageIndex = parseInt(imageId.split('-')[1]) - 1; // Extract image index from imageId
-                                            $('ul.preview-thumbnail li:eq(' + imageIndex + ') a').click(); // Trigger click event on corresponding thumbnail
-                                        }
-                                        function selectColorFromOptions(color) {
-                                            // Determine the image ID corresponding to the selected color
-                                            var imageId;
-                                            switch (color) {
-                                                case 'blue':
-                                                    imageId = 'pic-5';
-                                                    break;
-                                                case 'gold':
-                                                    imageId = 'pic-3';
-                                                    break;
-                                                case 'white':
-                                                    imageId = 'pic-4';
-                                                    break;
-                                                case 'green':
-                                                    imageId = 'pic-1';
-                                                    break;
-                                                case 'purple':
-                                                    imageId = 'pic-2';
-                                                    break;
-                                                default:
-                                                    return;
-                                            }
+                // Auto-select image based on color
+                var imageIndex = parseInt(imageId.split('-')[1]) - 1; // Extract image index from imageId
+                $('ul.preview-thumbnail li:eq(' + imageIndex + ') a').click(); // Trigger click event on corresponding thumbnail
+            }
+            function selectColorFromOptions(color) {
+                // Determine the image ID corresponding to the selected color
+                var imageId;
+                switch (color) {
+                    case 'black':
+                        imageId = 'pic-1';
+                        break;
+                    case 'gold':
+                        imageId = 'pic-3';
+                        break;
+                    case 'white':
+                        imageId = 'pic-5';
+                        break;
 
-                                            // Call the changeMainImage function to update the main image and color selection
-                                            changeMainImage(imageId, color, document.querySelector('.preview-thumbnail a[data-target="#' + imageId + '"]'));
-                                        }
+                    default:
+                        return;
+                }
+
+                // Call the changeMainImage function to update the main image and color selection
+                changeMainImage(imageId, color, document.querySelector('.preview-thumbnail a[data-target="#' + imageId + '"]'));
+            }
 
         </script>
-        </body>
-        </html>
+    </body>
+</html>
+

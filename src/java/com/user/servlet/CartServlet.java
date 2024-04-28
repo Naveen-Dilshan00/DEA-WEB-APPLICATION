@@ -107,8 +107,8 @@ public class CartServlet extends HttpServlet {
                     session.setAttribute("cart-list",cartList);
 
 
-                    session.setAttribute("addCart","Book added to the cart");
-                    response.sendRedirect("all_Laps.jsp");
+                    session.setAttribute("addCart","Item added to the cart");
+                    response.sendRedirect("mach.jsp");
                 }
                 else{
 
@@ -124,7 +124,7 @@ public class CartServlet extends HttpServlet {
                             exist=true;
                             out.println("Product exist");
                             session.setAttribute("addCart","item Already exist");
-                            response.sendRedirect("all_Laps.jsp");
+                            response.sendRedirect("mach.jsp");
 
                             break;
 
@@ -135,8 +135,8 @@ public class CartServlet extends HttpServlet {
 
                         cartDAOImpl dao2 =new cartDAOImpl(DBConnect.getConn());
                         boolean fff =dao2.addCart(c);
-                        session.setAttribute("addCart","Book added to the cart");
-                        response.sendRedirect("all_Laps.jsp");
+                        session.setAttribute("addCart","Item added to the cart");
+                        response.sendRedirect("mach.jsp");
                        
                     }
 
