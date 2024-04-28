@@ -301,7 +301,7 @@
                             } else{
                       %>
                             <div class="card-footer">
-                                <a class="btn btn-outline-dark" href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a>
+                                <a href="specs1.jsp?Iid=<%=b.getItemId()%>" class="btn btn-outline-dark" class="card-button">Buy Now</a>
                             </div>
                       <%
                             }
@@ -310,7 +310,7 @@
                 } else{
             %>
                 <div class="card-footer">
-                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                   <a href="specs1.jsp?Iid=<%=b.getItemId()%> "class="btn btn-outline-danger" disabled>Out Of Stock</a>
                 </div>
             <%
                 }
