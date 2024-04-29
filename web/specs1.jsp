@@ -131,8 +131,8 @@
             .blue {
                 background: #A3C1DC; }
 
-            .gold {
-                background: #FFEF99; }
+            .black {
+                background: #000 }
 
             .white {
                 background: #FFFFFF; }
@@ -329,14 +329,14 @@
                             <div class="preview-pic tab-content">
                                 <div class="tab-pane active" id="pic-1"><img src="Items_img/<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-2"><img src="Items_img/purple<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/black<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-4"><img src="Items_img/white<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-5"><img src="Items_img/blue<%=b.getPhotoName()%>" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
                                 <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/purple<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'black', this)"><img src="Items_img/black<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/white<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/blue<%=b.getPhotoName()%>" /></a></li>
                             </ul>
@@ -358,8 +358,8 @@
                                     <input type="radio" id="color_blue" name="phone_color" value="blue" onclick="selectColorFromOptions('blue')">
                                     <label for="color_blue" class="color-option blue"></label>
 
-                                    <input type="radio" id="color_gold" name="phone_color" value="gold" onclick="selectColorFromOptions('gold')">
-                                    <label for="color_gold" class="color-option gold"></label>
+                                    <input type="radio" id="color_black" name="phone_color" value="black" onclick="selectColorFromOptions('black')">
+                                    <label for="color_black" class="color-option black"></label>
 
                                     <input type="radio" id="color_white" name="phone_color" value="white" onclick="selectColorFromOptions('white')">
                                     <label for="color_white" class="color-option white"></label>
@@ -548,7 +548,7 @@
                                                 case 'blue':
                                                     imageId = 'pic-5';
                                                     break;
-                                                case 'gold':
+                                                case 'black':
                                                     imageId = 'pic-3';
                                                     break;
                                                 case 'white':
