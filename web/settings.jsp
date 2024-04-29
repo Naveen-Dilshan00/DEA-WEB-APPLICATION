@@ -34,7 +34,7 @@
                 </div
                 
                 <div class="col-md-6">
-                    <a href="edit_profile.jsp">
+                    <a href="Userprofile1.jsp">
                         <div class="card">
                             <div class="card-body text-center">
                                 <h3>Login & security(Edit)</h3>

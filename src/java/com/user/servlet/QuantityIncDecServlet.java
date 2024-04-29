@@ -76,7 +76,7 @@ public class QuantityIncDecServlet extends HttpServlet {
                                int cQuantity = c.getcQuantity();
                                cQuantity++;
                                c.setcQuantity(cQuantity);
-                               response.sendRedirect("checkout.jsp");
+                               response.sendRedirect("checkout1.jsp");
                            }
                        }
                    }
@@ -91,11 +91,11 @@ public class QuantityIncDecServlet extends HttpServlet {
                                break;
                            }
                        }
-                       response.sendRedirect("checkout.jsp");
+                       response.sendRedirect("checkout1.jsp");
                    }
                }
                else{
-                   response.sendRedirect("checkout.jsp");
+                   response.sendRedirect("checkout1.jsp");
                }
            }
            catch(Exception e){

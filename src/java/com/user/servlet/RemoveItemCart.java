@@ -69,6 +69,7 @@ public class RemoveItemCart extends HttpServlet {
                try(PrintWriter out = response.getWriter()){
                    String Iid = (request.getParameter("Iid"));
 //                   int Cid = Integer.parseInt(request.getParameter("Cid"));
+                   HttpSession session = request.getSession();
                    
                    if(Iid != null){
                        ArrayList<cart> cart_list = (ArrayList<cart>) request.getSession().getAttribute("cart-list");
@@ -76,14 +77,17 @@ public class RemoveItemCart extends HttpServlet {
                            for(cart c:cart_list){
                                if(c.getIid()==Integer.parseInt(Iid)){
                                    cart_list.remove(cart_list.indexOf(c));
+                                   
+                                   session.setAttribute("RemoveSuccMsg","Item Removed");
+                                   response.sendRedirect("checkout1.jsp");
                                    break;
                                }
                            }
-                           response.sendRedirect("checkout.jsp");
+                           response.sendRedirect("checkout1.jsp");
                        }
                    }
                    else{
-                       response.sendRedirect("checkout.jsp");
+                       response.sendRedirect("checkout1.jsp");
                    }
                }
                catch(Exception e){
