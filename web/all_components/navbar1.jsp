@@ -1,3 +1,8 @@
+<%-- 
+    Document   : navbar01
+    Created on : Apr 12, 2024, 8:42:26 PM
+    Author     : admin
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -268,15 +273,17 @@ nav .nav-bar .logo a
     
   </head>
   <body>
-      
+   
+  </head>
+  <body>
     <nav>
         <div class="nav-bar">
             <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#home"><img src="image/apple_logo.jpg" alt="apple-logo"></a></span>
+            <span class="logo navLogo"><a href="#home"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
 
             <div class="menu">
                 <div class="logo-toggle">
-                   <span class="logo"><a href="#home"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
+                    <span class="logo"><a href="#home"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
                     <i class='bx bx-x siderbarClose'></i>
                 </div>
 

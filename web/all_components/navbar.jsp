@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.cartDAOImpl"%>
 <%@page import="com.entity.cart"%>
@@ -27,6 +28,9 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         request.setAttribute("cart_list", cart_list);
         request.setAttribute("total",Total);
     }
+    
+    DecimalFormat dcf = new DecimalFormat("#.##");
+    request.setAttribute("dcf",dcf);
 %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -50,8 +54,8 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         <c:if test="${not empty userobj}">
              <div class="col-md-3">
 
-                 <a href="checkout.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
-                 <a href="checkout.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+                 <a href="checkout1.jsp"><span class="badge badge-danger">${cart_list.size()}</span><i class="fa-solid fa-cart-shopping text-success"></i></a>
+                
 
             <a href=" " class="btn btn-success">${userobj.name}</a>
             <a href="LogoutServlet"  class="btn btn-primary text-white">Logout</a>
@@ -61,8 +65,8 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         
         <c:if test="${empty userobj}">
              <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success">Login</a>
-            <a href="register.jsp" class="btn btn-primary text-white">Register</a>
+            <a href="login1.jsp" class="btn btn-success">Login</a>
+            <a href="register1.jsp" class="btn btn-primary text-white">Register</a>
              </div>
         </c:if>
     </div>
@@ -82,13 +86,13 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href=""><i class="fa-solid fa-book-open"></i>Watches</a>
+        <a class="nav-link" href="ipadh.jsp"><i class="fa-solid fa-book-open"></i>Ipad</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="all_Phones.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
+        <a class="nav-link" href="iphoneh.jsp"><i class="fa-solid fa-book-open"></i>Phones</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="all_Laps.jsp"><i class="fa-solid fa-book-open"></i>Laptops</a>
+        <a class="nav-link" href="mach.jsp"><i class="fa-solid fa-book-open"></i>MacBook</a>
       </li>
 <!--      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,7 +110,7 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
       </li>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a href="settings.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
+      <a href="Userprofile1.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
       <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fa-regular fa-address-book"></i>Contact Us</button>
     </form>
   </div>

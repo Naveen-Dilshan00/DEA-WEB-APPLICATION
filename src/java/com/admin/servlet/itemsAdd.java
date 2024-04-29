@@ -111,14 +111,14 @@ public class itemsAdd extends HttpServlet {
                         
 //                         System.out.println("Account created succesfully");
                            session.setAttribute("SuccMsg" , "Registration Succesfully");
-                           response.sendRedirect("admin/adminHome.jsp");
+                           response.sendRedirect("admin/Addminhome.jsp");
                            System.out.println("aaaaaaaaaaaaaaaaaaaa");
                          
                     }
                     else{
 //                        System.out.println("Something went wrong");
                            session.setAttribute("faildMsg","Something wrong on server");
-                           response.sendRedirect("admin/adminHome.jsp");
+                           response.sendRedirect("admin/AddminHome.jsp");
                            System.out.println("bbbbbbbbbbbbbbbbb");
                            
                     }

@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,6 +72,7 @@
         </style>
     </head>
     <body>
+        
         <div class="row vh-100 g-0">
             <!--left-->
             <div class="col-lg-7 position-relative d-none d-lg-block">
@@ -85,29 +89,45 @@
                       
                            <div class="right">
                            <div class="text mb-5">
+                               
+                               <c:if test="${ not empty RSuccMsg}">
+                                        <div class="alert alert-success" role="alert">
+                                            <P>${SuccMsg}</P>
+                                        </div>
+                                         <c:remove var="SuccMsg" scope="session"/>
+                                     </c:if>
+
+                                    <c:if test="${ not empty RfaildMsg}">
+                                        <div class="alert alert-danger" role="alert">
+                                         ${faildMsg}
+                                        </div>
+                                         <c:remove var="faildMsg" scope="session"/>
+                                    </c:if>
+                               
                                <h1 class="fw-bold"><b>Sign Up</b></h1>
                                <p class="text-secondary"><h6>Please enter your personal details to sign up</h6></p>
                            </div>
+                               
                            <div class="ab">    
-                            <form action="#">    
+                               <form action="registerServlet" method="POST">    
                            <div class="input-group mb-4">
-                               <input type="text" id="name" class="form-control form-control-lg fs-6" placeholder="Full Name">
+                               <input type="text" id="name" class="form-control form-control-lg fs-6" placeholder="Full Name" name="fname">
                            </div>
                            <div class="input-group mb-4">
-                               <input type="text" id="address" class="form-control form-control-lg fs-6" placeholder="Email Address">
+                               <input type="email" id="address" class="form-control form-control-lg fs-6" placeholder="Email Address" name="email">
                            </div>
                            <div class="input-group mb-4">
-                               <input type="password" id="password" class="form-control form-control-lg fs-6" placeholder="Password">
+                               <input type="password" id="password" class="form-control form-control-lg fs-6" placeholder="Password" name="password">
                            </div>
                            <div class="input-group mb-4 d-flex justify-content-between">
-                               <input type="checkbox" class="form-check-input" id="formCheck">
+                               <input type="checkbox" class="form-check-input" id="formCheck" name="check">
                                <label for="formCheck" class="form-check-label text-secondary"><small>I agree to all of the companie's <a href="#" class="fw-bold"><b>Terms & Conditions</b></a></small></label>
                            </div>
                           <div class="text-center">     
-                              <button type="button" id="submit" class="btn btn-primary btn-lg col-6 col-md-4 col-xl-8 mb-3 ">Sign Up</button>
+                              <button type="submit" id="submit" class="btn btn-primary btn-lg col-6 col-md-4 col-xl-8 mb-3 ">Sign Up</button>
                           </div>
                           <div class="text">
-                              Already have an account? <a href="#" class="fw-bold"><b>Sign In</b></a>
+                              Already have an account? <a href="login1.jsp" class="fw-bold"><b>Sign In</b></a>
                           </div><br><br>
                            
                             <!--divider-->
@@ -150,7 +170,7 @@
             </div>
             
         </div>
-        <script>
+<!--        <script>
           $("#submit").click(function(){
              
              var name = $("#name").val(); 
@@ -183,6 +203,6 @@
                        });
              }
           });  
-        </script>
+        </script>-->
     </body>
 </html>

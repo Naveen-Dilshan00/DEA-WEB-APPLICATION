@@ -47,6 +47,7 @@ public class cartDAOImpl implements cartDAO{
                         row.setItemName(rs.getString("Item_Name"));
                         row.setPricee(rs.getDouble("price")*item.getcQuantity());
                         row.setcQuantity(item.getcQuantity());
+                        row.setcPhoto(rs.getString("Photo"));
                         products.add(row);
                     }
                 }
@@ -90,7 +91,7 @@ public class cartDAOImpl implements cartDAO{
         
         boolean f=false;
         try{
-            String sql="insert into cart(Item_Id,User_Id,Item_Name,M_Year,Price,Total_Price) values(?,?,?,?,?,?)";
+            String sql="insert into cart(Item_ID,User_ID,Item_Name,M_Year,Price,Total_Price,Quantity) values(?,?,?,?,?,?,?)";
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setInt(1,c.getIid());
             ps.setInt(2,c.getUserId());
@@ -98,6 +99,7 @@ public class cartDAOImpl implements cartDAO{
             ps.setString(4,c.getM_year());
             ps.setDouble(5,c.getPricee());
             ps.setDouble(6,c.getTotallPrice());
+            ps.setInt(7,c.getcQuantity());
             
             int i = ps.executeUpdate();
             if(i==1){

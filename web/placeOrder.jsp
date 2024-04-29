@@ -41,6 +41,7 @@
                             <h3 class="text-center text-success">Your Detailes</h3>>
                             <form action="OrderServlet">
                                 <input type="hidden" name="id" value="${userobj.id}">
+                                <input type="hiden" name="Iid" value="">
                                 <div class="form-row">
                                   <div class="form-group col-md-6">
                                     <label name="name"for="inputEmail4">Name</label>
@@ -88,7 +89,7 @@
                                   <br>
                                   
                              </div>
-                                <button class="btn btn-warning">Ortder Now</button>
+                                <button class="btn btn-warning">Order Now</button>
                                   <a href="index.jsp" class="btn btn-success">Continue</a>
                             </form>
                         </div>

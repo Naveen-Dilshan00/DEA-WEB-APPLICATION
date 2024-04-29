@@ -5,11 +5,16 @@
  */
 package com.DAO;
 
+import com.entity.cart;
 import java.sql.Connection;
 import com.entity.user;
 import com.mysql.cj.protocol.Resultset;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,12 +36,12 @@ public class userDAOImpl implements userDAO{
         boolean f= false;
         
         try{
-            String sql="insert into user(Name,Email,Phonenumber,Password) values(?,?,?,?)";
+            String sql="insert into user(Name,Email,Password) values(?,?,?)";
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setString(1,us.getName());
             ps.setString(2,us.getEmail());
-            ps.setString(3,us.getPhno());
-            ps.setString(4,us.getPassword());
+//            ps.setString(3,us.getPhno());
+            ps.setString(3,us.getPassword());
             
             int i=ps.executeUpdate();
             if(i==1)
@@ -110,6 +115,29 @@ public class userDAOImpl implements userDAO{
         return f;
     }
     
+    
+    public boolean updatePassword(user us){
+        boolean f=false;
+            
+        try{
+           String sql ="update user set Password =? where Id =?";
+           PreparedStatement ps = conn.prepareStatement(sql);
+           ps.setString(1,us.getPassword());
+           ps.setInt(2,us.getId());
+           
+           int i =ps.executeUpdate();
+           if(i==1){
+               f=true;
+           }
+           
+        }
+        catch(Exception e){
+            
+        }
+        
+        return f;
+    }
+    
     public boolean updateProfile(user us){
         boolean f=false;
             
@@ -132,6 +160,41 @@ public class userDAOImpl implements userDAO{
         }
         
         return f;
+    }
+    
+    public int getUserCount() {
+        int count = 0;
+        try {
+            String sql ="SELECT COUNT(*) FROM user";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public int getProductCount() {
+        int count = 0;
+        try {
+            String sql ="SELECT COUNT(*) FROM item_data ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 }
     

@@ -82,16 +82,16 @@ public class registerServlet extends HttpServlet {
           try{
             String name=request.getParameter("fname");
             String email = request.getParameter("email");
-            String phno =request.getParameter("phno");
+//            String phno =request.getParameter("phno");
             String password = request.getParameter("password");
             String check = request.getParameter("check");
 
-          System.out.println(name + " " +email+" " +phno+" " +password+" "+check);
+          System.out.println(name + " " +email+" " +password+" "+check);
 
             user us =new user();
             us.setName(name);
             us.setEmail(email);
-            us.setPhno(phno);
+//            us.setPhno(phno);
             us.setPassword(password);
             
             
@@ -104,22 +104,23 @@ public class registerServlet extends HttpServlet {
 
                     if(f){
 //                        System.out.println("Account created succesfully");
-                           httpSession.setAttribute("SuccMsg" , "Registration Succesfully");
-                           response.sendRedirect("login.jsp");
+                           httpSession.setAttribute("RSuccMsg" , "Registration Succesfully");
+                           
+                           response.sendRedirect("register1.jsp");
                          
                     }
                     else{
 //                        System.out.println("Something went wrong");
-                           httpSession.setAttribute("faildMsg","Something wrong on server");
-                           response.sendRedirect("register.jsp");
+                           httpSession.setAttribute("RfaildMsg","Something wrong on server");
+                           response.sendRedirect("register1.jsp");
                            
                     }
                 }
             else{
 //                System.out.println("Please check agree &term conditions");
                    
-                   httpSession.setAttribute("faildMsg","please check terms and conditions");
-                    response.sendRedirect("register.jsp");
+                   httpSession.setAttribute("RfaildMsg","please check terms and conditions");
+                    response.sendRedirect("register1.jsp");
             }
             
             

@@ -68,8 +68,8 @@ public class LogoutServlet extends HttpServlet {
                 session.removeAttribute("cart-list");
 
                 HttpSession session2 = request.getSession();
-                session.setAttribute("SuccMsg" , "Logout Succesfully");
-                response.sendRedirect("login.jsp");
+                session.setAttribute("LogSuccMsg" , "Logout Succesfully");
+                response.sendRedirect("login1.jsp");
             }
             catch(Exception e){
                 e.printStackTrace();

@@ -7,8 +7,10 @@ package com.user.servlet;
 
 import com.DAO.cartDAOImpl;
 import com.DB.DBConnect;
+import com.entity.cart;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -62,21 +64,48 @@ public class RemoveItemCart extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-            int Iid = Integer.parseInt(request.getParameter("Iid"));
-            int Cid = Integer.parseInt(request.getParameter("Cid"));
-            cartDAOImpl dao = new cartDAOImpl(DBConnect.getConn());
-            boolean f= dao.deleteItem(Iid,Cid);
             
-            HttpSession session = request.getSession();
-            
-            if(f){
-                 session.setAttribute("succMsg","Email & Password invalid");
-                 response.sendRedirect("checkout.jsp");
-            }
-            else{
-                 session.setAttribute("failedMsg","Email & Password invalid");
-                 response.sendRedirect("checkout.jsp");
-            }
+
+               try(PrintWriter out = response.getWriter()){
+                   String Iid = (request.getParameter("Iid"));
+//                   int Cid = Integer.parseInt(request.getParameter("Cid"));
+                   HttpSession session = request.getSession();
+                   
+                   if(Iid != null){
+                       ArrayList<cart> cart_list = (ArrayList<cart>) request.getSession().getAttribute("cart-list");
+                       if(cart_list != null){
+                           for(cart c:cart_list){
+                               if(c.getIid()==Integer.parseInt(Iid)){
+                                   cart_list.remove(cart_list.indexOf(c));
+                                   
+                                   session.setAttribute("RemoveSuccMsg","Item Removed");
+                                   response.sendRedirect("checkout1.jsp");
+                                   break;
+                               }
+                           }
+                           response.sendRedirect("checkout1.jsp");
+                       }
+                   }
+                   else{
+                       response.sendRedirect("checkout1.jsp");
+                   }
+               }
+               catch(Exception e){
+                e.printStackTrace();
+               }
+//            cartDAOImpl dao = new cartDAOImpl(DBConnect.getConn());
+//            boolean f= dao.deleteItem(Iid,Cid);
+//            
+//            HttpSession session = request.getSession();
+//            
+//            if(f){
+//                 session.setAttribute("succMsg","Email & Password invalid");
+//                 response.sendRedirect("checkout.jsp");
+//            }
+//            else{
+//                 session.setAttribute("failedMsg","Email & Password invalid");
+//                 response.sendRedirect("checkout.jsp");
+//            }
     }
 
     /**

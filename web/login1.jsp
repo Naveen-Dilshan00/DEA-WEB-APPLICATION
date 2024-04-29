@@ -4,6 +4,8 @@
     Author     : Senur
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +18,7 @@
                 background-image: url("image/main.jpg");
                 position: absolute;
                 width: 100%;
-                height: 97vh; /* Adjusted to occupy full height of the viewport */
+                height: 97vh; 
                 border-radius: 0% 3% 3% 0%;
                 top: 0;
                 left: 0;
@@ -28,7 +30,12 @@
             .heading{
                 color:white; position: absolute; top: 12%; width: 100%;text-align: center; font-size: 3rem; font-weight: 800; 
             }
-            
+
+            .header{
+                background-color: #fff;
+                display:inherit;
+            }
+
             .font{
                 color: black;
             }
@@ -46,38 +53,51 @@
             }
 
             .right {
-                margin-top: 40%;
+                margin-top: 30%;
 
             }
             
 
+            .form-check {
+                margin-top: 5%; 
+                font-size: 0.75rem;
+            }
+
+
+
             .btn {
                 font-size: 0.8rem;
                 font-weight: 650;
-                
+
             }
 
             a {
-                text-decoration: underline;
+                text-decoration: none;
+                font-size: 0.9rem;
+                color: #303f9f;
             }
 
             a:hover {
-                text-decoration: underline;
+                text-decoration: none;
             }
 
             h1 {
-                font-family: Arial, sans-serif; /* Change font family */
-                font-size: 2.5rem; /* Adjusted font size for "Sign In" */
+                font-family: Arial, sans-serif; 
+                font-size: 2.5rem; 
                 font-weight: bold;
-                margin-bottom: 10px;
-                color:#303f9f
+                margin-bottom: 5px;
+                color:#303f9f;
+                
             }
 
-            .text-secondary {
+            .text{
                 font-size: 0.8rem;
                 font-family: Arial, sans-serif;
-                font-weight: 400;
-                /* Reduced font size for the accompanying text */
+                color: black;
+                
+                
+                
+                
             }
 
             .social-logos {
@@ -88,21 +108,21 @@
                 width: 40px;
                 margin-right: 10px;
                 margin-bottom: 10px;
-                border: 1px solid transparent; /* Add border */
-                padding: 5px; /* Add padding */
-                background-color: white; /* White background */
+                border: 1px solid transparent; 
+                padding: 5px;
+                background-color: white; 
             }
 
             .social-logos .row {
-                justify-content: center; /* Center align the row */
+                justify-content: center; 
             }
 
 
-            /* Adjustments for smaller screens */
+            
             @media screen and (min-width: 900px) {
                 .bg-holder .right {
                     flex-direction: row;
-                    height: 97.5vh; /* Maintain full height on smaller screens */
+                    height: 97.5vh; 
                 }
             }
 
@@ -112,13 +132,13 @@
             }
             .sbtn{
                 width: 40px;
-                margin-right: 10px;
-                margin-bottom: 10px;
-                border: 1px solid transparent; /* Add border */
-                padding: 5px; /* Add padding */
+                margin-right: 5px;
+                margin-bottom: 5px;
+                border: 1px solid transparent; 
+                padding: 5px; 
                 background-color: white;
-                
-                
+
+
             }
         </style>
     </head>
@@ -134,25 +154,54 @@
             <!--right Side-->
             <div class="col-lg-5">
                 <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
-                    <div class="col col-sm-6 col-lg-7 col-xl-6">
+                    <div class="col col-sm-6 col-lg-7 col-xl-7">
                         <!--Sign in Form -->
-                        <form action="#" class="right">
+                        <form action="LoginServlet" method="POST" class="right">
+                            
+                            
+                             <c:if test="${ not empty LogfailedMsg}">
+                                        <div class="alert alert-danger" role="alert">
+                                         ${LogfailedMsg}
+                                        </div>
+                                         <c:remove var="LogfailedMsg" scope="session"/>
+                                    </c:if>
+                            <c:if test="${ not empty LogSuccMsg}">
+                                        <div class="alert alert-success" role="alert">
+                                         ${LogSuccMsg}
+                                        </div>
+                                         <c:remove var="LogSuccMsg" scope="session"/>
+                                    </c:if>
+                                        
+                               
                             <div class="header">
                                 <h1>Sign in</h1>
-                                <p class="text-secondary">Please enter your login details to sign in</p>
+                             
+                                <p class="text">Please enter your login details to sign in</p>
+                                
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control form-control-lg fs-6" placeholder="Email Address">
+                                <input type="text" class="form-control form-control-lg fs-6" placeholder="User Name " name="uname">
                             </div>
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control form-control-lg fs-6" placeholder="Password">
+                                <input type="password" class="form-control form-control-lg fs-6" placeholder="Password" name="password">
                             </div>
-                            <div class="input-group mb-3">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Keep me logged in </small></label>
-                            </div>
-                            <!--admin and user login buttons -->
                             <div class="row mb-3">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check" name="check" value="">
+                                        <label class="form-check-label" for="check">Keep me logged in</label>
+                                    </div>
+                                    
+                                </div>
+                                &nbsp; &nbsp;
+                                <div class="col">
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                            </div>
+
+
+                            <!--admin and user login buttons -->
+                            <div class="row mb-3 ">
                                 <div class="col">
                                     <button class="btn btn-primary btn-lg w-100" type="submit">Admin Login</button>
                                 </div>
@@ -161,7 +210,7 @@
                                 </div>
                             </div>
                             <div class="text-center mb-3">
-                                <small>Don't have an account? <a href="#" class="fw-bold">Sign Up</a></small>
+                                <small>Don't have an account? <a href="register1.jsp" class="fw-bold">Sign Up</a></small>
                             </div>
 
                             <div class="position-relative mb-3">
@@ -172,13 +221,13 @@
                             <div class="social-logos">
                                 <div class="row">
                                     <div class="col">
-                                       <button class="sbtn"><img src="image/google.jpg" alt="Google"></button>
+                                        <a href=""><button class="sbtn"><img src="image/google.jpg" alt="Google"></button></a>
                                     </div>
                                     <div class="col">
-                                        <button class="sbtn"><img src="image/facebook.jpg" alt="Facebook"></button>
+                                        <a href=""><button class="sbtn"><img src="image/facebook.jpg" alt="Facebook"></button></a>
                                     </div>
                                     <div class="col">
-                                        <button class="sbtn"><img src="image/apple.jpg" alt="Apple"></button>
+                                        <a href=""><button class="sbtn"><img src="image/apple.jpg" alt="Apple"></button></a>
                                     </div>
                                 </div>
                             </div>
