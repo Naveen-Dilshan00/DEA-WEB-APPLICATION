@@ -303,7 +303,7 @@
                             } else{
                       %>
                             <div class="card-footer">
-                               <button class="card-button"> <a class="buy" href="view_Items1.jsp?Iid=<%=b.getItemId()%>" >Buy Now</a></button>
+                               <button class="card-button"> <a class="buy" href="specsP.jsp?Iid=<%=b.getItemId()%>" >Buy Now</a></button>
                             </div>
                       <%
                             }
@@ -312,7 +312,7 @@
                 } else{
             %>
                 <div class="card-footer">
-                  <button class="card-button"> <a href="view_Items1.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
+                  <button class="card-button"> <a href="specsP.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
                 </div>
             <%
                 }

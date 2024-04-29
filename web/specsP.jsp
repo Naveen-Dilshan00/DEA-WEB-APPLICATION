@@ -4,6 +4,8 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DAO.itemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
 
@@ -307,6 +309,18 @@
     </head>
 
     <body>
+        <%
+            user u =(user)session.getAttribute("userobj");
+        %>
+        
+         <%
+        int id = Integer.parseInt(request.getParameter("Iid"));
+        itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+        itemDetailes b = dao.getItemsById(id);
+    
+        %>
+            
+            <%@include file="all_components/navbar.jsp"%>
 
         <div class="container">
             <div class="card">
@@ -331,13 +345,13 @@
 
                         </div>
                         <div class="details col-md-6">
-                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPad</a>><span class="hed"> iPad Air</span></span>
-                            <h3 class="product-title">iPad Air (4th Gen)</h3>
+                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPad</a>><span class="hed"><%=b.getItemName()%></span></span>
+                            <h3 class="product-title"><%=b.getItemName()%></h3>
                             <div class="rating">
-                                <span class="review-no">In stock</span>
+                                <span class="review-no"><%=b.getStatus()%></span>
                             </div>
-                            <h4 class="price">$1199</h4>
-                            <p class="pdrop"> <s>$1269</s></p>
+                            <h4 class="price">$<%=b.getPrice()%></h4>
+                            <p class="pdrop"> <s>$<%=b.getPrice()+ 10%></s></p>
                             <br><br>
                             <div class="colors">
                                 <div class=""><p class="colo">Choose a Color</p></div>
@@ -370,12 +384,7 @@
                             </div>
                             <br>
                             <div class="action">
-                                <div class="quantity">
-                                    <p>Qty:</p>
-
-
-                                    <input type="number" id="quantity" name="quantity" min="1" value="1">
-                                </div>
+                                
                                 <div class="col">
                                     <div><br></div>
                                     <div> 
