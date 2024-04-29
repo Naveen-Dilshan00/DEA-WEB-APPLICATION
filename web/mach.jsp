@@ -371,7 +371,7 @@
                             <div class="card-footer">
 
 
-                                <button class="card-button"> <a  href="login1.jsp" class="buy">Buy Now</a></button>
+                                 <a  href="login1.jsp" class="buy"><button class="card-button">Buy Now</button></a>
 
 
                             </div>
@@ -381,7 +381,7 @@
                             <div class="card-footer">
 
 
-                               <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
+                                <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy"><button class="card-button">Buy Now</button></a>
 
                             </div>
                       <%
@@ -392,7 +392,7 @@
             %>
                 <div class="card-footer">
 
-                    <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
+                     <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled><button class="card-button">Out Of Stock</button></a>
 
                 </div>
             <%

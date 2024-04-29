@@ -169,6 +169,14 @@
     margin-bottom: 10px;
 }
 
+.buy{
+   color: white; 
+   text-decoration: none;
+}
+
+.buy:hover {
+    color: white; /* Change text color to white on hover */
+}
     
    
 
@@ -262,7 +270,7 @@
 
 
     <!-- Products  -->
-<div class="container">
+<div class="card-deck">
         <div class="row">
         <%
                     itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
@@ -272,7 +280,7 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top text-center" src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
@@ -288,13 +296,13 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
+                                <a href="login1.jsp" ><button class="card-button">Buy Now</button></a>
                             </div>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-                                <a href="specsW.jsp?Iid=<%=b.getItemId()%>" class="btn btn-outline-dark" class="card-button">Buy Now</a>
+                                <a href="specsW.jsp?Iid=<%=b.getItemId()%>"><button class="card-button">Buy Now</button></a>
                             </div>
                       <%
                             }
@@ -303,7 +311,7 @@
                 } else{
             %>
                 <div class="card-footer">
-                   <a href="specsW.jsp?Iid=<%=b.getItemId()%> "class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                    <a href="specsW.jsp?Iid=<%=b.getItemId()%> " disabled><button class="card-button">Out Of Stock</button></a>
                 </div>
             <%
                 }

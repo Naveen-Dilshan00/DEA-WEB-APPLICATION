@@ -297,13 +297,13 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                               <button class="card-button"> <a href="login1.jsp" class="buy">Buy Now</a></button>
+                               <a href="login1.jsp" class="buy"><button class="card-button"> Buy Now</button></a>
                             </div>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-                               <button class="card-button"> <a class="buy" href="view_Items1.jsp?Iid=<%=b.getItemId()%>" >Buy Now</a></button>
+                                <a class="buy" href="view_Items1.jsp?Iid=<%=b.getItemId()%>" ><button class="card-button">Buy Now</button></a>
                             </div>
                       <%
                             }
@@ -312,7 +312,7 @@
                 } else{
             %>
                 <div class="card-footer">
-                  <button class="card-button"> <a href="view_Items1.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
+                  <a href="view_Items1.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled> <button class="card-button">Out Of Stock</button></a>
                 </div>
             <%
                 }

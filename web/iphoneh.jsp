@@ -346,15 +346,14 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                               <button class="card-button"> <a href="login1.jsp" class="buy">Buy Now</a></button>
-                            </div>
+                                <a href="login1.jsp" class="buy"><button class="card-button">Buy Now</button></div></a>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
 
 
-                                <button class="card-button"> <a href="specs1.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
+                                <a href="specs1.jsp?Iid=<%=b.getItemId()%>" class="buy"> <button class="card-button">Buy Now</button></a>
 
 
                             </div>
