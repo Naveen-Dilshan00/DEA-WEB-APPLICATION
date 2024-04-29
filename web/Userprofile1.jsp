@@ -4,6 +4,8 @@
     Author     : HP
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -406,19 +408,8 @@
     </style>
 </head>
 <body>
-<div class="navbar">
-    <div class="navbar-logo">
-        <img src="apple_phone_image.png" alt="Apple Phone">
-    </div>
-    <div class="navbar-nav">
-        <a href="#">iPhone</a>
-        <a href="#">Mac</a>
-        <a href="#">AirPods</a>
-        <a href="#">iPads</a>
-        <a href="#">Support</a>
-    </div>
-    
-</div>
+<%@include file="all_components/allCSS.jsp" %>
+<%@include file="all_components/navbar.jsp" %>
 <div class="sidebar">
 
      <ul>
@@ -434,6 +425,19 @@
                  
 </div>
 <div class="content">
+    <c:if test="${ not empty UpdateSuccMsg}">
+               <div class="alert alert-success" role="alert">
+                    ${UpdateSuccMsg}
+               </div>
+               <c:remove var="UpdateSuccMsg" scope="session"/>
+            </c:if>
+        
+            <c:if test="${ not empty UpdateFailedMsg}">
+                <div class="alert alert-danger" role="alert">
+                    ${UpdateFailedMsg}
+                <c:remove var="UpdateFailedMsg" scope="session"/>
+                </div>
+            </c:if> 
     <div class="user-profile">
         <h2>User Profile</h2>
        <div class="user-info">
@@ -441,39 +445,28 @@
     <div class="user-details">
         <div class="user-name">
             <img src="download.jpg" alt="User Image"> <!-- Add this line -->
-            Hande Ercel
+            ${userobj.name}
         </div>
-        <div class="membership-info">Member since Aug 24</div>
-        <div class="country-info">Eastern European Time (EET), Cairo UTC +3</div>
-        <div class="form-buttons1">
-            <button type="submit" class="Uploadnewphoto-button">Upload New Photo</button>
-            <button type="button" class="delete-button">Delete</button>
-        </div>
-     
-
-        <hr>
+ <hr>
       
 
                 
   
-           <form class="personalinformation-form" action="userprofile.jsp" method="post">
+           <form class="personalinformation-form" action="UpdateProfileServlet" method="GET">
     <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" placeholder="eg. Hande">
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" placeholder="eg. MErcel">
+       <input type="hidden"   name="id" value="${userobj.id}"  >
     </div>
     <div class="form-group1">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" placeholder="eg. Hande.Ercel">
+      <input type="text" id="username" name="username" placeholder="${userobj.name}">
     </div>
                <hr>
                
     <div class="form-group2">
       <label for="email">Email Address:</label>
-      <input type="text" id="email" name="email" placeholder="Enter your email">
+      <input type="text" id="email" name="email" placeholder="${userobj.email}">
       <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" placeholder="Enter phone number">
+      <input type="text" id="phone" name="phone" placeholder="${userobj.phno}">
     </div>
                <hr>
                

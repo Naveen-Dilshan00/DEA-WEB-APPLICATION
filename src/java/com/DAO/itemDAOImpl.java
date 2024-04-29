@@ -376,4 +376,44 @@ public class itemDAOImpl implements itemDAO{
         return list2;
     }
     
+    
+    public List<itemDetailes> getAllwatches(){
+       
+        List<itemDetailes> list2 = new ArrayList<itemDetailes>();
+        itemDetailes b = null;
+              
+                try{
+                    
+                    String sql="select *from item_data where Category=? order by Item_ID DESC";
+                    PreparedStatement ps = con.prepareStatement(sql);
+                    String catergory;
+                    ps.setString(1,"Watches");
+//                    ps.setString(2,"Active");
+                    ResultSet rs =ps.executeQuery();
+                    
+                    
+                    while(rs.next() ){
+                        
+                        b =new itemDetailes();
+                        b.setItemId(rs.getInt(1));
+                        b.setItemName(rs.getString(2));
+                        b.setM_year(rs.getString(3));
+                        b.setPrice(rs.getDouble(4));
+                        b.setPhotoName(rs.getString(5));
+                        b.setCatergory(rs.getString(6));
+                        b.setStatus(rs.getString(7));
+                        b.setEmail(rs.getString(8));
+
+                        list2.add(b);
+                        
+                        
+                    }
+                    
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                
+        return list2;
+    }
 }

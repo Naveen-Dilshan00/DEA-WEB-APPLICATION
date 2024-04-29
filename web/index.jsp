@@ -698,7 +698,7 @@ function showSlider(type){
             <h4>Smarter. Brighter. Mightier</h4>
             <div class="button-container2">
               <a href="#" class="btn btn-success"><b>Learn More</b></a>
-              <a href="ipadh.jsp" class="btn btn-primary"><b>Buy Now</b></a>
+              <a href="watchh.jsp" class="btn btn-primary"><b>Buy Now</b></a>
             </div>
           </div>
           <div class="boximage2">

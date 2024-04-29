@@ -397,18 +397,18 @@
                              <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">Address</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="address" value="${userobj.email}">
+                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Address" name="address" required>
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">LandMark</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password" name="landmark" value="${userobj.email}">
+                                 <input type="text" class="form-control" id="inputPassword4" placeholder="LandMark" name="landmark" required>
                                </div>
                              </div>
                               <div class="form-row">
                                <div class="form-group col-md-6">
                                    
                                  <label for="inputEmail4">City</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email" name="city"  value="${userobj.email}">
+                                 <input type="text" class="form-control" id="inputEmail4" placeholder="City" name="city"  required>
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">Zip</label>
