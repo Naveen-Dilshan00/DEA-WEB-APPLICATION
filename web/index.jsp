@@ -651,7 +651,7 @@ function showSlider(type){
             <h4>Apple Worldwide Developers Conference</h4>
             <h4>Join Us Online June 10 - 14</h4>
             <div class="button-container1">
-              <a href="#" class="btn btn-primary"><b>Join Now</b></a>
+              <a href="ipadh.jsp" class="btn btn-primary"><b>Join Now</b></a>
             </div>
           </div>
         </div>
