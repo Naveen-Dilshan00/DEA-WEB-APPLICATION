@@ -125,7 +125,7 @@
             }
 
             input[type="radio"]:checked + .color-option {
-                border: 1px solid #4C4C4C; /* Add border for selected color */
+                border: 2px solid #4C4C4C; /* Add border for selected color */
             }
 
             .blue {
@@ -303,7 +303,7 @@
         </style>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
+        
     </head>
 
     <body>
@@ -318,7 +318,8 @@
         itemDetailes b = dao.getItemsById(id);
     
         %>
-
+        
+ 
         <div class="container">
             <div class="card">
                 <div class="container-fliud">
@@ -385,8 +386,10 @@
                                 <div class="col">
                                     <div><br></div>
                                     <div> 
+                                         
                                         <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
-                                        <button class="btn3">Buy Now</button>
+                                        <a href="DirplaceOrder.jsp?Iid=<%=b.getItemId()%>" class="btn3">Buy Now</a>
+                                      
                                     </div>
                                 </div>
                             </div></div>

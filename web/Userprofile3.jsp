@@ -4,6 +4,11 @@
     Author     : HP
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="com.entity.item_order"%>
+<%@page import="com.DAO.itemOrderDAOImpl"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -349,19 +354,13 @@
     </style>
 </head>
 <body>
-<div class="navbar">
-    <div class="navbar-logo">
-        <img src="apple_phone_image.png" alt="Apple Phone">
-    </div>
-    <div class="navbar-nav">
-        <a href="#">iPhone</a>
-        <a href="#">Mac</a>
-        <a href="#">AirPods</a>
-        <a href="#">iPads</a>
-        <a href="#">Support</a>
-    </div>
+    <%@include file="all_components/allCSS.jsp" %>
+    <%@include file="all_components/navbar.jsp"%>
     
-</div>
+    <c:if test="${empty userobj}">
+            <c:redirect url="login.jsp"></c:redirect>
+        </c:if>
+
 <div class="sidebar">
      <ul>
         
@@ -403,53 +402,43 @@
       
 
                 
-  
-      <table>
+          <table class="table table-striped">
+  <thead>
     <tr>
-        <th>Order ID</th>
-        <th>Order Item</th>
-        <th>Date</th>
-        <th>Amount</th>
-        <th>Payment Type</th>
-   <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>     
-   
-   <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>     
-   
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>     
-   
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>     
+     
+      <th scope="col">Order ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Payment Type</th>
+    </tr>
+  </thead>
+  <tbody>
+      <%
+        
+             user u =(user)session.getAttribute("userobj");
+             itemOrderDAOImpl dao = new itemOrderDAOImpl(DBConnect.getConn());
+             List<item_order> blist = dao.getItem(u.getId());
+             for(item_order b:blist){
+       %>          
+                <tr>
+                    <th scope="row"><%=b.getOrder_Id()%></th>
+                    <td><%=b.getId()%></td>
+                    <td><%=b.getUserName()%></td>
+                    <td><%=b.getItemName()%></td>
+                    <td><%=b.getPrice()%></td>
+                    <td><%=b.getPaymenttype()%></td>
+                    
+                </tr>
+       
+       <%
+             }
+      %>
     
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>     
-      </table>
+
+  </tbody>
+</table>
         
         <hr>
    

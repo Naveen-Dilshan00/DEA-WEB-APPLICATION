@@ -1,4 +1,6 @@
-    <%-- 
+    <%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DAO.itemDAOImpl"%>
+<%-- 
         Document   : shop
         Created on : Apr 11, 2024, 9:56:35 AM
         Author     : ASUS TUF
@@ -180,7 +182,11 @@
              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         </head>
         <body>
-            <p>navbar</p>
+            <%
+            user u =(user)session.getAttribute("userobj");
+            %>
+            
+            <%@include file="all_components/navbar.jsp"%>
 
             <section class="main">
                <div class="container">
@@ -256,123 +262,58 @@
 
 
     <!-- Products  -->
-
-                        <!-- 1st row  -->
-       <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="image/watch7.jpg" alt="Card image cap">
+<div class="container">
+        <div class="row">
+        <%
+                    itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+                    List<itemDetailes> list2 = dao.getAllwatches();
+                    for(itemDetailes b : list2){
+                    %>
+     
+      <div class="col-md-3">
+       <div class="card card-ho">
+           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple watch S9</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$999</span></h5></div>
+                <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
             </div>
          
-          <p class="card-text">Alpine Loop</p>
+          <p class="card-text">512GB</p>
         </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
+            <%
+                if(b.getStatus().equals("Active")){
+            %>
+                      <%
+                            if(u == null){
+                      %>
+                            <div class="card-footer">
+                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
+                            </div>
+                      <%
+                            } else{
+                      %>
+                            <div class="card-footer">
+                                <a href="specsW.jsp?Iid=<%=b.getItemId()%>" class="btn btn-outline-dark" class="card-button">Buy Now</a>
+                            </div>
+                      <%
+                            }
+                      %>
+            <%
+                } else{
+            %>
+                <div class="card-footer">
+                   <a href="specsW.jsp?Iid=<%=b.getItemId()%> "class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                </div>
+            <%
+                }
+            %>
       </div>
-      <div class="card">
-        <img class="card-img-top" src="image/watch2jpg.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple watch Ultra 2</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$699</span></h5></div>
-            </div>         
-            <p class="card-text">S9 chip</p>
-        </div>
-        <div class="card-footer">
-          <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/watch3.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple watch SE</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$599</span></h5></div>
-            </div>          
-            <p class="card-text">Nike Edition</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-
-    <div class="card">
-        <img class="card-img-top" src="image/watch4.jpeg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple watch S8</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$399</span></h5></div>
-            </div>         
-            <p class="card-text">Powerful sensors</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-    </div>
-
-
-
-                         <!-- 2nd row  -->
-
-      <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="image/watch5.jpg" alt="Card image cap">
-        <div class="card-body">
-         <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple Watch S7</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$699</span></h5></div>
-            </div>          
-            <p class="card-text">S6 chip</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/watch6.png" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple Watch Hermès</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$799</span></h5></div>
-            </div>        
-            <p class="card-text">Light on price</p>
-        </div>
-        <div class="card-footer">
-          <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="image/watch7.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple Watch Ultra</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$499</span></h5></div>
-            </div>          
-            <p class="card-text">Milanese Loop Band </p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
-
-    <div class="card">
-        <img class="card-img-top" src="image/watch8.jpg" alt="Card image cap">
-        <div class="card-body">
- <div class="row">
-                <div class="col-md-8"> <h5 class="card-title">Apple Watch Ultra 2</h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$699</span></h5></div>
-            </div>          
-            <p class="card-text">The most rugged and capable.</p>
-        </div>
-        <div class="card-footer">
-           <button class="card-button">Buy Now</button>
-        </div>
-      </div>
+     </div>
+      <%
+      }
+      %>
+   </div>
     </div>
 
     <div class="section layout_padding">

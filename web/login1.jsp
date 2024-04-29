@@ -32,7 +32,7 @@
             }
 
             .header{
-                background-color: #fff:
+                background-color: #fff;
             }
 
             .font{
@@ -82,7 +82,7 @@
 
             h1 {
                 font-family: Arial, sans-serif; 
-                font-size: 2.5rem; 
+                font-size: 2rem; 
                 font-weight: bold;
                 margin-bottom: 10px;
                 color:#303f9f
