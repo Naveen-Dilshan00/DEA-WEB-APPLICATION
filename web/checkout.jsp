@@ -14,6 +14,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored ="false"%>
 
+<%
+    user u = (user)session.getAttribute("userobj");
+    
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,9 +29,7 @@
     <body>
         <%@include file="all_components/navbar.jsp" %>
         
-        <c:if test="${empty userobj}">
-            <c:redirect url="login.jsp"></c:redirect>
-        </c:if>
+       
         
          <c:if test="${ not empty succMsg}">
             <div class="alert alert-success" role="alert">
@@ -37,13 +40,13 @@
         
         <c:if test="${ not empty failedMsg}">
             <div class="alert alert-danger" role="alert">
-             This is a success alert—check it out!
+             ${failedMsg}
             </div>
              <c:remove var="failedMsg" scope="session"/>
         </c:if>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                      <div class="card bg-white">
                 <div class="card-body">
                     <h3 class="text-center text succes">Youe selected</h3>
@@ -52,34 +55,67 @@
                               <tr>
                                 <th scope="col">Item Name</th>
                                 <th scope="col">M_year</th>
+                                <th scope="col">Quantity</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Action</th>
                               </tr>
                             </thead>
                             <tbody>
                                 <%
-                                    user u = (user)session.getAttribute("userobj");
-                                    
-                                    cartDAOImpl dao = new cartDAOImpl(DBConnect.getConn());
-                                     List<cart> cart = dao.getItemByUser( u.getId());
-                                     Double totallprice =0.00;
-                                     for(cart c:cart){
-                                         totallprice= c.getTotallPrice();
-                                     %>
-                                         <tr>
+
+                                   
+                                    if(cart_list != null){
+                                        
+                                        for(cart c: cartProducts){ %>
+                                            
+                                           
+                                        <tr>
+                             
+
                                             <th scope="row"><%=c.getItemName()%></th>
+
                                             <td><%=c.getM_year()%></td>
-                                            <td><%=c.getPrice()%></td>
+
+                                            <td>
+                                                <form action="" method="" class="form-inline">
+                                                    <input type="hidden" name="id" value="<%=c.getIid()%>" class="form-input">
+                                                    <div class="form-group d-flex justify-content-between">
+                                                        <a href="QuantityIncDecServlet?action=dec&Iid=<%=c.getIid()%>" class="btn btn-sn btn decre text-danger"><i class="fa-solid fa-square-minus"></i></a>
+                                                        <input type="text" name="quantity"  class="form-control" value="<%=c.getcQuantity()%>" readonly>
+                                                        <a href="QuantityIncDecServlet?action=inc&Iid=<%=c.getIid()%>" class="btn btn-sn btn incre text-success"><i class="fa-solid fa-square-plus"></i></a>
+                                                    </div>
+                                                </form>
+                                            </td>
+
+                                            <td><%= dcf.format(c.getPricee()) %></td>
+
                                             <td><a href="RemoveItemCart?Iid=<%=c.getIid()%>&&Cid=<%=c.getCid()%>" class="btn btn-sm btn-danger ">REMOVE</a></td>
+
+
+                                           
                                           </tr>
-                                <%          
-                                     }
-                                %>
+                                          <%
+                                         
+                                    }
+
+                  
+                                                  }
+                                %>         
+                                
                                 <tr>
                                     <td>Total Price</td>
                                     <td></td>
                                     <td></td>
-                                    <td><%=totallprice%></td>
+
+
+
+                                    <td></td>
+                                    <td>${(total>0)?dcf.format(total):0.00}</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td><a href="placeOrder.jsp" class="btn btn-sm btn-warning "> Order Now</a></td>
                                 </tr>
                              
                             </tbody>
@@ -88,67 +124,7 @@
             </div>
                 </div>
                 
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="text-center text-success">Your Detailes</h3>>
-                            <form>
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Name</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                  </div>
-                                </div>
-                                
-                              <div class="form-row">
-                               <div class="form-group col-md-6">
-                                 <label for="inputEmail4">Email</label>
-                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                               </div>
-                               <div class="form-group col-md-6">
-                                 <label for="inputPassword4">Phone Number</label>
-                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password">
-                               </div>
-                             </div>
-                                                            <div class="form-row">
-                               <div class="form-group col-md-6">
-                                 <label for="inputEmail4">Address</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
-                               </div>
-                               <div class="form-group col-md-6">
-                                 <label for="inputPassword4">LandMark</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
-                               </div>
-                             </div>
-                              <div class="form-row">
-                               <div class="form-group col-md-6">
-                                 <label for="inputEmail4">City</label>
-                                 <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
-                               </div>
-                               <div class="form-group col-md-6">
-                                 <label for="inputPassword4">Zip</label>
-                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
-                               </div>
-                                  <div class="form-group">
-                                      <label>Payment Mode</label>
-                                      <select>
-                                          <option>-Select-</option>
-                                          <option>Cash on dilivary</option>
-                                      </select>
-                                  </div>
-                                  <br>
-                                  
-                             </div>
-                                <button class="btn btn-warning">Ortder Now</button>
-                                  <a href="index.jsp" class="btn btn-success">Continue</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </body>

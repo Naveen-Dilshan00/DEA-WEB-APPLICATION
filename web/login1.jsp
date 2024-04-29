@@ -3,8 +3,9 @@
     Created on : Apr 10, 2024, 10:33:07 PM
     Author     : Senur
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,13 +18,30 @@
                 background-image: url("image/main.jpg");
                 position: absolute;
                 width: 100%;
-                height: 100vh; 
-                border-radius: 0% 10% 10% 0%;
+                height: 97vh; 
+                border-radius: 0% 3% 3% 0%;
                 top: 0;
                 left: 0;
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
+            }
+
+            .heading{
+                color:white; position: absolute; top: 12%; width: 100%;text-align: center; font-size: 3rem; font-weight: 800; 
+            }
+
+            .header{
+                background-color: #fff:
+            }
+
+            .font{
+                color: black;
+            }
+
+            .para{
+                color: white; position: absolute; top:25%; text-align:center;width: 100%;font-size: 0.8rem;
+
             }
 
             body {
@@ -34,27 +52,32 @@
             }
 
             .right {
-                margin-top: 10%;
-                padding: 0 20px;
+                margin-top: 35%;
+
             }
+            
+
+            .form-check {
+                margin-top: 5%; 
+                font-size: 0.75rem;
+            }
+
+
 
             .btn {
                 font-size: 0.8rem;
-                font-weight: 700;
-            }
+                font-weight: 650;
 
-            .input-group-append button {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
             }
-
 
             a {
                 text-decoration: none;
+                font-size: 0.9rem;
+                color: #303f9f;
             }
 
             a:hover {
-                text-decoration: underline;
+                text-decoration: none;
             }
 
             h1 {
@@ -62,10 +85,15 @@
                 font-size: 2.5rem; 
                 font-weight: bold;
                 margin-bottom: 10px;
+                color:#303f9f
             }
 
-            .text-secondary {
-                font-size: 0.8rem; 
+            .text{
+                font-size: 0.8rem;
+                font-family: Arial, sans-serif;
+                color: black;
+                font-weight: 400;
+                
             }
 
             .social-logos {
@@ -76,57 +104,95 @@
                 width: 40px;
                 margin-right: 10px;
                 margin-bottom: 10px;
-                border: 1px solid #ccc; 
-                padding: 3px;
+                border: 1px solid transparent; 
+                padding: 5px;
                 background-color: white; 
             }
 
             .social-logos .row {
                 justify-content: center; 
             }
+
+
             
-            @media (max-width: 991px) {
-                .bg-holder {
-                    height: 100vh; 
+            @media screen and (min-width: 900px) {
+                .bg-holder .right {
+                    flex-direction: row;
+                    height: 97.5vh; 
                 }
             }
 
-            
+            /* Adjust placeholder font size */
             ::placeholder {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
+            }
+            .sbtn{
+                width: 40px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                border: 1px solid transparent; 
+                padding: 5px; 
+                background-color: white;
+
+
             }
         </style>
     </head>
     <body>
         <div class="row vh-100 g-0">
-            <!--left side-->
-            <div class="col-lg-6 position-relative d-none d-lg-block">
+            <!--left Side (Image)-->
+
+            <div class="col-lg-7 position-relative d-none d-lg-block">
                 <div class="bg-holder"></div>
+                <h2 class="heading"> WELCOME <span class="font">BACK </span></h2>
+                <p class="para"> Sign in to explore the latest Apple products, manage<br> your orders,and enjoy personalized<br> recommendations tailored just for you.</p>
             </div>
-            <!--right side-->
-            <div class="col-lg-6">
+            <!--right Side-->
+            <div class="col-lg-5">
                 <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
                     <div class="col col-sm-6 col-lg-7 col-xl-6">
-                        <!--form Content-->
-                        <form action="#" class="right">
+                        <!--Sign in Form -->
+                        <form action="LoginServlet" method="POST" class="right">
+                            
+                            
+                             <c:if test="${ not empty LogfailedMsg}">
+                                        <div class="alert alert-danger" role="alert">
+                                         ${LogfailedMsg}
+                                        </div>
+                                         <c:remove var="LogfailedMsg" scope="session"/>
+                                    </c:if>
+                            <c:if test="${ not empty LogSuccMsg}">
+                                        <div class="alert alert-success" role="alert">
+                                         ${LogSuccMsg}
+                                        </div>
+                                         <c:remove var="LogSuccMsg" scope="session"/>
+                                    </c:if>
+                                        
+                               
                             <div class="header">
                                 <h1>Sign in</h1>
-                                <p class="text-secondary">Please enter your login details to sign in</p>
+                                <p class="text">Please enter your login details to sign in</p>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control form-control-lg fs-6" placeholder="Email Address">
+                                <input type="text" class="form-control form-control-lg fs-6" placeholder="User Name " name="uname">
                             </div>
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control form-control-lg fs-6" id="password" placeholder="Password">
-                               
+                                <input type="password" class="form-control form-control-lg fs-6" placeholder="Password" name="password">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check" name="check" value="">
+                                        <label class="form-check-label" for="check">Keep me logged in</label>
+                                    </div>
+                                    
+                                </div>
+                                &nbsp; &nbsp;
+                                <div class="col">
+                                    <a href="#">Forgot password?</a>
+                                </div>
                             </div>
 
-                            <div class="input-group mb-3 d-flex justify-content-between">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Keep me logged in </small></label>
-                                <small><a href="" class="fw-bold">Forgot password ?</a></small>
-                            </div>
-                            
 
                             <!--admin and user login buttons -->
                             <div class="row mb-3">
@@ -137,27 +203,25 @@
                                     <button class="btn btn-primary btn-lg w-100" type="submit">User Login</button>
                                 </div>
                             </div>
-                            <!--Sign up button-->
                             <div class="text-center mb-3">
-                                <small>Don't have an account? <a href="#" class="fw-bold">Sign Up</a></small>
+                                <small>Don't have an account? <a href="register1.jsp" class="fw-bold">Sign Up</a></small>
                             </div>
 
                             <div class="position-relative mb-3">
                                 <hr class="text-secondary divider">
                                 <div class="divider-content-center text-center"><small>Or continue with</small></div>
                             </div>
-                            
-                            <!--Social-Logos-->
+
                             <div class="social-logos">
                                 <div class="row">
                                     <div class="col">
-                                        <img src="image/google.png" alt="Google">
+                                        <a href=""><button class="sbtn"><img src="image/google.jpg" alt="Google"></button></a>
                                     </div>
                                     <div class="col">
-                                        <img src="image/facebook.png" alt="Facebook">
+                                        <a href=""><button class="sbtn"><img src="image/facebook.jpg" alt="Facebook"></button></a>
                                     </div>
                                     <div class="col">
-                                        <a href=""><img src="image/apple.png" alt="Apple"></a>
+                                        <a href=""><button class="sbtn"><img src="image/apple.jpg" alt="Apple"></button></a>
                                     </div>
                                 </div>
                             </div>

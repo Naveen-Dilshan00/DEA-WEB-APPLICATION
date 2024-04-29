@@ -30,25 +30,28 @@
 	animation: fadeIn 0.5, fadeOut 0.5s 2.5s;
 }
 
-@keyframes fadeIn {from { bottom:0;
-	opacity: 0;
+@keyframes fadeIn {
+    from { 
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
-to {
-	bottom: 30px;
-	opacity: 1;
+@keyframes fadeOut {
+    from { 
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
-}
-@keyframes fadeOut {form { bottom:30px;
-	opacity: 1;
-}
-
-to {
-	bottom: 0;
-	opacity: 0;
-}
-}
 
 
 
@@ -71,93 +74,88 @@ img
   }
 
 nav
+/*header section css part*/
+.header
 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    background-color:#000;
-    z-index: 100;
-}
-
-
-nav .nav-bar
-{
-    position: relative;
-    height: 100%;
-    max-width: 1000px;
-    width: 100%;
-    background-color:#000;
-    margin: 0 auto;
-    padding: 0 30px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-nav .nav-bar .sidebarOpen
-{
-    color: #fff;
-    font-size: 25px;
-    padding: 5px;
-    cursor: pointer;
-    display: none;
-}
-
-nav .nav-bar .logo a
-{
-    font-size: 25px;
-    font-weight: 500;
-    color:#000;
-    text-decoration: none;
-}
-
-.menu .logo-toggle
-{
-    display: none;
-}
-
-.nav-bar .nav-links{
-    display: flex;
-    align-items: center;
-}
-
-.nav-bar .nav-links li
-{
-    margin: 0 5px;
-    list-style: none;
-}
-
-.nav-links li a
-{
     position: relative;
-    font-size: 17px;
-    font-weight: 400;
-    color:#fff;
-    text-decoration: none;
-    padding: 10px;
+    background-color: black;
+    display: flex;
+    height: 100px;
+    
 }
-.nav-links li a:hover
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-left: 90px;
+    
+}
+
+.ul-nav{
+    
+    
+     float:right;
+     list-style-type: none;
+     margin-top: 10px;
+     margin-right: 10px;
+     width: auto;
+     font-size: 17px;
+     width: 80%;
+     height: 80px;
+     line-height: 60px;
+     padding-right: -10px;
+     padding-left: 10px;
+     margin: 20px;
+     margin-top: 20px;
+     justify-content: center;
+     display: flex;
+     display: inline-block;
+     margin-left: 20px;
+}
+
+
+.navbar li a 
+{
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.navbar li a:hover
 {
     background-color: white;
     color:#000;
-    border-radius:15px;
 }
 
-.nav-links li a::before
+li
 {
+    list-style: none;
+    display: inline-block;
+}
+a
+{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.box
+{
+    background:black;
+    height: 10px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 30px;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.3);
+    margin-right: 0px;
+    margin-top: 0px;
     
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    background-color:#fff;
-    opacity: 0;
-    transition: all 0.3s ease;
 }
 
 .nav-links li:hover a::before
@@ -235,7 +233,7 @@ nav .nav-bar .logo a
 {
     width: 200px;
 }
-.toggle input
+.box input
 {
     width: 0;
     outline: none;
@@ -244,3 +242,9 @@ nav .nav-bar .logo a
     transition: 0.8s;
     background: transparent;
 }
+.box a .fas
+{
+    color: white;
+    font-size: 18px;
+}
+
