@@ -352,11 +352,11 @@
                             } else{
                       %>
                             <div class="card-footer">
-<<<<<<< Updated upstream
-                                 <button class="card-button"><a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a></button>
-=======
+
+
                                 <button class="card-button"> <a href="specs1.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
->>>>>>> Stashed changes
+
+
                             </div>
                       <%
                             }
@@ -365,11 +365,10 @@
                 } else{
             %>
                 <div class="card-footer">
-<<<<<<< Updated upstream
-                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
-=======
-                    <button class="card-button"> <a href="specs1.jsp?Iid=<%=b.getItemId()%> " class="buy" disabled>Out Of Stock</a></button>
->>>>>>> Stashed changes
+
+
+                    <a href="specs1.jsp?Iid=<%=b.getItemId()%> " class="buy" disabled><button class="card-button"> Out Of Stock</button></a>
+
                 </div>
             <%
                 }

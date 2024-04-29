@@ -1,7 +1,9 @@
-    <%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page import="com.DB.DBConnect"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <%-- 
         Document   : shop
         Created on : Apr 11, 2024, 9:56:35 AM
@@ -234,11 +236,31 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+             
+             <%@include file="all_components/allCSS.jsp"%>
         </head>
         <body>
             <%
             user u =(user)session.getAttribute("userobj");
             %>
+            
+            <!-- popUp massage-->
+        <c:if test="${not empty addCart}">
+            <div id="toast">${addCart}</div>
+
+            <script type="text/javascript">
+                            showToast();
+                            function showToast(content)
+                            {
+                                $('#toast').addClass("display");
+                                $('#toast').html(content);
+                                setTimeout(()=>{
+                                    $("#toast").removeClass("display");
+                                },2000)
+                            }	
+            </script>
+            <c:remove var="addCart" scope="session"/>
+        </c:if>   
             
             <%@include file="all_components/navbar.jsp"%>
 
@@ -347,21 +369,20 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-<<<<<<< Updated upstream
-                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
-=======
+
+
                                 <button class="card-button"> <a  href="login1.jsp" class="buy">Buy Now</a></button>
->>>>>>> Stashed changes
+
+
                             </div>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-<<<<<<< Updated upstream
-                               <button class="card-button"> <a  href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a></button>
-=======
+
+
                                <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
->>>>>>> Stashed changes
+
                             </div>
                       <%
                             }
@@ -370,11 +391,9 @@
                 } else{
             %>
                 <div class="card-footer">
-<<<<<<< Updated upstream
-                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
-=======
+
                     <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
->>>>>>> Stashed changes
+
                 </div>
             <%
                 }
