@@ -244,7 +244,7 @@
         }
 
         .about-us-section .atext-para{
-            font-size: 22px;
+            font-size: 17px;
         }
         
         .about-us-section .box {
@@ -475,15 +475,26 @@ form{
 </head>
 <body>
     
+
+    <%@include file="all_components/navbar1.jsp" %>
+    
 <!--       check user already loged in-->
+
         <%
             user u =(user)session.getAttribute("userobj");
         %>
           
         
         
+
         
+        <% Connection conn=DBConnect.getConn();
+        out.println(conn);
+        %>
+
+
     <!-- Carousel -->
+
 
 
   <div class="carousel">
