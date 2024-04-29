@@ -4,6 +4,10 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.DAO.itemDAOImpl"%>
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
 
@@ -307,6 +311,17 @@
     </head>
 
     <body>
+        
+        <%
+            user u =(user)session.getAttribute("userobj");
+        %>
+        
+         <%
+        int id = Integer.parseInt(request.getParameter("Iid"));
+        itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+        itemDetailes b = dao.getItemsById(id);
+    
+        %>
 
         <div class="container">
             <div class="card">
@@ -331,8 +346,8 @@
 
                         </div>
                         <div class="details col-md-6">
-                            <span class="review-no1"><a href="#">Home ></a><a href="#">Apple Watch</a>><span class="hed"> Apple Watch Series 7</span></span>
-                            <h3 class="product-title">Apple Watch Series 7</h3>
+                            <span class="review-no1"><a href="#">Home ></a><a href="#">Apple Watch</a>><span class="hed"><%=b.getItemName()%></span></span>
+                            <h3 class="product-title"><%=b.getItemName()%></h3>
                             <div class="rating">
                                 <span class="review-no">In stock</span>
                             </div>
@@ -373,17 +388,30 @@
                             </div>
                             <br>
                             <div class="action">
-                                <div class="quantity">
+<!--                                <div class="quantity">
                                     <p>Qty:</p>
 
 
                                     <input type="number" id="quantity" name="quantity" min="1" value="1">
-                                </div>
+                                </div>-->
                                 <div class="col">
                                     <div><br></div>
                                     <div> 
-                                        <button class="btn2">Add To Cart</button>
-                                        <button class="btn3">Buy Now</button>
+                                        <%
+                                        if(b.getStatus().equals("Active")){
+                                    
+                                    %>
+                                    <div> 
+                                        <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
+                                        <a href="DirplaceOrder.jsp?Iid=<%=b.getItemId()%>" class="btn3">Buy Now</a>
+                                    </div>
+                                    <%} else{
+
+                                     %>
+                                     <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+                                    <%
+                                        }
+                                    %>
                                     </div>
                                 </div>
                             </div></div>
