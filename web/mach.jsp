@@ -63,6 +63,7 @@
 
     .btn1{
        margin-top: 80px;
+       
     }
 
     /* card button */
@@ -173,6 +174,18 @@
     margin-bottom: 10px;
 }
 
+.buy{
+   color: white; 
+   text-decoration: none;
+}
+
+.buy:hover {
+    color: white; /* Change text color to white on hover */
+}
+
+
+ 
+
  @media (max-width: 768px) {
             .text-group {
                 margin-top: 50px;
@@ -272,6 +285,7 @@
                 </div>
             </div>
         </div>
+                
             </section>
 
             <div class="container">
@@ -328,21 +342,22 @@
 
                         <!-- 1st row  -->
     
-    <div class="container">
-        <div class="row">
+        <div class="card-deck"><!-- added  -->
+        <div class="row row1">
         <%
                     itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
                     List<itemDetailes> list2 = dao.getAllLaps();
                     for(itemDetailes b : list2){
                     %>
      
+                    
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$<%=b.getPrice()%></span></h5></div>
             </div>
          
           <p class="card-text">512GB</p>
@@ -354,13 +369,20 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                                <a  href="login1.jsp"class="btn btn-outline-dark">Buy Now</a>
+
+
+                                <button class="card-button"> <a  href="login1.jsp" class="buy">Buy Now</a></button>
+
+
                             </div>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-                                <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="btn btn-outline-dark" class="card-button">Buy Now</a>
+
+
+                               <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
+
                             </div>
                       <%
                             }
@@ -369,7 +391,9 @@
                 } else{
             %>
                 <div class="card-footer">
-                   <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="btn btn-outline-danger" disabled>Out Of Stock</a>
+
+                    <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
+
                 </div>
             <%
                 }
@@ -380,7 +404,8 @@
       }
       %>
    </div>
-    </div>
+    </div><!-- added  -->
+    
 
                         
 
@@ -408,7 +433,6 @@ to date with the latest technology.</p>
                     </div>
         </div>
 
-<!-- comment -->
 <div class="container" style=" margin-top: 0px;">
                            <!-- FAQs  -->
 
