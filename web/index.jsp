@@ -1,3 +1,5 @@
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="com.entity.user"%>
 <!DOCTYPE html>
 <html lang="en">
