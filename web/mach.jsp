@@ -20,7 +20,6 @@
             <style>
 
 .main{
-    background: url(image/Wallpaper.jpg)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;
@@ -353,7 +352,7 @@
                     
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>

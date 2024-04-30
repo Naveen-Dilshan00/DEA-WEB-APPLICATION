@@ -326,27 +326,27 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/black.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-2"><img src="Items_img/upview.jpg" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold.jpg" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-4"><img src="Items_img/sideview.jpg" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="Items_img/white.jpg" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/white<%=b.getPhotoName()%>" /></div>
                                 
 
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'black', this)"><img src="Items_img/black.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'black', this)"><img src="admin_img/<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'front', this)"><img src="Items_img/upview.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold.jpg" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'side', this)"><img src="Items_img/sideview.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'white', this)"><img src="Items_img/white.jpg" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'white', this)"><img src="Items_img/white<%=b.getPhotoName()%>" /></a></li>
 
 
 
                         </div>
                         <div class="details col-md-6">
                             <span class="review-no1"><a href="#">Home ></a><a href="#">MacBook</a>><span class="hed"><%=b.getItemName()%></span></span>
-                            <h3 class="product-title">><%=b.getItemName()%></h3>
+                            <h3 class="product-title"><%=b.getItemName()%></h3>
                             <div class="rating">
                                 <span class="review-no"><%=b.getStatus()%></span>
                             </div>

@@ -315,14 +315,14 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/ipadRose.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/ipadRose.jpg" /></div>
                                 <div class="tab-pane" id="pic-2"><img src="Items_img/ipadGreen.jpg" /></div>
                                 <div class="tab-pane" id="pic-3"><img src="Items_img/ipadSilver.jpg" /></div>
                                 <div class="tab-pane" id="pic-4"><img src="Items_img/ipadBlue.jpg" /></div>
                                 <div class="tab-pane" id="pic-5"><img src="Items_img/ipadGrey.jpg" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'rose', this)"><img src="Items_img/ipadRose.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'rose', this)"><img src="admin_img/ipadRose.jpg" /></a></li>
                                 <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/ipadGreen.jpg" /></a></li>
                                 <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'silver', this)"><img src="Items_img/ipadSilver.jpg" /></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'blue', this)"><img src="Items_img/ipadBlue.jpg" /></a></li>
