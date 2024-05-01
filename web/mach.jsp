@@ -21,6 +21,7 @@
             <style>
 
 .main{
+    background: url(image/topbg1.jpeg)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;
@@ -343,6 +344,7 @@
 
 
     <!-- Products  -->
+                         <div class="container" style=" margin-top: 0px;">
 
                         <!-- 1st row  -->
     
@@ -437,7 +439,6 @@ to date with the latest technology.</p>
                     </div>
         </div>
 
-<div class="container" style=" margin-top: 0px;">
                            <!-- FAQs  -->
 
     <div class="col-lg-6 faq">
