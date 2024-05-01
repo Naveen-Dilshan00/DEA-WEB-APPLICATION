@@ -20,7 +20,7 @@
             <style>
 
 .main{
-    background: url(image/Wallpaper.jpg)no-repeat;
+    background: url(image/topbg1.jpeg)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;
@@ -152,7 +152,7 @@
     }
 
     .end{
-         background: url(image/Wallpaper.jpg)no-repeat;
+        background: url(image/Wallpaper.jpg)no-repeat;
         background-size: cover;
         height: 75vh;
         background-position: 50% 50%;
@@ -243,7 +243,7 @@
             
             <%@include file="all_components/navbar1.jsp"%>
 
-            <section class="main">
+            <section class="main" style="background: url(image/topbg2.jpeg)no-repeat; width: 100%;">
                <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -271,20 +271,20 @@
         <div class="row" style="margin-top:100px;">
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="Items_img/img4.png" alt="Image 1" class="img-fluid smaller-image" style="margin-right: 10px;">
+                    <img src="image/img4.png" alt="Image 1" class="img-fluid smaller-image" style="margin-right: 10px;">
                     <p class="image-text">Free next-day<br> shipping</p>
 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="Items_img/img5.png" alt="Image 2" class="img-fluid smaller-image">
+                    <img src="image/img5.png" alt="Image 2" class="img-fluid smaller-image">
                     <p class="image-text">ready in one hour</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="Items_img/img6.png" alt="Image 3" class="img-fluid smaller-image">
+                    <img src="image/img6.png" alt="Image 3" class="img-fluid smaller-image">
                     <p class="image-text">Same-day delivery</p>
                 </div>
             </div>
@@ -319,6 +319,7 @@
                     </div>
             </div>
 
+                         <div class="container" style=" margin-top: 0px;">
 
     <!-- Products  -->
      <div class="card-deck"><!-- added  -->
@@ -419,7 +420,6 @@
         </div>
 
                          <!-- comment -->
-                         <div class="container" style=" margin-top: 0px;">
                                  
                            <!-- FAQs  -->
 
