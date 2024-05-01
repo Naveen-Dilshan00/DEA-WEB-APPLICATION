@@ -75,7 +75,7 @@
         </style>
     </head>
     <body style='background-color:#f0f2f2'>
-        <%@include file="adminNavbar.jsp"%>
+         <%@include file="sidebar.jsp" %>
         <div class="container">
             <div class="row">
                 <div class='col-md-4 offset-md-4'>
