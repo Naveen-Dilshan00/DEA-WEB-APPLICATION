@@ -1,4 +1,5 @@
 
+<%@page import="com.entity.user"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="java.util.List"%>
@@ -240,7 +241,7 @@
             user u =(user)session.getAttribute("userobj");
             %>
             
-            <%@include file="all_components/navbar.jsp"%>
+            <%@include file="all_components/navbar1.jsp"%>
 
             <section class="main">
                <div class="container">
@@ -523,7 +524,7 @@
         </div>
         </center>
                            
-
+<%@include file="all_components/footer.jsp"%>
                            
    <script src=
 "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -406,10 +406,10 @@
 }
 
     </style>
-    <%@include file="all_components/allCSS.jsp" %>
+   
 </head>
 <body>
-<%@include file="all_components/navbar01.jsp" %>
+<%@include file="all_components/navbar1.jsp" %>
     
 
 

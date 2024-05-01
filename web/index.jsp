@@ -1031,6 +1031,6 @@ responsive: {
   </div>
    </section>
 
- 
+ <%@include file="all_components/footer.jsp"%>
 </body>
 </html>
