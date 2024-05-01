@@ -311,7 +311,7 @@
     </head>
 
     <body>
-        
+        <%@include file="all_components/navbar1.jsp" %>
         <%
             user u =(user)session.getAttribute("userobj");
         %>

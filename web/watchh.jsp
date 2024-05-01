@@ -276,6 +276,7 @@
                     </div>
             </div>
 
+                         <div class="container" style=" margin-top: 0px;">
 
     <!-- Products  -->
 <div class="card-deck"><!-- added  -->
@@ -353,7 +354,6 @@
         </div>
 
                          <!-- comment -->
-                         <div class="container">
                            <!-- FAQs  -->
 
     <div class="col-lg-6 faq">

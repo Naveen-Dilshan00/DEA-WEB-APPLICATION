@@ -203,10 +203,12 @@
                             <!--admin and user login buttons -->
                             <div class="row mb-3 ">
                                 <div class="col">
-                                    <button class="btn btn-primary btn-lg w-100" type="submit">Admin Login</button>
+                                     <button class="btn btn-primary btn-lg w-100" type="submit" name="loginType" value="admin">Admin Login</button>
                                 </div>
                                 <div class="col">
-                                    <button class="btn btn-primary btn-lg w-100" type="submit">User Login</button>
+                                   
+                                    <button class="btn btn-primary btn-lg w-100" type="submit" name="loginType" value="user">User Login</button>
+
                                 </div>
                             </div>
                             <div class="text-center mb-3">

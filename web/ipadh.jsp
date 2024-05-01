@@ -275,6 +275,7 @@
                     </div>
             </div>
 
+                         <div class="container">
 
     <!-- Products  -->
 
@@ -361,7 +362,6 @@
 
 
                          <!-- comment -->
-                         <div class="container">
                            <!-- FAQs  -->
 
     <div class="col-lg-6 faq">

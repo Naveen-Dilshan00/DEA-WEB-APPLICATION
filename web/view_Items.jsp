@@ -75,5 +75,6 @@
             </div>
         </div>
     </div>
+                <%@include file="all_components/footer.jsp"%>
     </body>
 </html>
