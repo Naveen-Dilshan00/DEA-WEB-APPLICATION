@@ -92,7 +92,9 @@ nav
     height: 70px;
     width: 100%;
     background-color:#000;
-    z-index: 100;
+    z-index: 101;
+   
+   
 }
 
 
@@ -108,6 +110,8 @@ nav .nav-bar
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+  
 }
 
 nav .nav-bar .sidebarOpen
@@ -257,6 +261,10 @@ nav .nav-bar .logo a
     font-weight: 500;
     transition: 0.8s;
     background: transparent;
+}
+.toggle .btn:hover{
+    color:blue;
+    background-color: white;
 }
 .cart4{
     margin-right: 150px;
