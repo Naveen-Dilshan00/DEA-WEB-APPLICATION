@@ -92,17 +92,28 @@ public class LoginServlet extends HttpServlet {
             
             HttpSession session = request.getSession();
             
+            String loginType = request.getParameter("loginType");
             String name =request.getParameter("uname");
             String password = request.getParameter("password");
             
 //            System.out.println(name+" "+password);
 
-            if("admin".equals(name)&& "admin".equals(password)){
+
+
+            if ("admin".equals(loginType)) {
+                
+                if("admin".equals(name)&& "admin".equals(password)){
                 response.sendRedirect("admin/Addminhome.jsp");
                 }
-            else{
+                else{
+                    session.setAttribute("LogfailedMsg","Email & Password invalid");
+                    response.sendRedirect("login1.jsp");
+                }
                 
-                user us = dao.login(name,password);
+            }
+             else if ("user".equals(loginType)) {
+                    
+                 user us = dao.login(name,password);
                 if(us !=null){
                     session.setAttribute("userobj",us);
                     response.sendRedirect("index.jsp");
@@ -111,6 +122,13 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("LogfailedMsg","Email & Password invalid");
                     response.sendRedirect("login1.jsp");
                 }
+                 
+    }
+
+            
+            else{
+                
+                System.out.println("wrong"); 
                 
                 
             }
