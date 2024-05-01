@@ -146,7 +146,7 @@
     }
 
     .end{
-          background: url(image/Wallpaper.jpg)no-repeat;
+          background: url(image/download.jpg)no-repeat;
         background-size: cover;
         height: 75vh;
         background-position: 50% 50%;
@@ -205,7 +205,7 @@
                     <div class="text-group">
 
                         <p class="dis">Discover<p>
-                        <h2>Lean. Mean. M3 machine.</h2>
+                        <h2>iPad - Lovable, Drawable,<br>Magical.</h2>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -285,7 +285,7 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top text-center"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>

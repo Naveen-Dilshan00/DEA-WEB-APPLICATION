@@ -206,7 +206,7 @@
                     <div class="text-group">
 
                         <p class="dis">Discover<p>
-                        <h2>Lean. Mean. M3 machine.</h2>
+                        <h2>Which Apple Watch is right for you?</h2>
                     </div>
                 </div>
                 <div class="col-md-6">
