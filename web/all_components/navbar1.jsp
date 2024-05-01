@@ -258,7 +258,7 @@ nav .nav-bar .logo a
     transition: 0.8s;
     background: transparent;
 }
-cart4{
+.cart4{
     margin-right: 150px;
 }
 

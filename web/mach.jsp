@@ -1,3 +1,4 @@
+<%@page import="com.entity.user"%>
 <%@page import="java.util.List"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
@@ -238,7 +239,11 @@
              
              <%@include file="all_components/allCSS.jsp"%>
         </head>
+        
+        
         <body>
+            
+            <%@include file="all_components/navbar1.jsp"%>
             <%
             user u =(user)session.getAttribute("userobj");
             %>
