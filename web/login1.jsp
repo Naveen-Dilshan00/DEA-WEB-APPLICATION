@@ -32,7 +32,8 @@
             }
 
             .header{
-                background-color: #fff:
+                background-color: #fff;
+                display:inherit;
             }
 
             .font{
@@ -52,7 +53,7 @@
             }
 
             .right {
-                margin-top: 35%;
+                margin-top: 30%;
 
             }
             
@@ -84,15 +85,18 @@
                 font-family: Arial, sans-serif; 
                 font-size: 2.5rem; 
                 font-weight: bold;
-                margin-bottom: 10px;
-                color:#303f9f
+                margin-bottom: 5px;
+                color:#303f9f;
+                
             }
 
             .text{
                 font-size: 0.8rem;
                 font-family: Arial, sans-serif;
                 color: black;
-                font-weight: 400;
+                
+                
+                
                 
             }
 
@@ -128,8 +132,8 @@
             }
             .sbtn{
                 width: 40px;
-                margin-right: 10px;
-                margin-bottom: 10px;
+                margin-right: 5px;
+                margin-bottom: 5px;
                 border: 1px solid transparent; 
                 padding: 5px; 
                 background-color: white;
@@ -150,7 +154,7 @@
             <!--right Side-->
             <div class="col-lg-5">
                 <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
-                    <div class="col col-sm-6 col-lg-7 col-xl-6">
+                    <div class="col col-sm-6 col-lg-7 col-xl-7">
                         <!--Sign in Form -->
                         <form action="LoginServlet" method="POST" class="right">
                             
@@ -171,7 +175,9 @@
                                
                             <div class="header">
                                 <h1>Sign in</h1>
+                             
                                 <p class="text">Please enter your login details to sign in</p>
+                                
                             </div>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control form-control-lg fs-6" placeholder="User Name " name="uname">
@@ -195,7 +201,7 @@
 
 
                             <!--admin and user login buttons -->
-                            <div class="row mb-3">
+                            <div class="row mb-3 ">
                                 <div class="col">
                                     <button class="btn btn-primary btn-lg w-100" type="submit">Admin Login</button>
                                 </div>
