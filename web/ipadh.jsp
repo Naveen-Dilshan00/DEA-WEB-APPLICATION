@@ -145,6 +145,7 @@
         height: auto
     }
 
+
   .end {
      background-image: linear-gradient(to right bottom, rgba(0,0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/download1.jpg);
     background-repeat: no-repeat;
@@ -156,6 +157,7 @@
     align-content: center;
     align-items: center;
 }
+
     .text_groupend{
         align-content: center;
         align-items: center;
@@ -210,7 +212,7 @@
                     <div class="text-group">
 
                         <p class="dis">Discover<p>
-                        <h2>Lean. Mean. M3 machine.</h2>
+                        <h2>iPad - Lovable, Drawable,<br>Magical.</h2>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -290,7 +292,9 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+
+           <img class="card-img-top text-center"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
+
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
