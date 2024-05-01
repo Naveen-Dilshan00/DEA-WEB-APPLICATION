@@ -14,7 +14,7 @@ and open the template in the editor.
 }
 
 .main{
-    background: url(image/topbg1.jpeg)no-repeat;
+    background: url(image/topbg1)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;

@@ -4,6 +4,8 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DAO.itemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
 
@@ -125,7 +127,7 @@
             }
 
             input[type="radio"]:checked + .color-option {
-                border: 1px solid #4C4C4C; /* Add border for selected color */
+                border: 2px solid #4C4C4C; /* Add border for selected color */
             }
 
             .grey {
@@ -307,6 +309,18 @@
     </head>
 
     <body>
+        <%
+            user u =(user)session.getAttribute("userobj");
+        %>
+        
+         <%
+        int id = Integer.parseInt(request.getParameter("Iid"));
+        itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+        itemDetailes b = dao.getItemsById(id);
+    
+        %>
+            
+            <%@include file="all_components/navbar.jsp"%>
 
         <div class="container">
             <div class="card">
@@ -315,14 +329,14 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/ipadRose.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/ipadRose.jpg" /></div>
                                 <div class="tab-pane" id="pic-2"><img src="Items_img/ipadGreen.jpg" /></div>
                                 <div class="tab-pane" id="pic-3"><img src="Items_img/ipadSilver.jpg" /></div>
                                 <div class="tab-pane" id="pic-4"><img src="Items_img/ipadBlue.jpg" /></div>
                                 <div class="tab-pane" id="pic-5"><img src="Items_img/ipadGrey.jpg" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'rose', this)"><img src="Items_img/ipadRose.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'rose', this)"><img src="admin_img/ipadRose.jpg" /></a></li>
                                 <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/ipadGreen.jpg" /></a></li>
                                 <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'silver', this)"><img src="Items_img/ipadSilver.jpg" /></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'blue', this)"><img src="Items_img/ipadBlue.jpg" /></a></li>
@@ -331,13 +345,13 @@
 
                         </div>
                         <div class="details col-md-6">
-                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPad</a>><span class="hed"> iPad Air</span></span>
-                            <h3 class="product-title">iPad Air (4th Gen)</h3>
+                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPad</a>><span class="hed"><%=b.getItemName()%></span></span>
+                            <h3 class="product-title"><%=b.getItemName()%></h3>
                             <div class="rating">
-                                <span class="review-no">In stock</span>
+                                <span class="review-no"><%=b.getStatus()%></span>
                             </div>
-                            <h4 class="price">$1199</h4>
-                            <p class="pdrop"> <s>$1269</s></p>
+                            <h4 class="price">$<%=b.getPrice()%></h4>
+                            <p class="pdrop"> <s>$<%=b.getPrice()+ 10%></s></p>
                             <br><br>
                             <div class="colors">
                                 <div class=""><p class="colo">Choose a Color</p></div>
@@ -370,12 +384,7 @@
                             </div>
                             <br>
                             <div class="action">
-                                <div class="quantity">
-                                    <p>Qty:</p>
-
-
-                                    <input type="number" id="quantity" name="quantity" min="1" value="1">
-                                </div>
+                                
                                 <div class="col">
                                     <div><br></div>
                                     <div> 

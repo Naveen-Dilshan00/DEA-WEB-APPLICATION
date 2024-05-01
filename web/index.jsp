@@ -246,7 +246,7 @@
         }
 
         .about-us-section .atext-para{
-            font-size: 22px;
+            font-size: 17px;
         }
         
         .about-us-section .box {
@@ -477,15 +477,26 @@ form{
 </head>
 <body>
     
+
+    <%@include file="all_components/navbar1.jsp" %>
+    
 <!--       check user already loged in-->
+
         <%
             user u =(user)session.getAttribute("userobj");
         %>
           
         
         
+
         
+        <% Connection conn=DBConnect.getConn();
+        out.println(conn);
+        %>
+
+
     <!-- Carousel -->
+
 
 
   <div class="carousel">
@@ -653,7 +664,7 @@ function showSlider(type){
             <h4>Apple Worldwide Developers Conference</h4>
             <h4>Join Us Online June 10 - 14</h4>
             <div class="button-container1">
-              <a href="#" class="btn btn-primary"><b>Join Now</b></a>
+              <a href="ipadh.jsp" class="btn btn-primary"><b>Join Now</b></a>
             </div>
           </div>
         </div>

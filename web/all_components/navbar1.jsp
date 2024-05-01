@@ -257,11 +257,8 @@ nav .nav-bar .logo a
     font-weight: 500;
     transition: 0.8s;
     background: transparent;
-    margin-left: 150px;
 }
-.cart4{
-    margin-right: 150px;
-}
+
 
     </style>
     
