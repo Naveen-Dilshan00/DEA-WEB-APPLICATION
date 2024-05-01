@@ -19,7 +19,7 @@ public class DBConnect {
     {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ebook-app","root","");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/dea_db","root","");
         } catch(Exception e){
             e.printStackTrace();
         }

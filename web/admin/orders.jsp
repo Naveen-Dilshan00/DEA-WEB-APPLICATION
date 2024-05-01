@@ -27,6 +27,7 @@
             border-collapse: collapse;
             border-spacing: 0;
             margin-top: 20px;
+            margin-left: 20px;
         }
         .table th,
         .table td {
@@ -54,7 +55,7 @@
     </style>
 </head>
 <body>
-    <%@include file="adminNavbar.jsp"%>
+     <%@include file="sidebar.jsp" %>
     <h2 class="text-center">Hello Admin</h2>
     
     <!-- Table markup -->

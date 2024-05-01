@@ -199,9 +199,10 @@ a:hover{
         </style>
         
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-     <%@include file="all_components/allCSS.jsp" %>
+     
     </head>
     <body>
+        <%@include file="all_components/navbar1.jsp" %>
         
         
         <c:if test="${empty userobj}">

@@ -4,12 +4,13 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.entity.user"%>
+<%@page import="com.DAO.itemDAOImpl"%>
+<%@page import="com.entity.itemDetailes"%>
+<%@page import="com.DB.DBConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!------ Include the above in your HEAD tag ---------->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,9 +70,11 @@
             }
             .spec-heading {
                 text-align: center; /* Center the subheading */
-                font-size: 24px; /* Increase subheading font size */
                 margin-top: 50px;
                 bottom: 10px;/* Add space below the subheading */
+            }
+            .accordion-body{
+                color: gray;
             }
             @media screen and (max-width: 996px) {
                 .preview {
@@ -109,7 +112,7 @@
 
             .card {
                 margin-top: 50px;
-                background: #eee;
+                background: #fdfdfd;
                 padding: 3em;
                 line-height: 1.5em; }
             .color-option {
@@ -122,23 +125,23 @@
             }
 
             input[type="radio"]:checked + .color-option {
-                border: 1px solid #4C4C4C; /* Add border for selected color */
+                border: 2px solid #4C4C4C; /* Add border for selected color */
             }
 
             .blue {
                 background: #A3C1DC; }
 
-            .gold {
-                background: #FFEF99; }
+            .black {
+                background: #000 }
 
             .white {
-                background: #FFFFFF; }
+                background: #EEEEEE; }
 
             .green {
                 background: #17411E; }
 
-            .purple {
-                background: #8E5A95; }
+            .rose {
+                background: #ffb3d9; }
 
             /* Hide radio buttons */
             .color-options input[type="radio"] {
@@ -300,11 +303,23 @@
         </style>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
+        
     </head>
 
     <body>
-
+        <%@include file="all_components/navbar1.jsp" %>
+        <%
+            user u =(user)session.getAttribute("userobj");
+        %>
+        
+         <%
+        int id = Integer.parseInt(request.getParameter("Iid"));
+        itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+        itemDetailes b = dao.getItemsById(id);
+    
+        %>
+        
+ 
         <div class="container">
             <div class="card">
                 <div class="container-fliud">
@@ -312,29 +327,29 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/14green.jpg" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="Items_img/14purple.jpg" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/14gold.jpg" /></div>
-                                <div class="tab-pane" id="pic-4"><img src="Items_img/14white.jpg" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="Items_img/14blue.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/rose<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/black<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="Items_img/white<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/blue<%=b.getPhotoName()%>" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/14green.jpg" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/14purple.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/14gold.jpg" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/14white.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/14blue.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="admin_img/<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'rose', this)"><img src="Items_img/rose<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'black', this)"><img src="Items_img/black<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/white<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/blue<%=b.getPhotoName()%>" /></a></li>
                             </ul>
 
                         </div>
                         <div class="details col-md-6">
-                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPhone</a>><span class="hed"> iPhone 15 Pro Max</span></span>
-                            <h3 class="product-title">iPhone 14 Pro</h3>
+                            <span class="review-no1"><a href="#">Home ></a><a href="#">iPhone</a>><span class="hed"> <%=b.getItemName()%></span></span>
+                            <h3 class="product-title"><%=b.getItemName()%></h3>
                             <div class="rating">
-                                <span class="review-no">In stock</span>
+                                <span class="review-no"><%=b.getStatus()%></span>
                             </div>
-                            <h4 class="price">$799</h4>
-                            <p class="pdrop"> <s>$869</s></p>
+                            <h4 class="price"><%=b.getPrice()%></h4>
+                            <p class="pdrop"> <s><%=b.getPrice()-100.0%></s></p>
                             <br><br>
                             <div class="colors">
                                 <div class=""><p class="colo">Choose a Color</p></div>
@@ -343,8 +358,8 @@
                                     <input type="radio" id="color_blue" name="phone_color" value="blue" onclick="selectColorFromOptions('blue')">
                                     <label for="color_blue" class="color-option blue"></label>
 
-                                    <input type="radio" id="color_gold" name="phone_color" value="gold" onclick="selectColorFromOptions('gold')">
-                                    <label for="color_gold" class="color-option gold"></label>
+                                    <input type="radio" id="color_black" name="phone_color" value="black" onclick="selectColorFromOptions('black')">
+                                    <label for="color_black" class="color-option black"></label>
 
                                     <input type="radio" id="color_white" name="phone_color" value="white" onclick="selectColorFromOptions('white')">
                                     <label for="color_white" class="color-option white"></label>
@@ -352,11 +367,11 @@
                                     <input type="radio" id="color_green" name="phone_color" value="green" onclick="selectColorFromOptions('green')">
                                     <label for="color_green" class="color-option green"></label>
 
-                                    <input type="radio" id="color_purple" name="phone_color" value="purple" onclick="selectColorFromOptions('purple')">
-                                    <label for="color_purple" class="color-option purple"></label>
+                                    <input type="radio" id="color_rose" name="phone_color" value="rose" onclick="selectColorFromOptions('rose')">
+                                    <label for="color_rose" class="color-option rose"></label>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="storage">
                                 <p class="colo">Choose a Storage</p>
                                 <div class="storage-options">
@@ -367,17 +382,14 @@
                             </div>
                             <br>
                             <div class="action">
-                                <div class="quantity">
-                                    <p>Qty:</p>
-
-
-                                    <input type="number" id="quantity" name="quantity" min="1" value="1">
-                                </div>
+                                
                                 <div class="col">
                                     <div><br></div>
                                     <div> 
-                                        <button class="btn2">Add To Cart</button>
-                                        <button class="btn3">Buy Now</button>
+                                         
+                                        <a href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="btn2">Add To Cart</a>
+                                        <a href="DirplaceOrder.jsp?Iid=<%=b.getItemId()%>" class="btn3">Buy Now</a>
+                                      
                                     </div>
                                 </div>
                             </div></div>
@@ -385,7 +397,7 @@
                     </div>
                 </div>
             </div>
-            <h2 class="spec-heading">Specifications</h2>
+            <h1 class="spec-heading">Specifications</h1>
             <div class="additional-info-container">
                 <div class="info-heading">Brand</div>
                 <div class="info-description">
@@ -404,7 +416,7 @@
 
                 <div class="info-heading">Camera</div>
                 <div class="info-description">
-                    <p>12MP Front/48MP Back</p>
+                    <p>12MP Front / 48MP Back</p>
                 </div>
 
                 <div class="info-heading">Color</div>
@@ -417,10 +429,89 @@
                     <p>iOS 16</p>
                 </div>
             </div>
+            <div class="container rounded h-75 w-77">
+                <div style="margin: 50px auto 10px"><h1 class="text-center" >FAQs</h1></div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                How to buy Apple products?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Place your order by adding items to the cart and go to the checkout page to make the payment.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                What payment methods are accepted?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Credit card/Debit card payments and Paypal payments are Accepted.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                Are there any warranties?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Yes, you will receive 1 year Apple Care Warranty.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                Can I track my order?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                No You can not track your order.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
+                                      
         <!-- JavaScript -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous">
+        </script>
+        
         <script>
                                         function increaseQuantity() {
                                             var quantityInput = document.getElementById("quantity");
@@ -458,7 +549,7 @@
                                                 case 'blue':
                                                     imageId = 'pic-5';
                                                     break;
-                                                case 'gold':
+                                                case 'black':
                                                     imageId = 'pic-3';
                                                     break;
                                                 case 'white':
@@ -467,7 +558,7 @@
                                                 case 'green':
                                                     imageId = 'pic-1';
                                                     break;
-                                                case 'purple':
+                                                case 'rose':
                                                     imageId = 'pic-2';
                                                     break;
                                                 default:
@@ -479,5 +570,6 @@
                                         }
 
         </script>
-        </body>
-        </html>
+        <%@include file="all_components/footer.jsp"%>  
+    </body>
+</html>

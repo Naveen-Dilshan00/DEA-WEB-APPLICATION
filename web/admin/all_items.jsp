@@ -50,7 +50,7 @@
         }
     </style>
     <body>
-        <%@include file="adminNavbar.jsp"%>
+         <%@include file="sidebar.jsp" %>
         <h2 class="text-center">Hello Admin</h2>
         
         
@@ -74,7 +74,7 @@
               %>   
                <tr>
                   <td><%=b.getItemId()%></td>
-                  <td><img src="../Items_img/<%=b.getPhotoName()%>" style="width:100px;height:100px;"></td>
+                  <td><img src="../admin_img/<%=b.getPhotoName()%>" style="width:100px;height:100px;"></td>
                   <td><%=b.getItemName()%></td>
                   <td><%=b.getM_year()%></td>
                   <td><%=b.getPrice()%></td>

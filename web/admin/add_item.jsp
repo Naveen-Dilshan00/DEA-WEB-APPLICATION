@@ -75,7 +75,7 @@
         </style>
     </head>
     <body style='background-color:#f0f2f2'>
-        <%@include file="adminNavbar.jsp"%>
+         <%@include file="sidebar.jsp" %>
         <div class="container">
             <div class="row">
                 <div class='col-md-4 offset-md-4'>
@@ -106,7 +106,7 @@
                                           <option value="IPhone">IPhone</option>
                                           <option value="Laptop">MacBook</option>
                                           <option value="IPad">Ipad</option>
-                                          
+                                          <option value="Watches">Watches</option>
                                         </select>
                                      </div>
                                     

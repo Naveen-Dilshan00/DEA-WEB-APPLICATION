@@ -1,4 +1,5 @@
 
+<%@page import="com.entity.user"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="java.util.List"%>
@@ -19,7 +20,7 @@
             <style>
 
 .main{
-    background: url(image/Wallpaper.jpg)no-repeat;
+    background: url(image/topbg1.jpeg)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;
@@ -150,17 +151,17 @@
         height: auto
     }
 
-    .end{
-         background: url(image/Wallpaper.jpg)no-repeat;
-        background-size: cover;
-        height: 75vh;
-        background-position: 50% 50%;
-        width: 100%;
-        margin-top: 80px;
-        align-content: center;
-        align-items: center;;
-        
-    }
+    .end {
+     background-image: linear-gradient(to right bottom, rgba(0,0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/download1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 75vh;
+    width: 100%;
+    margin-top: 80px;
+    align-content: center;
+    align-items: center;
+}
     .text_groupend{
         align-content: center;
         align-items: center;
@@ -171,6 +172,57 @@
         float: right;
         text-align: right;
 }
+.buy{
+   color: white; 
+   text-decoration: none;
+   
+}
+
+.buy:hover {
+    color: white; /* Change text color to white on hover */
+}
+
+@media (max-width: 768px) {
+            .text-group {
+                margin-top: 50px;
+                text-align: center;
+            }
+            .image-text {
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+            .card {
+                margin-bottom: 30px;
+            }
+            .faq h1 {
+                text-align: center;
+            }
+            .faqlast {
+                text-align: center;
+            }
+            .section_3 {
+                padding-top: 50px;
+                text-align: center;
+                padding-left: 0px;
+            }
+            .uni_text {
+                text-align: center;
+            }
+            ._text {
+                text-align: center;
+            }
+            .more {
+                text-align: center;
+            }
+            .image_1 img {
+                max-width: 50%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
 
     
    
@@ -189,9 +241,16 @@
             user u =(user)session.getAttribute("userobj");
             %>
             
-            <%@include file="all_components/navbar.jsp"%>
+            <%@include file="all_components/navbar1.jsp"%>
 
-            <section class="main">
+
+            <section class="main" style="background: url(image/topbg2.jpeg)no-repeat; width: 100%;  background: url(image/topbg1.jpeg)no-repeat;
+    background-size: cover;
+    height: 75vh;
+    background-position: 50% 50%;
+    width: 100%;
+   ">
+
                <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -219,20 +278,20 @@
         <div class="row" style="margin-top:100px;">
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="img/img4.png" alt="Image 1" class="img-fluid smaller-image" style="margin-right: 10px;">
+                    <img src="image/img4.png" alt="Image 1" class="img-fluid smaller-image" style="margin-right: 10px;">
                     <p class="image-text">Free next-day<br> shipping</p>
 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="img/img5.png" alt="Image 2" class="img-fluid smaller-image">
+                    <img src="image/img5.png" alt="Image 2" class="img-fluid smaller-image">
                     <p class="image-text">ready in one hour</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="img/img6.png" alt="Image 3" class="img-fluid smaller-image">
+                    <img src="image/img6.png" alt="Image 3" class="img-fluid smaller-image">
                     <p class="image-text">Same-day delivery</p>
                 </div>
             </div>
@@ -267,10 +326,11 @@
                     </div>
             </div>
 
+                         <div class="container" style=" margin-top: 0px;">
 
     <!-- Products  -->
-    <div class="container">
-        <div class="row">
+     <div class="card-deck"><!-- added  -->
+        <div class="row row1">
         <%
                     itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
                     List<itemDetailes> list2 = dao.getAlliphone();
@@ -279,11 +339,11 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$<%=b.getPrice()%></span></h5></div>
             </div>
          
           <p class="card-text">512GB</p>
@@ -295,13 +355,16 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
-                            </div>
+                                <a href="login1.jsp" class="buy"><button class="card-button">Buy Now</button></div></a>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-                                <a class="btn btn-outline-dark" href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a>
+
+
+                                <a href="specs1.jsp?Iid=<%=b.getItemId()%>" class="buy"> <button class="card-button">Buy Now</button></a>
+
+
                             </div>
                       <%
                             }
@@ -310,7 +373,10 @@
                 } else{
             %>
                 <div class="card-footer">
-                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+
+
+                    <a href="specs1.jsp?Iid=<%=b.getItemId()%> " class="buy" disabled><button class="card-button"> Out Of Stock</button></a>
+
                 </div>
             <%
                 }
@@ -321,7 +387,8 @@
       }
       %>
    </div>
-    </div>
+     </div>
+ 
 
                     
                     
@@ -352,7 +419,7 @@
 
                          </div>
                          <div class="col-md-6">
-                            <div class="image_1" style="padding-bottom:0px;"><img src="image/download (19).jpg"></div>
+                            <div class="image_1" style="padding-bottom:0px;"><img src="image/download11.jpg"></div>
                          </div>
                       </div>
                    </div>
@@ -360,7 +427,6 @@
         </div>
 
                          <!-- comment -->
-                         <div class="container" style=" margin-top: 0px;">
                                  
                            <!-- FAQs  -->
 
@@ -381,8 +447,7 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Anim pariatur cliche 
-                </div>
+ Go to the our website, then set up your shipping information. Find the product you want to purchase and use your credit card or other payment tools to make the payment.                </div>
             </div>
         </div>
         <div class="accordion-item">
@@ -393,7 +458,7 @@
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Abore wes anderson cred  heard of them accusamus labore sustainable VHS.
+                    U can use your credit card or cash on delivery to make the payment.
                 </div>
             </div>
         </div>
@@ -405,7 +470,7 @@
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                   h 3 wolf  you probably haven't heard of them accusamus labore sustainable VHS.
+                  With Apple hub 'Free Return' service, you get an extra 15 days (on top of the on-time delivery date) to decide if you want to keep or return the item for any reason. It is totally free. If the seller offers Free Return, it will be clearly marked on the item details page.
                 </div>
             </div>
         </div>
@@ -417,8 +482,7 @@
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
+Visit the carrier's website: Go to the official website of the shipping carrier. Most carriers have a designated tracking page where you can enter your tracking number. Enter the tracking number: Input your tracking number into the appropriate field and click the "Track" button or a similar prompt.                </div>
             </div>
         </div>
         <div class="accordion-item">
@@ -429,11 +493,11 @@
             </h2>
             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Quality is key at iSpot Lanka. Each device undergoes rigorous testing to meet high standards. Trust iSpot Lanka for an exceptional experience from day one.
+                Quality is key at Apple hub. Each device undergoes rigorous testing to meet high standards. Trust Apple hub for an exceptional experience from day one.
                 </div>
             </div>
         </div>
-    </div>  
+    </div>   
 
 
 
@@ -443,7 +507,7 @@
     <div class=" justify-content-center align-items-lg-start align-items-md-center ">
       <h1>Still have questions?</h1>
     <p>Contact our support team for further assistance.</p>
-    <button type="button" class="btn btn-outline-dark">Contact</button>
+   <a href="index.jsp#contact"><button type="button" class="btn btn-outline-dark">Contact</button></a>
     </div> 
        </div> 
                         
@@ -464,7 +528,7 @@
         </div>
         </center>
                            
-
+<%@include file="all_components/footer.jsp"%>
                            
    <script src=
 "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
