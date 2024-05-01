@@ -243,7 +243,16 @@
             
             <%@include file="all_components/navbar1.jsp"%>
 
+<<<<<<< Updated upstream
             <section class="main">
+=======
+            <section class="main" style="background: url(image/topbg2.jpeg)no-repeat; width: 100%;  background: url(image/topbg1.jpeg)no-repeat;
+    background-size: cover;
+    height: 75vh;
+    background-position: 50% 50%;
+    width: 100%;
+   ">
+>>>>>>> Stashed changes
                <div class="container">
             <div class="row">
                 <div class="col-md-6">
