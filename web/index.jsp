@@ -1,3 +1,5 @@
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="com.entity.user"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -244,11 +246,9 @@
         }
 
         .about-us-section .atext-para{
-<<<<<<< Updated upstream
-            font-size: 22px;
-=======
+
             font-size: 20px;
->>>>>>> Stashed changes
+
         }
         
         .about-us-section .box {
@@ -479,15 +479,26 @@ form{
 </head>
 <body>
     
+
+    <%@include file="all_components/navbar1.jsp" %>
+    
 <!--       check user already loged in-->
+
         <%
             user u =(user)session.getAttribute("userobj");
         %>
           
         
         
+
         
+        <% Connection conn=DBConnect.getConn();
+        out.println(conn);
+        %>
+
+
     <!-- Carousel -->
+
 
 
   <div class="carousel">
@@ -1026,6 +1037,6 @@ responsive: {
   </div>
    </section>
 
- 
+ <%@include file="all_components/footer.jsp"%>
 </body>
 </html>

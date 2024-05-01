@@ -16,7 +16,7 @@
         <%@include file="all_components/allCSS.jsp"%>
     </head>
     <body style="background-color: #f0f1f2">
-        <%@include file="all_components/navbar.jsp"%>
+        <%@include file="all_components/navbar1.jsp"%>
         
         <c:if test="${ not empty succMsg}">
             <div class="alert alert-success" role="alert">

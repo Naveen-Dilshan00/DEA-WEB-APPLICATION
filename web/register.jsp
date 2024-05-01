@@ -14,10 +14,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EBook:Register</title>
-        <%@include file="all_components/allCSS.jsp"%>
+       
     </head>
     <body style="background-color: #f0f1f2">
-        <%@include file="all_components/navbar.jsp"%>
+        <%@include file="all_components/navbar1.jsp"%>
         
         <div class="container p-2">
             <div class="row">

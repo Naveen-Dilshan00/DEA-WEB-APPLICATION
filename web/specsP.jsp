@@ -4,6 +4,8 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -130,10 +132,10 @@
                 border: 2px solid #4C4C4C; /* Add border for selected color */
             }
 
-            .grey {
-                background: #5a5a5a; }
+            .black {
+                background: #000; }
 
-            .silver {
+            .white {
                 background: #c0c0c0; }
 
             .blue {
@@ -320,7 +322,7 @@
     
         %>
             
-            <%@include file="all_components/navbar.jsp"%>
+            <%@include file="all_components/navbar1.jsp"%>
 
         <div class="container">
             <div class="card">
@@ -329,18 +331,18 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/ipadRose.jpg" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="Items_img/ipadGreen.jpg" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/ipadSilver.jpg" /></div>
-                                <div class="tab-pane" id="pic-4"><img src="Items_img/ipadBlue.jpg" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="Items_img/ipadGrey.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/green<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/white<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="Items_img/blue<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/black<%=b.getItemName()%>" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'rose', this)"><img src="Items_img/ipadRose.jpg" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/ipadGreen.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'silver', this)"><img src="Items_img/ipadSilver.jpg" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'blue', this)"><img src="Items_img/ipadBlue.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'grey', this)"><img src="Items_img/ipadGrey.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'rose', this)"><img src="admin_img/<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/green<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'white', this)"><img src="Items_img/white<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'blue', this)"><img src="Items_img/blue<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'black', this)"><img src="Items_img/black<%=b.getItemName()%>" /></a></li>
                             </ul>
 
                         </div>
@@ -360,11 +362,11 @@
                                     <input type="radio" id="color_blue" name="phone_color" value="blue" onclick="selectColorFromOptions('blue')">
                                     <label for="color_blue" class="color-option blue"></label>
 
-                                    <input type="radio" id="color_silver" name="phone_color" value="silver" onclick="selectColorFromOptions('silver')">
-                                    <label for="color_silver" class="color-option silver"></label>
+                                    <input type="radio" id="color_white" name="phone_color" value="silver" onclick="selectColorFromOptions('white')">
+                                    <label for="color_white" class="color-option white"></label>
 
-                                    <input type="radio" id="color_grey" name="phone_color" value="grey" onclick="selectColorFromOptions('grey')">
-                                    <label for="color_grey" class="color-option grey"></label>
+                                    <input type="radio" id="color_black" name="phone_color" value="black" onclick="selectColorFromOptions('black')">
+                                    <label for="color_black" class="color-option black"></label>
 
                                     <input type="radio" id="color_rose" name="phone_color" value="rose" onclick="selectColorFromOptions('rose')">
                                     <label for="color_rose" class="color-option rose"></label>
@@ -421,7 +423,7 @@
 
                 <div class="info-heading">Color</div>
                 <div class="info-description">
-                    <p>Deep Purple,Gold,Silver,Light Blue,Green</p>
+                    <p>Black,RoseGold,White,Light Blue,Green</p>
                 </div>
 
                 
@@ -497,6 +499,7 @@
             </div>
 
         </div>
+<%@include file="all_components/footer.jsp"%>                            
         <!-- JavaScript -->
 
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -539,10 +542,10 @@
                 // Determine the image ID corresponding to the selected color
                 var imageId;
                 switch (color) {
-                    case 'grey':
+                    case 'black':
                         imageId = 'pic-5';
                         break;
-                    case 'silver':
+                    case 'white':
                         imageId = 'pic-3';
                         break;
                     case 'blue':

@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="all_components/navbar01.jsp"%>
+        <%@include file="all_components/navbar1.jsp"%>
     </body>
 </html>
