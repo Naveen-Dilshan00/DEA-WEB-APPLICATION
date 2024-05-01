@@ -4,6 +4,7 @@
     Author     : admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,15 +25,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <style>
-        .bg-custom{
-    background-color: #303f9f;
-}
-
-.navbar .nav-item:hover .nav-link{
-    background-color: white;
-    color:#303f9f;
-    border-radius:15px;
-}
 
 
 #toast {
@@ -255,7 +247,7 @@ nav .nav-bar .logo a
 }
 .toggle:hover input
 {
-    width: 200px;
+    width: 150px;
 }
 .toggle input
 {
@@ -279,28 +271,34 @@ nav .nav-bar .logo a
     <nav>
         <div class="nav-bar">
             <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#home"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
+            <span class="logo navLogo"><a href="index.jsp"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
 
             <div class="menu">
                 <div class="logo-toggle">
-                    <span class="logo"><a href="#home"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
+                    <span class="logo"><a href="index.jsp"><img src="image/apple_logo.jpg" alt="apple-logo" alt="logo-pict"></a></span>
                     <i class='bx bx-x siderbarClose'></i>
                 </div>
 
                 <ul class="nav-links">
-                    <li><a href="#iphone">iPhone</a></li>
-                    <li><a href="#watch">Watch</a></li>
-                    <li><a href="#mac">Mac</a></li>
-                    <li><a href="#airpods">Airpods</a></li>
-                    <li><a href="#ipads">iPads</a></li>
-                 <li><a href="#support">Support</a></li>
-                 <li class="toggle"><input type="text" placeholder="Search...">
-                    <a href="#search-bar">
-                         <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                </li>
-                <li class="toggle"><a href="#cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li> 
-                <li class="toggle"><a href="#login.jsp"><i class="fa-solid fa-user"></i></a></li>
+                    <li><a href="iphoneh.jsp">iPhone</a></li>
+                    <li><a href="watchh.jsp">Watch</a></li>
+                    <li><a href="mach.jsp">Mac</a></li>
+                    <li><a class="cart4" href="ipadh.jsp">iPads</a></li>
+                 
+                 
+                
+                <c:if test="${not empty userobj}">
+                    
+                    <li class="toggle cart4"><span class="badge badge-danger">${cart_list.size()}</span><a href="checkout1.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li> 
+                    <li class="toggle"><a href="Userprofie1.jsp"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="toggle"><a href="LogoutServlet"  class="btn">Logout</a></li>
+                </c:if>
+                <c:if test="${empty userobj}">
+                     
+                 <li class="toggle"> <a href="login1.jsp" class="btn">Login</a></li>
+                 <li class="toggle"><a href="register1.jsp" class="btn">Register</a></li>
+                      
+                </c:if>
                 </ul>
             </div>
         </div>
