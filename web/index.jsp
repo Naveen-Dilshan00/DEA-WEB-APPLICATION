@@ -246,7 +246,9 @@
         }
 
         .about-us-section .atext-para{
-            font-size: 17px;
+
+            font-size: 20px;
+
         }
         
         .about-us-section .box {
@@ -676,8 +678,8 @@ function showSlider(type){
             <h1><b>MacBooks</b></h1>
             <h4>Lean. Mean. Stylish</h4>
             <div class="button-container2">
-              <a href="#" class="btn btn-primary"><b>Learn More</b></a>
-              <a href="mach.jsp" class="btn btn-success"><b>Buy Now</b></a>
+             
+              <a href="mach.jsp" class="btn btn-success"><b>Explore</b></a>
             </div>
           </div>
           <div class="boximage2">
@@ -694,8 +696,8 @@ function showSlider(type){
             <h1><b>iPhone 15 PRO</b></h1>
             <h4>New Camera. New Design. Newphoria</h4>
             <div class="button-container2">
-              <a href="#" class="btn btn-primary"><b>Learn More</b></a>
-              <a href="iphoneh.jsp" class="btn btn-success"><b>Buy Now</b></a>
+             
+              <a href="iphoneh.jsp" class="btn btn-success"><b>Explore</b></a>
             </div>
           </div>
           <div class="boximage2">
@@ -710,8 +712,8 @@ function showSlider(type){
             <h1><b>iWATCHES</b></h1>
             <h4>Smarter. Brighter. Mightier</h4>
             <div class="button-container2">
-              <a href="#" class="btn btn-success"><b>Learn More</b></a>
-              <a href="watchh.jsp" class="btn btn-primary"><b>Buy Now</b></a>
+             
+              <a href="watchh.jsp" class="btn btn-primary"><b>Explore</b></a>
             </div>
           </div>
           <div class="boximage2">
@@ -816,28 +818,9 @@ function showSlider(type){
           </div>
       </div>
 
-      <div class = "col product-item mx-auto">
+     <div class = "col product-item mx-auto">
           <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
-              <span class = "heart-icon">
-              </span>
-              <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
-                      BUY NOW
-                  </button>
-              </div>
-          </div>
-
-          <div class = "product-info p-3">
-              <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
-              <span class = "product-price">From $ 999</span>
-              <p>Click the product to purchase </p>
-          </div>
-      </div>
-      <div class = "col product-item mx-auto">
-          <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <img src = "image/bs1.png" alt = "" class = "img-fluid d-block mx-auto">
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
@@ -857,7 +840,7 @@ function showSlider(type){
 
       <div class = "col product-item mx-auto">
           <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <img src = "image/bs2.png" alt = "" class = "img-fluid d-block mx-auto">
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
@@ -869,15 +852,15 @@ function showSlider(type){
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
-              <span class = "product-price">From $ 999</span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple Watch SE</a>
+              <span class = "product-price">From $ 249</span>
               <p>Click the product to purchase </p>
           </div>
       </div>
 
       <div class = "col product-item mx-auto">
           <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <img src = "image/bs3.png" alt = "" class = "img-fluid d-block mx-auto">
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
@@ -889,12 +872,35 @@ function showSlider(type){
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
-              <span class = "product-price">From $ 999</span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">AirPods Max</a>
+              <span class = "product-price">From $ 459</span>
               <p>Click the product to purchase </p>
           </div>
       </div>
 
+      <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/bs4.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">iPhone 15 Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+     
+  
+
+     
       
   </div>
 </div>
