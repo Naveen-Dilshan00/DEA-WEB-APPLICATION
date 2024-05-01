@@ -21,52 +21,20 @@
             background: #c7cfd4;
             padding: 50px 0px;
         }
-<<<<<<< Updated upstream
-=======
-        footer .container {
-            display: flex;
-            justify-content: center;
-        }
-        footer .single-box {
-            margin: 0 20px;
-        }
->>>>>>> Stashed changes
         footer .icon-and-text {
             display: flex;
             align-items: center; 
             justify-content: center;
         }
-<<<<<<< Updated upstream
-         footer .icon-and-text i {
-            font-size: 3em;
-            margin-right: 10px; 
-        }
-         footer .socials i {
-=======
         footer .icon-and-text i {
             font-size: 3em;
             margin-right: 10px; 
         }
         footer .socials i {
->>>>>>> Stashed changes
             margin-top: 0.5rem;
             margin-bottom: 0.8rem;
             font-size: 3em; 
         }
-<<<<<<< Updated upstream
-         footer ul {
-            margin-top: 20px; 
-            padding-left: 0; 
-        }
-         footer li {
-            margin-bottom: 10px; 
-            list-style: none; 
-        }
-         footer li a {
-            color: gray;
-        }
-         footer .btn-1{
-=======
         footer ul {
             margin-top: 20px; 
             padding-left: 0; 
@@ -79,7 +47,6 @@
             color: gray;
         }
         footer .btn-1{
->>>>>>> Stashed changes
             width: 100%;
             background: black;
             color: white;
@@ -88,15 +55,6 @@
             font-size: 1.5rem;
             margin-top: 1rem;
         }
-<<<<<<< Updated upstream
-         footer .input-group {
-            margin-bottom: 1rem;
-        }
-         footer .copyright {
-            color: gray;
-        }
-         footer .abc {
-=======
         footer .input-group {
             margin-bottom: 1rem;
         }
@@ -104,23 +62,10 @@
             color: gray;
         }
         footer .abc {
->>>>>>> Stashed changes
             margin-top: -0.7rem;
             color: black; 
             text-align: center;
         }
-<<<<<<< Updated upstream
-=======
-        
-        footer .btn {
-            margin-top: 8px;
-        }
-        
-        footer .email {
-            margin-top: -30px; 
-         
-        }
->>>>>>> Stashed changes
     </style>
 </head>
 <body>
