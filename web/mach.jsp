@@ -20,7 +20,7 @@
             <style>
 
 .main{
-    background: url(image/apple.jpg)no-repeat;
+    background: url(image/Wallpaper.jpg)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;
