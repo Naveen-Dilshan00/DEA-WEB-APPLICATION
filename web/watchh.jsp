@@ -294,7 +294,7 @@
                <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
                  <div class="col-md-4"> <h5 class="card-title"><span class="price">$<%=b.getPrice()%></span></h5></div>
             </div>
-         n
+         
           <p class="card-text">512GB</p>
         </div>
             <%
