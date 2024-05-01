@@ -984,7 +984,7 @@ responsive: {
 
    <!-- Contact Form -->
 
-   <section class="contact-form">
+   <section class="contact-form" id="contact">
     <div class = "contacted">
     <h1 class="sectionHeader">contact us</h1>
     <h3 class="heading">Get In Touch!</h3>

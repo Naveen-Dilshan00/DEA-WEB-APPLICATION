@@ -93,13 +93,13 @@
                     <div class="single-box">
                         <h2><b>Site Map</b></h2>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">iPhone</a></li>
-                            <li><a href="#">Mac</a></li>
-                            <li><a href="#">AirPods</a></li>
-                            <li><a href="#">Watch</a></li>
-                            <li><a href="#">iPads</a></li>
-                            <li><a href="#">Support</a></li>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="iphoneh">iPhone</a></li>
+                            <li><a href="mach">Mac</a></li>
+                            
+                            <li><a href="watchh">Watch</a></li>
+                            <li><a href="ipadh">iPads</a></li>
+                            <li><a href="#contact">Support</a></li>
                         </ul>
                     </div>                    
                 </div>
