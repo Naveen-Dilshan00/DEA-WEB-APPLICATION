@@ -470,17 +470,17 @@
                 
   
            <form class="personalinformation-form" action="UpdateProfileServlet" method="POST">
-    <div class="form-group">
-      <input type="hidden"   name="id" value="${userobj.id}"  >
-      <label for="currentpassword">Current Password:</label>
-      <input type="password" id="currentpassword" name="currentpass" >
-      <label for="newpassword">New password:</label>
-      <input type="password" id="newpassword" name="newpass" placeholder="">
-    </div>
-    <div class="form-group1">
-      <label for="confirmnewtpassword">Confirm New Password:</label>
-      <input type="password" id="confirmnewtpassword" name="confirmpass" placeholder="">
-    </div>
+                        <div class="form-group">
+                          <input type="hidden"   name="id" value="${userobj.id}"  >
+                          <label for="currentpassword">Current Password:</label>
+                          <input type="password" id="currentpassword" name="currentpass" >
+                          <label for="newpassword">New password:</label>
+                          <input type="password" id="newpassword" name="newpass" placeholder="">
+                        </div>
+                        <div class="form-group1">
+                          <label for="confirmnewtpassword">Confirm New Password:</label>
+                          <input type="password" id="confirmnewtpassword" name="confirmpass" placeholder="">
+                        </div>
              
                
     

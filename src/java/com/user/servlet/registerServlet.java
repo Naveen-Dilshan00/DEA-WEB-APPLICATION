@@ -82,11 +82,10 @@ public class registerServlet extends HttpServlet {
           try{
             String name=request.getParameter("fname");
             String email = request.getParameter("email");
-//            String phno =request.getParameter("phno");
             String password = request.getParameter("password");
             String check = request.getParameter("check");
 
-          System.out.println(name + " " +email+" " +password+" "+check);
+//          System.out.println(name + " " +email+" " +password+" "+check);
 
             user us =new user();
             us.setName(name);

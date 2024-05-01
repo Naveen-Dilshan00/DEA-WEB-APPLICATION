@@ -11,6 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
          <%@include file="all_components/allCSS.jsp" %>
+         <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+            <%@page isELIgnored ="false"%>
+
         <style type="text/css">
             *{
 /*                padding: 0;
