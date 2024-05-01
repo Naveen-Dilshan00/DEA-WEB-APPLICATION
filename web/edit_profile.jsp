@@ -15,7 +15,7 @@
         <%@include file="all_components/allCSS.jsp" %>
     </head>
     <body>
-        <%@include file="all_components/navbar.jsp" %>
+        <%@include file="all_components/navbar01.jsp" %>
         <div class="container">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
