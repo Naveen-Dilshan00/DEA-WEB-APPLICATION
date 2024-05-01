@@ -533,8 +533,8 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
     <h1>Stay Updated with Exclusive Deals</h1>
     <p>Sign up to receive updates on new product releases and exclusive deals.</p>
 
-                       <button class="btn btn-outline-dark" style="color:white;">Sign Up</button>
-                         <button class="btn btn-outline-dark"style="color:white;">Learn More</button>
+                       <a href="register1.jsp"><button class="btn btn-outline-dark" style="color:white;">Sign Up</button></a>
+                         <a href="mach.jsp"><button class="btn btn-outline-dark"style="color:white;">Learn More</button></a>
 
     </div>
         </div>
