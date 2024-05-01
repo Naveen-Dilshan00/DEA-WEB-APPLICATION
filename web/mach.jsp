@@ -236,7 +236,7 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
              
-             <%@include file="all_components/allCSS.jsp"%>
+            
         </head>
         <body>
             <%
@@ -261,7 +261,7 @@
             <c:remove var="addCart" scope="session"/>
         </c:if>   
             
-            <%@include file="all_components/navbar.jsp"%>
+            <%@include file="all_components/navbar1.jsp"%>
 
             <section class="main">
                <div class="container">
@@ -530,7 +530,7 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
         </div>
                            </center>
                            
-
+<%@include file="all_components/footer.jsp"%>
                            
    <script src=
 "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

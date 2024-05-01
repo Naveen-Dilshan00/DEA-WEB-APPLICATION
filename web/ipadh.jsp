@@ -1,4 +1,7 @@
-    <%@page import="com.entity.itemDetailes"%>
+    <%@page import="java.util.List"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
+<%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%-- 
         Document   : shop
@@ -193,7 +196,7 @@
             user u =(user)session.getAttribute("userobj");
             %>
             
-            <%@include file="all_components/navbar.jsp"%>
+            <%@include file="all_components/navbar1.jsp"%>
 
             <section class="main">
                <div class="container">
@@ -456,7 +459,7 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
                            </center>
                            
 
-                           
+<%@include file="all_components/footer.jsp"%>                           
    <script src=
 "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>

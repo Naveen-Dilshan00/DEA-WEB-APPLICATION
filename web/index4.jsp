@@ -16,7 +16,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>APPLE-Index</title>
-        <%@include file="all_components/allCSS.jsp"%>
+        
         
         <style type="text/css">
             .back-img{
@@ -39,7 +39,7 @@
             user u =(user)session.getAttribute("userobj");
         %>
         
-        <%@include file="all_components/navbar01.jsp"%>
+        <%@include file="all_components/navbar1.jsp"%>
         
         
         <div class="container-fluid back-img">

@@ -4,6 +4,8 @@
     Author     : THARINDU DISSANAYAKE
 --%>
 
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.user"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -320,7 +322,7 @@
     
         %>
             
-            <%@include file="all_components/navbar.jsp"%>
+            <%@include file="all_components/navbar1.jsp"%>
 
         <div class="container">
             <div class="card">
@@ -497,6 +499,7 @@
             </div>
 
         </div>
+<%@include file="all_components/footer.jsp"%>                            
         <!-- JavaScript -->
 
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

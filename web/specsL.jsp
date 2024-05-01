@@ -513,6 +513,7 @@
             </div>
 
         </div>
+<%@include file="all_components/footer.jsp"%>                                
         <!-- JavaScript -->
 
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
