@@ -21,32 +21,32 @@
             background: #c7cfd4;
             padding: 50px 0px;
         }
-        .icon-and-text {
+        footer .icon-and-text {
             display: flex;
             align-items: center; 
             justify-content: center;
         }
-        .icon-and-text i {
+        footer .icon-and-text i {
             font-size: 3em;
             margin-right: 10px; 
         }
-        .socials i {
+        footer .socials i {
             margin-top: 0.5rem;
             margin-bottom: 0.8rem;
             font-size: 3em; 
         }
-        ul {
+        footer ul {
             margin-top: 20px; 
             padding-left: 0; 
         }
-        li {
+        footer li {
             margin-bottom: 10px; 
             list-style: none; 
         }
-        li a {
+        footer li a {
             color: gray;
         }
-        .btn-1{
+        footer .btn-1{
             width: 100%;
             background: black;
             color: white;
@@ -55,13 +55,13 @@
             font-size: 1.5rem;
             margin-top: 1rem;
         }
-        .input-group {
+        footer .input-group {
             margin-bottom: 1rem;
         }
-        .copyright {
+        footer .copyright {
             color: gray;
         }
-        .abc {
+        footer .abc {
             margin-top: -0.7rem;
             color: black; 
             text-align: center;
@@ -93,13 +93,13 @@
                     <div class="single-box">
                         <h2><b>Site Map</b></h2>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">iPhone</a></li>
-                            <li><a href="#">Mac</a></li>
-                            <li><a href="#">AirPods</a></li>
-                            <li><a href="#">Watch</a></li>
-                            <li><a href="#">iPads</a></li>
-                            <li><a href="#">Support</a></li>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="iphoneh">iPhone</a></li>
+                            <li><a href="mach">Mac</a></li>
+                            
+                            <li><a href="watchh">Watch</a></li>
+                            <li><a href="ipadh">iPads</a></li>
+                            <li><a href="#contact">Support</a></li>
                         </ul>
                     </div>                    
                 </div>
@@ -120,6 +120,4 @@
         </div>
     </footer>
 </body>
-</html>
-
-
+</html> 

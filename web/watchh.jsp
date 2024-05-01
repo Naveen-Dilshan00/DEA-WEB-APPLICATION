@@ -144,19 +144,18 @@
         width: 20px;
         height: auto
     }
-
-    .end{
-          background: url(image/download1.jpg)no-repeat;
-        background-size: cover;
-        height: 75vh;
-        background-position: 50% 50%;
-        width: 100%;
-        margin-top: 80px;
-        align-content: center;
-        align-items: center;
-        
-    }
-    .text_groupend{
+.end {
+     background-image: linear-gradient(to right bottom, rgba(0,0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/download1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 75vh;
+    width: 100%;
+    margin-top: 80px;
+    align-content: center;
+    align-items: center;
+}
+.text_groupend{
         align-content: center;
         align-items: center;
     }
@@ -199,7 +198,12 @@
             
             <%@include file="all_components/navbar1.jsp"%>
 
-            <section class="main">
+            <section class="main" style="background: url(image/topbg2.jpeg)no-repeat; width: 100%;  background: url(image/topbg1.jpeg)no-repeat;
+    background-size: cover;
+    height: 75vh;
+    background-position: 50% 50%;
+    width: 100%;
+   ">
                <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -284,7 +288,7 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top" src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
@@ -424,7 +428,7 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
     <div class=" justify-content-center align-items-lg-start align-items-md-center ">
       <h1>Still have questions?</h1>
     <p>Contact our support team for further assistance.</p>
-    <button type="button" class="btn btn-outline-dark">Contact</button>
+   <a href="index.jsp#contact"><button type="button" class="btn btn-outline-dark">Contact</button></a>
     </div> 
        </div> 
                            

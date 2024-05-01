@@ -246,7 +246,9 @@
         }
 
         .about-us-section .atext-para{
-            font-size: 17px;
+
+            font-size: 20px;
+
         }
         
         .about-us-section .box {
@@ -513,7 +515,7 @@ form{
                       
                   </div>
                   <div class="buttons">
-                      <button>About US</button>
+                      <a href="#aboutus"><button>About US</button></a>
                   </div>
               </div>
           </div>
@@ -527,7 +529,7 @@ form{
                       The No. 01 Smart phone in the world right now with all the new features.
                   </div>
                   <div class="buttons">
-                      <button>BUY NOW</button>
+                      <a href ="iphoneh.jsp"><button>BUY NOW</button></a>
                      
                   </div>
               </div>
@@ -542,7 +544,7 @@ form{
                       Experience the all world infront of your Eyes with Apple Vision Pro
                   </div>
                   <div class="buttons">
-                      <button>BUY NOW</button>  
+                      <a href ="ipadh.jsp"><button>BUY NOW</button></a>  
                   </div>
               </div>
           </div>
@@ -676,8 +678,8 @@ function showSlider(type){
             <h1><b>MacBooks</b></h1>
             <h4>Lean. Mean. Stylish</h4>
             <div class="button-container2">
-              <a href="#" class="btn btn-primary"><b>Learn More</b></a>
-              <a href="mach.jsp" class="btn btn-success"><b>Buy Now</b></a>
+             
+              <a href="mach.jsp" class="btn btn-success"><b>Explore</b></a>
             </div>
           </div>
           <div class="boximage2">
@@ -694,8 +696,8 @@ function showSlider(type){
             <h1><b>iPhone 15 PRO</b></h1>
             <h4>New Camera. New Design. Newphoria</h4>
             <div class="button-container2">
-              <a href="#" class="btn btn-primary"><b>Learn More</b></a>
-              <a href="iphoneh.jsp" class="btn btn-success"><b>Buy Now</b></a>
+             
+              <a href="iphoneh.jsp" class="btn btn-success"><b>Explore</b></a>
             </div>
           </div>
           <div class="boximage2">
@@ -710,8 +712,8 @@ function showSlider(type){
             <h1><b>iWATCHES</b></h1>
             <h4>Smarter. Brighter. Mightier</h4>
             <div class="button-container2">
-              <a href="#" class="btn btn-success"><b>Learn More</b></a>
-              <a href="watchh.jsp" class="btn btn-primary"><b>Buy Now</b></a>
+             
+              <a href="watchh.jsp" class="btn btn-primary"><b>Explore</b></a>
             </div>
           </div>
           <div class="boximage2">
@@ -742,15 +744,15 @@ function showSlider(type){
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href="mach.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <a href = "mach.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
               <span class = "product-price">From $ 999</span>
               <p>Click the product to purchase </p>
           </div>
@@ -762,15 +764,15 @@ function showSlider(type){
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href="watchh.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple Watch SE</a>
+              <a href = "watchh.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">Apple Watch SE</a>
               <span class = "product-price">From $ 249</span>
               <p>Click the product to purchase </p>
           </div>
@@ -782,15 +784,15 @@ function showSlider(type){
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href="ipadh.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">AirPods Max</a>
+              <a href = "ipadh.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">AirPods Max</a>
               <span class = "product-price">From $ 459</span>
               <p>Click the product to purchase </p>
           </div>
@@ -802,15 +804,35 @@ function showSlider(type){
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href ="iphoneh.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">iPhone 15 Pro</a>
+              <a href = "iphoneh.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">iPhone 15 Pro</a>
+              <span class = "product-price">From $ 999</span>
+              <p>Click the product to purchase </p>
+          </div>
+      </div>
+
+  <div class = "col product-item mx-auto">
+          <div class = "product-img">
+              <img src = "image/bs1.png" alt = "" class = "img-fluid d-block mx-auto">
+              <span class = "heart-icon">
+              </span>
+              <div class = "row btns w-100 mx-auto text-center">
+                  <a href="mach.jsp"><button type = "button" class = "col-6 py-2">
+                      BUY NOW
+                      </button></a>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type"></span>
+              <a href = "mach.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
               <span class = "product-price">From $ 999</span>
               <p>Click the product to purchase </p>
           </div>
@@ -818,83 +840,68 @@ function showSlider(type){
 
       <div class = "col product-item mx-auto">
           <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <img src = "image/bs2.png" alt = "" class = "img-fluid d-block mx-auto">
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href="watchh.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
-              <span class = "product-price">From $ 999</span>
-              <p>Click the product to purchase </p>
-          </div>
-      </div>
-      <div class = "col product-item mx-auto">
-          <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
-              <span class = "heart-icon">
-              </span>
-              <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
-                      BUY NOW
-                  </button>
-              </div>
-          </div>
-
-          <div class = "product-info p-3">
-              <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
-              <span class = "product-price">From $ 999</span>
+              <a href = "watchh.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">Apple Watch SE</a>
+              <span class = "product-price">From $ 249</span>
               <p>Click the product to purchase </p>
           </div>
       </div>
 
       <div class = "col product-item mx-auto">
           <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <img src = "image/bs3.png" alt = "" class = "img-fluid d-block mx-auto">
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href="ipadh.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
-              <span class = "product-price">From $ 999</span>
+              <a href = "ipadh.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">AirPods Max</a>
+              <span class = "product-price">From $ 459</span>
               <p>Click the product to purchase </p>
           </div>
       </div>
 
       <div class = "col product-item mx-auto">
           <div class = "product-img">
-              <img src = "image/macbook_pro_1634580340025_1696138183858-removebg-preview.png" alt = "" class = "img-fluid d-block mx-auto">
+              <img src = "image/bs4.png" alt = "" class = "img-fluid d-block mx-auto">
               <span class = "heart-icon">
               </span>
               <div class = "row btns w-100 mx-auto text-center">
-                  <button type = "button" class = "col-6 py-2">
+                  <a href ="iphoneh.jsp"><button type = "button" class = "col-6 py-2">
                       BUY NOW
-                  </button>
+                      </button></a>
               </div>
           </div>
 
           <div class = "product-info p-3">
               <span class = "product-type"></span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">MacBook Pro</a>
+              <a href = "iphoneh.jsp" class = "d-block text-dark text-decoration-none py-2 product-name">iPhone 15 Pro</a>
               <span class = "product-price">From $ 999</span>
               <p>Click the product to purchase </p>
           </div>
       </div>
 
+     
+  
+
+     
       
   </div>
 </div>
@@ -929,8 +936,8 @@ responsive: {
 
 <!-- About Us -->
 
-<div class = "center-vertical">
-  <div class = "about-us-section ">
+<div class = "center-vertical" >
+  <div class = "about-us-section" id = "aboutus">
       <div class ="containeraboutus">
           <div class ="row">
               <div class ="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -978,7 +985,7 @@ responsive: {
 
    <!-- Contact Form -->
 
-   <section class="contact-form">
+   <section class="contact-form" id="contact">
     <div class = "contacted">
     <h1 class="sectionHeader">contact us</h1>
     <h3 class="heading">Get In Touch!</h3>

@@ -50,7 +50,7 @@
         }
     </style>
     <body>
-        <%@include file="adminNavbar.jsp"%>
+         <%@include file="sidebar.jsp" %>
         <h2 class="text-center">Hello Admin</h2>
         
         
