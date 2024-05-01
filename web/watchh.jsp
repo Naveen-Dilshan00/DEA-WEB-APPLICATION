@@ -272,7 +272,7 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
