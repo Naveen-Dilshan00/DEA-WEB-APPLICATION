@@ -344,7 +344,7 @@
                         </div>
                         <div class="details col-md-6">
                             <span class="review-no1"><a href="#">Home ></a><a href="#">iPhone</a>><span class="hed"> <%=b.getItemName()%></span></span>
-                            <h3 class="product-title">iPhone 14 Pro</h3>
+                            <h3 class="product-title"><%=b.getItemName()%></h3>
                             <div class="rating">
                                 <span class="review-no"><%=b.getStatus()%></span>
                             </div>
