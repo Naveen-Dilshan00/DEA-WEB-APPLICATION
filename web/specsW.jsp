@@ -330,18 +330,18 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/watchBlue.jpg" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="Items_img/watchGreen2.jpg" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/watchRed.jpg" /></div>
-                                <div class="tab-pane" id="pic-4"><img src="Items_img/watchWhite2.jpg" /></div>
-                                <div class="tab-pane" id="pic-5"><img src="Items_img/watchBlack.jpg" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/green<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/red<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="Items_img/white<%=b.getItemName()%>" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="Items_img/black<%=b.getItemName()%>" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'blue', this)"><img src="Items_img/watchBlue.jpg" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/watchGreen2.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'red', this)"><img src="Items_img/watchRed.jpg" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/watchWhite2.jpg" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'black', this)"><img src="Items_img/watchBlack.jpg" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'blue', this)"><img src="admin_img/<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'green', this)"><img src="Items_img/green<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'red', this)"><img src="Items_img/red<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/white<%=b.getItemName()%>" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'black', this)"><img src="Items_img/black<%=b.getItemName()%>" /></a></li>
                             </ul>
 
                         </div>
