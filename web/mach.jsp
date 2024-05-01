@@ -267,7 +267,7 @@
             <c:remove var="addCart" scope="session"/>
         </c:if>   
             
-            <%@include file="all_components/navbar1.jsp"%>
+           
 
             <section class="main" style="background: url(image/topbg2.jpeg)no-repeat; width: 100%;  background: url(image/topbg1.jpeg)no-repeat;
     background-size: cover;

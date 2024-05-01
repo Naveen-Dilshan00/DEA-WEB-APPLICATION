@@ -16,22 +16,6 @@
 <%@page isELIgnored ="false"%>
 
 
-<%
-    user u = (user)session.getAttribute("userobj");
-    
-    ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
-    List<cart> cartProducts = null;
-    if(cart_list !=null){
-        cartDAOImpl Dao = new cartDAOImpl(DBConnect.getConn());
-        cartProducts = Dao.getCartProducts(cart_list);
-        Double Total = Dao.getTotalCartPrice(cart_list);
-        request.setAttribute("cart_list", cart_list);
-        request.setAttribute("total",Total);
-    }
-    
-    DecimalFormat dcf = new DecimalFormat("#.##");
-    request.setAttribute("dcf",dcf);
-%>
 <!DOCTYPE html>
 <html>
     <head>

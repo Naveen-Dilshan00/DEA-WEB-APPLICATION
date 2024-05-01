@@ -4,6 +4,26 @@
     Author     : admin
 --%>
 
+<%@page import="com.DAO.cartDAOImpl"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.cart"%>
+<%@page import="java.util.ArrayList"%>
+<%
+ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
+    List<cart> cartProducts = null;
+    if(cart_list !=null){
+        cartDAOImpl Dao = new cartDAOImpl(DBConnect.getConn());
+        cartProducts = Dao.getCartProducts(cart_list);
+        Double Total = Dao.getTotalCartPrice(cart_list);
+        request.setAttribute("cart_list", cart_list);
+        request.setAttribute("total",Total);
+    }
+    
+    DecimalFormat dcf = new DecimalFormat("#.##");
+    request.setAttribute("dcf",dcf);
+%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
