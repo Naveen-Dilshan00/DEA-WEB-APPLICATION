@@ -202,6 +202,7 @@ a:hover{
      <%@include file="all_components/allCSS.jsp" %>
     </head>
     <body>
+        <%@include file="all_components/navbar1.jsp" %>
         
         
         <c:if test="${empty userobj}">

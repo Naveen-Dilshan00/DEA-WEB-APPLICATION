@@ -45,7 +45,7 @@
                                 <div class="form-row">
                                   <div class="form-group col-md-6">
                                     <label name="name"for="inputEmail4">Name</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.name}" name="username">
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Name" value="${userobj.name}" name="username" required>
                                   </div>
                                  
                                 </div>
@@ -53,11 +53,11 @@
                               <div class="form-row">
                                <div class="form-group col-md-6">
                                  <label for="inputEmail4">Email</label>
-                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}" name="email">
+                                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="${userobj.email}" name="email" required>
                                </div>
                                <div class="form-group col-md-6">
                                  <label for="inputPassword4">Phone Number</label>
-                                 <input type="number" class="form-control" id="inputPassword4" placeholder="Password" value="${userobj.phno}" name="phno">
+                                 <input type="text" class="form-control" id="inputPassword4" placeholder="Phone_number" value="${userobj.phno}" name="phno"required>
                                </div>
                              </div>
                                                             <div class="form-row">

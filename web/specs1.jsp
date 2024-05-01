@@ -112,7 +112,7 @@
 
             .card {
                 margin-top: 50px;
-                background: #eee;
+                background: #fdfdfd;
                 padding: 3em;
                 line-height: 1.5em; }
             .color-option {
@@ -125,23 +125,23 @@
             }
 
             input[type="radio"]:checked + .color-option {
-                border: 1px solid #4C4C4C; /* Add border for selected color */
+                border: 2px solid #4C4C4C; /* Add border for selected color */
             }
 
             .blue {
                 background: #A3C1DC; }
 
-            .gold {
-                background: #FFEF99; }
+            .black {
+                background: #000 }
 
             .white {
-                background: #FFFFFF; }
+                background: #EEEEEE; }
 
             .green {
                 background: #17411E; }
 
-            .purple {
-                background: #8E5A95; }
+            .rose {
+                background: #ffb3d9; }
 
             /* Hide radio buttons */
             .color-options input[type="radio"] {
@@ -327,16 +327,16 @@
                         <div class="preview col-md-6">
 
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="Items_img/<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-2"><img src="Items_img/purple<%=b.getPhotoName()%>" /></div>
-                                <div class="tab-pane" id="pic-3"><img src="Items_img/gold<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane active" id="pic-1"><img src="admin_img/<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="Items_img/rose<%=b.getPhotoName()%>" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="Items_img/black<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-4"><img src="Items_img/white<%=b.getPhotoName()%>" /></div>
                                 <div class="tab-pane" id="pic-5"><img src="Items_img/blue<%=b.getPhotoName()%>" /></div>
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="Items_img/<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'purple', this)"><img src="Items_img/purple<%=b.getPhotoName()%>" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'gold', this)"><img src="Items_img/gold<%=b.getPhotoName()%>" /></a></li>
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab" onclick="changeMainImage('pic-1', 'green', this)"><img src="admin_img/<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab" onclick="changeMainImage('pic-2', 'rose', this)"><img src="Items_img/rose<%=b.getPhotoName()%>" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab" onclick="changeMainImage('pic-3', 'black', this)"><img src="Items_img/black<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab" onclick="changeMainImage('pic-4', 'white', this)"><img src="Items_img/white<%=b.getPhotoName()%>" /></a></li>
                                 <li><a data-target="#pic-5" data-toggle="tab" onclick="changeMainImage('pic-5', 'blue', this)"><img src="Items_img/blue<%=b.getPhotoName()%>" /></a></li>
                             </ul>
@@ -358,8 +358,8 @@
                                     <input type="radio" id="color_blue" name="phone_color" value="blue" onclick="selectColorFromOptions('blue')">
                                     <label for="color_blue" class="color-option blue"></label>
 
-                                    <input type="radio" id="color_gold" name="phone_color" value="gold" onclick="selectColorFromOptions('gold')">
-                                    <label for="color_gold" class="color-option gold"></label>
+                                    <input type="radio" id="color_black" name="phone_color" value="black" onclick="selectColorFromOptions('black')">
+                                    <label for="color_black" class="color-option black"></label>
 
                                     <input type="radio" id="color_white" name="phone_color" value="white" onclick="selectColorFromOptions('white')">
                                     <label for="color_white" class="color-option white"></label>
@@ -367,11 +367,11 @@
                                     <input type="radio" id="color_green" name="phone_color" value="green" onclick="selectColorFromOptions('green')">
                                     <label for="color_green" class="color-option green"></label>
 
-                                    <input type="radio" id="color_purple" name="phone_color" value="purple" onclick="selectColorFromOptions('purple')">
-                                    <label for="color_purple" class="color-option purple"></label>
+                                    <input type="radio" id="color_rose" name="phone_color" value="rose" onclick="selectColorFromOptions('rose')">
+                                    <label for="color_rose" class="color-option rose"></label>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="storage">
                                 <p class="colo">Choose a Storage</p>
                                 <div class="storage-options">
@@ -548,7 +548,7 @@
                                                 case 'blue':
                                                     imageId = 'pic-5';
                                                     break;
-                                                case 'gold':
+                                                case 'black':
                                                     imageId = 'pic-3';
                                                     break;
                                                 case 'white':
@@ -557,7 +557,7 @@
                                                 case 'green':
                                                     imageId = 'pic-1';
                                                     break;
-                                                case 'purple':
+                                                case 'rose':
                                                     imageId = 'pic-2';
                                                     break;
                                                 default:
