@@ -16,31 +16,62 @@
         <title>Admin:All items</title>
         <%@include file="adminCSS.jsp"%>
     </head>
+    
+    <style>
+       
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 20px;
+        }
+        .table th,
+        .table td {
+            padding: 8px;
+            text-align: center; 
+            border-bottom: 1px solid #ddd;
+            font-weight: 500;
+        }
+        
+        h2{
+            color: #007bff;
+            font-weight: 700;
+        }
+        .table th {
+            background-color: #0C0C1E; 
+            color: white;
+            font-weight: 700;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .table tbody tr:hover {
+            background-color: #ddd;
+        }
+    </style>
     <body>
         <%@include file="adminNavbar.jsp"%>
-        <h3 class="text-center">Hello Admin</h3>
+        <h2 class="text-center">Hello Admin</h2>
         
         
         <table class="table">
-            <thead class="bg-dark text-white">
+            <thead>
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Image</th>
                   <th scope="col">Item Name</th>
                   <th scope="col">Year</th>
                   <th scope="col">Price</th>
-                  <th scope="col">Catergories</th>
+                  <th scope="col">Categories</th>
                   <th scope="col">Status</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-              <%
-              
-              itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
+              <%itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
               List<itemDetailes> list = dao.getAllItems();
               for(itemDetailes b : list){
-               %>   
+              %>   
                <tr>
                   <td><%=b.getItemId()%></td>
                   <td><img src="../admin_img/<%=b.getPhotoName()%>" style="width:100px;height:100px;"></td>
