@@ -436,7 +436,7 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
             </div>
         </div>
     </div>  
-    </div>  
+     
 
 
 
@@ -452,7 +452,7 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
 
                            </div>
                          
-                         </div>
+                       
                          
                            <center>
                                 <div class="end">
