@@ -151,17 +151,17 @@
         height: auto
     }
 
-    .end{
-        background: url(image/Wallpaper.jpg)no-repeat;
-        background-size: cover;
-        height: 75vh;
-        background-position: 50% 50%;
-        width: 100%;
-        margin-top: 80px;
-        align-content: center;
-        align-items: center;;
-        
-    }
+    .end {
+     background-image: linear-gradient(to right bottom, rgba(0,0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/download1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 75vh;
+    width: 100%;
+    margin-top: 80px;
+    align-content: center;
+    align-items: center;
+}
     .text_groupend{
         align-content: center;
         align-items: center;
@@ -507,7 +507,7 @@ Visit the carrier's website: Go to the official website of the shipping carrier.
     <div class=" justify-content-center align-items-lg-start align-items-md-center ">
       <h1>Still have questions?</h1>
     <p>Contact our support team for further assistance.</p>
-    <button type="button" class="btn btn-outline-dark">Contact</button>
+   <a href="index.jsp#contact"><button type="button" class="btn btn-outline-dark">Contact</button></a>
     </div> 
        </div> 
                         
