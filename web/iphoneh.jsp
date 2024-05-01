@@ -171,6 +171,57 @@
         float: right;
         text-align: right;
 }
+.buy{
+   color: white; 
+   text-decoration: none;
+   
+}
+
+.buy:hover {
+    color: white; /* Change text color to white on hover */
+}
+
+@media (max-width: 768px) {
+            .text-group {
+                margin-top: 50px;
+                text-align: center;
+            }
+            .image-text {
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+            .card {
+                margin-bottom: 30px;
+            }
+            .faq h1 {
+                text-align: center;
+            }
+            .faqlast {
+                text-align: center;
+            }
+            .section_3 {
+                padding-top: 50px;
+                text-align: center;
+                padding-left: 0px;
+            }
+            .uni_text {
+                text-align: center;
+            }
+            ._text {
+                text-align: center;
+            }
+            .more {
+                text-align: center;
+            }
+            .image_1 img {
+                max-width: 50%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
 
     
    
@@ -219,20 +270,20 @@
         <div class="row" style="margin-top:100px;">
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="img/img4.png" alt="Image 1" class="img-fluid smaller-image" style="margin-right: 10px;">
+                    <img src="Items_img/img4.png" alt="Image 1" class="img-fluid smaller-image" style="margin-right: 10px;">
                     <p class="image-text">Free next-day<br> shipping</p>
 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="img/img5.png" alt="Image 2" class="img-fluid smaller-image">
+                    <img src="Items_img/img5.png" alt="Image 2" class="img-fluid smaller-image">
                     <p class="image-text">ready in one hour</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="image-item d-flex align-items-center">
-                    <img src="img/img6.png" alt="Image 3" class="img-fluid smaller-image">
+                    <img src="Items_img/img6.png" alt="Image 3" class="img-fluid smaller-image">
                     <p class="image-text">Same-day delivery</p>
                 </div>
             </div>
@@ -269,8 +320,8 @@
 
 
     <!-- Products  -->
-    <div class="container">
-        <div class="row">
+     <div class="card-deck"><!-- added  -->
+        <div class="row row1">
         <%
                     itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
                     List<itemDetailes> list2 = dao.getAlliphone();
@@ -279,11 +330,11 @@
      
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$<%=b.getPrice()%></span></h5></div>
             </div>
          
           <p class="card-text">512GB</p>
@@ -295,13 +346,17 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
+                               <button class="card-button"> <a href="login1.jsp" class="buy">Buy Now</a></button>
                             </div>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-                                <a class="btn btn-outline-dark" href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a>
+
+
+                                <button class="card-button"> <a href="specs1.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
+
+
                             </div>
                       <%
                             }
@@ -310,7 +365,10 @@
                 } else{
             %>
                 <div class="card-footer">
-                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+
+
+                    <a href="specs1.jsp?Iid=<%=b.getItemId()%> " class="buy" disabled><button class="card-button"> Out Of Stock</button></a>
+
                 </div>
             <%
                 }
@@ -321,7 +379,8 @@
       }
       %>
    </div>
-    </div>
+     </div>
+ 
 
                     
                     
@@ -352,7 +411,7 @@
 
                          </div>
                          <div class="col-md-6">
-                            <div class="image_1" style="padding-bottom:0px;"><img src="image/download (19).jpg"></div>
+                            <div class="image_1" style="padding-bottom:0px;"><img src="image/download11.jpg"></div>
                          </div>
                       </div>
                    </div>

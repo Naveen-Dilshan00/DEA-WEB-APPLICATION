@@ -202,6 +202,7 @@ a:hover{
      <%@include file="all_components/allCSS.jsp" %>
     </head>
     <body>
+        <%@include file="all_components/navbar1.jsp" %>
         
         
         <c:if test="${empty userobj}">
@@ -233,7 +234,12 @@ a:hover{
                 </div>
                 <c:remove var="OfailedMsg" scope="session"/>
             </c:if>
-           
+           <c:if test="${ not empty EmptyfailedMsg}">
+                <div class="alert alert-danger" role="alert">
+                    ${EmptyfailedMsg}
+                </div>
+                <c:remove var="EmptyfailedMsg" scope="session"/>
+            </c:if>
                 
                     
                     <div class="row border-top border-bottom">

@@ -1,7 +1,9 @@
-    <%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page import="com.entity.itemDetailes"%>
 <%@page import="com.DAO.itemDAOImpl"%>
 <%@page import="com.DB.DBConnect"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
 <%-- 
         Document   : shop
         Created on : Apr 11, 2024, 9:56:35 AM
@@ -18,7 +20,6 @@
             <style>
 
 .main{
-    background: url(image/Wallpaper.jpg)no-repeat;
     background-size: cover;
     height: 75vh;
     background-position: 50% 50%;
@@ -61,6 +62,7 @@
 
     .btn1{
        margin-top: 80px;
+       
     }
 
     /* card button */
@@ -171,6 +173,18 @@
     margin-bottom: 10px;
 }
 
+.buy{
+   color: white; 
+   text-decoration: none;
+}
+
+.buy:hover {
+    color: white; /* Change text color to white on hover */
+}
+
+
+ 
+
  @media (max-width: 768px) {
             .text-group {
                 margin-top: 50px;
@@ -221,11 +235,31 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+             
+             <%@include file="all_components/allCSS.jsp"%>
         </head>
         <body>
             <%
             user u =(user)session.getAttribute("userobj");
             %>
+            
+            <!-- popUp massage-->
+        <c:if test="${not empty addCart}">
+            <div id="toast">${addCart}</div>
+
+            <script type="text/javascript">
+                            showToast();
+                            function showToast(content)
+                            {
+                                $('#toast').addClass("display");
+                                $('#toast').html(content);
+                                setTimeout(()=>{
+                                    $("#toast").removeClass("display");
+                                },2000)
+                            }	
+            </script>
+            <c:remove var="addCart" scope="session"/>
+        </c:if>   
             
             <%@include file="all_components/navbar.jsp"%>
 
@@ -250,6 +284,7 @@
                 </div>
             </div>
         </div>
+                
             </section>
 
             <div class="container">
@@ -306,21 +341,22 @@
 
                         <!-- 1st row  -->
     
-    <div class="container">
-        <div class="row">
+        <div class="card-deck"><!-- added  -->
+        <div class="row row1">
         <%
                     itemDAOImpl dao = new itemDAOImpl(DBConnect.getConn());
                     List<itemDetailes> list2 = dao.getAllLaps();
                     for(itemDetailes b : list2){
                     %>
      
+                    
       <div class="col-md-3">
        <div class="card card-ho">
-           <img class="card-img-top text-center"  style="width:200px; height:200px"  src="Items_img/<%=b.getPhotoName()%>" alt="Card image cap">
+           <img class="card-img-top"  src="admin_img/<%=b.getPhotoName()%>" alt="Card image cap">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8"> <h5 class="card-title"><%=b.getItemName()%></h5></div>
-                 <div class="col-md-4"> <h5 class="card-title"><span class="price"><%=b.getPrice()%></span></h5></div>
+                 <div class="col-md-4"> <h5 class="card-title"><span class="price">$<%=b.getPrice()%></span></h5></div>
             </div>
          
           <p class="card-text">512GB</p>
@@ -332,13 +368,20 @@
                             if(u == null){
                       %>
                             <div class="card-footer">
-                                <a href="login1.jsp" class="btn btn-outline-dark">Buy Now</a>
+
+
+                                <button class="card-button"> <a  href="login1.jsp" class="buy">Buy Now</a></button>
+
+
                             </div>
                       <%
                             } else{
                       %>
                             <div class="card-footer">
-                                <a class="btn btn-outline-dark" href="CartServlet?Iid=<%=b.getItemId()%>&&Uid=<%=u.getId()%>" class="card-button">Buy Now</a>
+
+
+                               <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy">Buy Now</a></button>
+
                             </div>
                       <%
                             }
@@ -347,7 +390,9 @@
                 } else{
             %>
                 <div class="card-footer">
-                   <a class="btn btn-outline-danger" disabled>Out Of Stock</a>
+
+                    <button class="card-button"> <a href="specsL.jsp?Iid=<%=b.getItemId()%>" class="buy" disabled>Out Of Stock</a></button>
+
                 </div>
             <%
                 }
@@ -358,7 +403,8 @@
       }
       %>
    </div>
-    </div>
+    </div><!-- added  -->
+    
 
                         
 
@@ -386,7 +432,6 @@ to date with the latest technology.</p>
                     </div>
         </div>
 
-<!-- comment -->
 <div class="container" style=" margin-top: 0px;">
                            <!-- FAQs  -->
 

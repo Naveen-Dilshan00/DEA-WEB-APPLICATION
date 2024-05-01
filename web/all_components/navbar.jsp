@@ -110,7 +110,7 @@ ArrayList<cart> cart_list =(ArrayList<cart>) session.getAttribute("cart-list");
       </li>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a href="settings.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
+      <a href="Userprofile1.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
       <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fa-regular fa-address-book"></i>Contact Us</button>
     </form>
   </div>

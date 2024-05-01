@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored ="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -431,21 +434,34 @@
                  
 </div>
 <div class="content">
+         <c:if test="${ not empty UpdateSuccMsg}">
+               <div class="alert alert-success" role="alert">
+                    ${UpdateSuccMsg}
+               </div>
+               <c:remove var="UpdateSuccMsg" scope="session"/>
+            </c:if>
+        
+            <c:if test="${ not empty UpdateFailedMsg}">
+                <div class="alert alert-danger" role="alert">
+                    ${UpdateFailedMsg}
+                <c:remove var="UpdateFailedMsg" scope="session"/>
+                </div>
+            </c:if>    
     <div class="user-profile">
         <h2>User Profile</h2>
+       
        <div class="user-info">
     
     <div class="user-details">
         <div class="user-name">
             <img src="download.jpg" alt="User Image"> <!-- Add this line -->
-            Hande Ercel
+            <h1>${userobj.name}</h1>
         </div>
-        <div class="membership-info">Member since Aug 24</div>
-        <div class="country-info">Eastern European Time (EET), Cairo UTC +3</div>
-        <div class="form-buttons1">
+        
+<!--        <div class="form-buttons1">
             <button type="submit" class="Uploadnewphoto-button">Upload New Photo</button>
             <button type="button" class="delete-button">Delete</button>
-        </div>
+        </div>-->
      
 
         <hr>
@@ -457,13 +473,13 @@
     <div class="form-group">
       <input type="hidden"   name="id" value="${userobj.id}"  >
       <label for="currentpassword">Current Password:</label>
-      <input type="password" id="currentpassword" name="currentpassword" >
+      <input type="password" id="currentpassword" name="currentpass" >
       <label for="newpassword">New password:</label>
-      <input type="password" id="newpassword" name="newpassword" placeholder="">
+      <input type="password" id="newpassword" name="newpass" placeholder="">
     </div>
     <div class="form-group1">
       <label for="confirmnewtpassword">Confirm New Password:</label>
-      <input type="password" id="confirmnewtpassword" name="confirmnewtpassword" placeholder="">
+      <input type="password" id="confirmnewtpassword" name="confirmpass" placeholder="">
     </div>
              
                

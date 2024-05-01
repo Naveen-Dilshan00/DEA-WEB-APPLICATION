@@ -4,6 +4,12 @@
     Author     : Naveen Dilshan
 --%>
 
+
+<div class="container-fluid text-center text-white p-3 mt-2"
+    style="background-color:#303f9f">
+    <h5>Copyright claims active</h5>    
+</div>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -44,7 +50,7 @@
         li a {
             color: gray;
         }
-        .btn {
+        .btn-1{
             width: 100%;
             background: black;
             color: white;
